@@ -8,6 +8,7 @@ var max_hp = 20
 var hp = 20 setget _set_HP
 
 func _ready() -> void:
+	add_to_group("enemy")
 	$Hitbox.add_to_group("enemy")
 	set_bars()
 
@@ -41,9 +42,8 @@ func destroyed() -> void:
 	print("destroyed")
 	speed = 0
 
-
 func _on_Hitbox_area_entered(area: Area2D) -> void:
 	if area.is_in_group("player"):
 		_set_HP(hp - area.get_parent().hp)
-	elif area.is_in_group("player_bullet"):
+	elif area.is_in_group("player_bullet") or area.is_in_group("environmental"):
 		_set_HP(hp - area.damage)

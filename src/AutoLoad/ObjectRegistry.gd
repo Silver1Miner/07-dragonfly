@@ -1,4 +1,4 @@
 extends Node
 
 func register_bullet(bullet: Node) -> void:
-	add_child(bullet)
+	call_deferred("add_child", bullet)

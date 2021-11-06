@@ -1,9 +1,9 @@
 extends KinematicBody2D
 class_name Player
 
-const SPEED_FAST := 500
+const SPEED_FAST := 300
 const SPEED_SLOW := 100
-const SPEED_NORMAL := 300
+const SPEED_NORMAL := 200
 var speed := 300 # pixels/second
 var velocity := Vector2.ZERO
 
@@ -21,8 +21,7 @@ signal shield_updated(shield)
 signal energy_updated(energy)
 
 func _ready() -> void:
-	$Hitbox.add_to_group("player")
-	$Shield.add_to_group("player")
+	add_to_group("player")
 	$Gun.add_to_group("player_bullet")
 	$Gun.target_groups = ["enemy"]
 	set_bars()
@@ -62,7 +61,7 @@ func get_input():
 	if Input.is_action_pressed("fire_secondary"):
 		if $Bomber/Timer.is_stopped() and bombs > 0:
 			$Bomber.bomb()
-			bombs -= 1
+			#bombs -= 1
 			print(bombs)
 
 var accumulated = 0
@@ -103,6 +102,10 @@ func _set_SH(new_shield) -> void:
 	if shield != prev_shield:
 		$shield_bar.value = shield
 		emit_signal("shield_updated", shield)
+	if shield <= 0:
+		$Shield.visible = false
+	else:
+		$Shield.visible = true
 
 func _set_EN(new_energy) -> void:
 	var prev_energy = energy
