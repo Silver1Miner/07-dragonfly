@@ -4,30 +4,34 @@
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = -120.0
-rect_min_size = Vector2( 640, 120 )
+margin_top = -80.0
+rect_min_size = Vector2( 640, 80 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Panels" type="HBoxContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_bottom = -40.0
 custom_constants/separation = 0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Left" type="Panel" parent="Panels"]
-margin_right = 120.0
-margin_bottom = 120.0
-rect_min_size = Vector2( 120, 0 )
+margin_right = 80.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 80, 80 )
 
 [node name="Center" type="NinePatchRect" parent="Panels"]
-margin_left = 120.0
-margin_right = 520.0
-margin_bottom = 120.0
-rect_min_size = Vector2( 400, 0 )
+margin_left = 80.0
+margin_right = 560.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 480, 0 )
 
 [node name="Right" type="Panel" parent="Panels"]
-margin_left = 520.0
+margin_left = 560.0
 margin_right = 640.0
-margin_bottom = 120.0
-rect_min_size = Vector2( 120, 0 )
+margin_bottom = 80.0
+rect_min_size = Vector2( 80, 0 )

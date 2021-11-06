@@ -9,55 +9,60 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Sections" type="HBoxContainer" parent="."]
+[node name="Sections" type="VBoxContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 custom_constants/separation = 0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
-[node name="Left" type="VBoxContainer" parent="Sections"]
-margin_right = 120.0
-margin_bottom = 404.0
+[node name="Top" type="HBoxContainer" parent="Sections"]
+margin_right = 640.0
+margin_bottom = 40.0
 rect_min_size = Vector2( 120, 0 )
 custom_constants/separation = 0
 
-[node name="Panel" type="Panel" parent="Sections/Left"]
-margin_right = 120.0
-margin_bottom = 280.0
-rect_min_size = Vector2( 0, 280 )
+[node name="Panel" type="Panel" parent="Sections/Top"]
+margin_right = 80.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 80, 40 )
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Sections/Left"]
-margin_top = 280.0
-margin_right = 120.0
-margin_bottom = 400.0
-rect_min_size = Vector2( 0, 120 )
-
-[node name="View" type="Control" parent="Sections"]
-margin_left = 120.0
-margin_right = 520.0
-margin_bottom = 404.0
-rect_min_size = Vector2( 400, 0 )
-
-[node name="Right" type="VBoxContainer" parent="Sections"]
-margin_left = 520.0
-margin_right = 640.0
-margin_bottom = 404.0
-rect_min_size = Vector2( 120, 0 )
-
-[node name="Panel" type="Panel" parent="Sections/Right"]
-margin_right = 120.0
-margin_bottom = 280.0
-rect_min_size = Vector2( 0, 280 )
-
-[node name="NinePatchRect" type="NinePatchRect" parent="Sections/Right"]
-margin_top = 284.0
-margin_right = 120.0
-margin_bottom = 404.0
-rect_min_size = Vector2( 0, 120 )
+[node name="Label" type="Label" parent="Sections/Top/Panel"]
+margin_right = 45.0
+margin_bottom = 31.0
+text = "HP
+SH"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="View" type="Control" parent="Sections"]
+margin_top = 40.0
+margin_right = 640.0
+margin_bottom = 320.0
+rect_min_size = Vector2( 640, 280 )
+
+[node name="Bottom" type="HBoxContainer" parent="Sections"]
+margin_top = 320.0
+margin_right = 640.0
+margin_bottom = 400.0
+rect_min_size = Vector2( 640, 80 )
+custom_constants/separation = 0
+
+[node name="Panel" type="Panel" parent="Sections/Bottom"]
+margin_right = 80.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 80, 80 )
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Sections/Bottom"]
+margin_left = 80.0
+margin_right = 560.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 480, 0 )
+
+[node name="Panel2" type="Panel" parent="Sections/Bottom"]
+margin_left = 560.0
+margin_right = 640.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 80, 80 )
+
 [node name="Textbox" parent="." instance=ExtResource( 1 )]
+visible = false

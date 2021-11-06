@@ -14,6 +14,7 @@ var shield = 80 setget _set_SH
 var max_energy = 100
 var energy = 100 setget _set_EN
 var recharge_rate = 40
+var bombs = 10
 
 signal hp_updated(hp)
 signal shield_updated(shield)
@@ -58,19 +59,24 @@ func get_input():
 		if $Gun/Timer.is_stopped() and energy > $Gun.get_energy_cost():
 			$Gun.fire()
 			_set_EN(energy - $Gun.get_energy_cost())
+	if Input.is_action_pressed("fire_secondary"):
+		if $Bomber/Timer.is_stopped() and bombs > 0:
+			$Bomber.bomb()
+			bombs -= 1
+			print(bombs)
 
 var accumulated = 0
 func _physics_process(delta):
 	get_input()
 	var _collision = move_and_collide(velocity * delta)
-	if position.x < 120 + 16:
-		position.x = 120 + 16
-	elif position.x > 520 - 16:
-		position.x = 520 - 16
-	if position.y < 0 + 16:
-		position.y = 0 + 16
-	elif position.y > 400 - 16:
-		position.y = 400 - 16
+	if position.x < 16:
+		position.x = 16
+	elif position.x > 640 - 16:
+		position.x = 640 - 16
+	if position.y < 40 + 16:
+		position.y = 40 + 16
+	elif position.y > 400 - 80 - 16:
+		position.y = 400 - 80 - 16
 	_set_EN(energy + recharge_rate * delta)
 	accumulated += 1
 	if accumulated >= 60:

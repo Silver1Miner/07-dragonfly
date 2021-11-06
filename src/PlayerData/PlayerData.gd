@@ -1,5 +1,7 @@
 extends Node
 
+export var SCROLL_SPEED = 30
+
 var player_hp = 100
 var player_shield = 100
 

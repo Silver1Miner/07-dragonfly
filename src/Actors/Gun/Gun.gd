@@ -4,7 +4,7 @@ class_name Gun
 export var Bullet: PackedScene
 export var damage := 2.0
 export var cooldown := 0.2
-export var direction := Vector2.UP
+export var direction := Vector2.RIGHT
 export var speed := 200
 export var lifetime := 2
 export var energy_cost := 10.0
