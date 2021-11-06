@@ -40,7 +40,13 @@ func _set_HP(new_hp) -> void:
 
 func destroyed() -> void:
 	print("destroyed")
-	speed = 0
+	var explosion = preload("res://src/Actors/Gun/Explosion.tscn")
+	var explosion_instance = explosion.instance()
+	explosion_instance.damage = 0
+	explosion_instance.size_scale = 1
+	explosion_instance.global_position = global_position
+	ObjectRegistry.register_bullet(explosion_instance)
+	queue_free()
 
 func _on_Hitbox_area_entered(area: Area2D) -> void:
 	if area.is_in_group("player"):

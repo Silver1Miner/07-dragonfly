@@ -1,10 +1,13 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://src/UI/Textbox.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/UI/progressbar.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/UI/HUD.gd" type="Script" id=3]
 
 [node name="HUD" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -20,19 +23,131 @@ margin_bottom = 40.0
 rect_min_size = Vector2( 120, 0 )
 custom_constants/separation = 0
 
-[node name="Panel" type="Panel" parent="Sections/Top"]
-margin_right = 80.0
+[node name="Ship" type="Panel" parent="Sections/Top"]
+margin_right = 320.0
 margin_bottom = 40.0
-rect_min_size = Vector2( 80, 40 )
+rect_min_size = Vector2( 320, 40 )
 
-[node name="Label" type="Label" parent="Sections/Top/Panel"]
-margin_right = 45.0
-margin_bottom = 31.0
-text = "HP
-SH"
+[node name="Stats" type="VBoxContainer" parent="Sections/Top/Ship"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_right = 2.0
+rect_min_size = Vector2( 210, 0 )
+custom_constants/separation = 0
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="HP" type="HBoxContainer" parent="Sections/Top/Ship/Stats"]
+margin_right = 312.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 0, 20 )
+custom_constants/separation = 0
+
+[node name="text" type="Label" parent="Sections/Top/Ship/Stats/HP"]
+margin_top = 3.0
+margin_right = 100.0
+margin_bottom = 17.0
+rect_min_size = Vector2( 100, 0 )
+text = "HP 100/100"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="progressbar" parent="Sections/Top/Ship/Stats/HP" instance=ExtResource( 2 )]
+margin_left = 100.0
+margin_right = 228.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 128, 0 )
+
+[node name="SH" type="HBoxContainer" parent="Sections/Top/Ship/Stats"]
+margin_top = 20.0
+margin_right = 312.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 0, 20 )
+custom_constants/separation = 0
+
+[node name="text" type="Label" parent="Sections/Top/Ship/Stats/SH"]
+margin_top = 3.0
+margin_right = 100.0
+margin_bottom = 17.0
+rect_min_size = Vector2( 100, 0 )
+text = "SH 100/100"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="progressbar" parent="Sections/Top/Ship/Stats/SH" instance=ExtResource( 2 )]
+margin_left = 100.0
+margin_right = 228.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 128, 0 )
+
+[node name="Weapons" type="Panel" parent="Sections/Top"]
+margin_left = 320.0
+margin_right = 640.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 320, 0 )
+
+[node name="Ammo" type="VBoxContainer" parent="Sections/Top/Weapons"]
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -260.0
+custom_constants/separation = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EN" type="HBoxContainer" parent="Sections/Top/Weapons/Ammo"]
+margin_right = 260.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 0, 20 )
+custom_constants/separation = 0
+
+[node name="text" type="Label" parent="Sections/Top/Weapons/Ammo/EN"]
+margin_top = 3.0
+margin_right = 100.0
+margin_bottom = 17.0
+rect_min_size = Vector2( 100, 0 )
+text = "EN 100/100"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="progressbar" parent="Sections/Top/Weapons/Ammo/EN" instance=ExtResource( 2 )]
+margin_left = 100.0
+margin_right = 228.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 128, 0 )
+
+[node name="Bombs" type="HBoxContainer" parent="Sections/Top/Weapons/Ammo"]
+margin_top = 20.0
+margin_right = 260.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 0, 20 )
+custom_constants/separation = 0
+
+[node name="text" type="Label" parent="Sections/Top/Weapons/Ammo/Bombs"]
+margin_top = 3.0
+margin_right = 100.0
+margin_bottom = 17.0
+rect_min_size = Vector2( 100, 0 )
+text = "Bombs: 10"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="progressbar" parent="Sections/Top/Weapons/Ammo/Bombs" instance=ExtResource( 2 )]
+margin_left = 100.0
+margin_right = 228.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 128, 0 )
 
 [node name="View" type="Control" parent="Sections"]
 margin_top = 40.0

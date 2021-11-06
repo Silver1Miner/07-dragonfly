@@ -1,6 +1,6 @@
 extends Position2D
 
-export var Bomb: PackedScene
+export var Bomb: PackedScene = load("res://src/Actors/Gun/Bomb.tscn")
 var cooldown = 1.0
 
 func _ready() -> void:

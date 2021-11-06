@@ -15,10 +15,12 @@ var max_energy = 100
 var energy = 100 setget _set_EN
 var recharge_rate = 40
 var bombs = 10
+var max_bombs = 10
 
-signal hp_updated(hp)
-signal shield_updated(shield)
-signal energy_updated(energy)
+signal hp_updated(hp, max_hp)
+signal shield_updated(shield, max_shield)
+signal energy_updated(energy, max_energy)
+signal bombs_updated(bombs, max_bombs)
 
 func _ready() -> void:
 	add_to_group("player")
@@ -36,6 +38,12 @@ func set_bars() -> void:
 	$shield_bar.value = shield
 	$energy_bar.max_value = max_energy
 	$energy_bar.value = energy
+
+func update_display() -> void:
+	emit_signal("hp_updated", hp, max_hp)
+	emit_signal("shield_updated",shield, max_shield)
+	emit_signal("energy_updated",energy, max_energy)
+	emit_signal("bombs_updated",bombs, max_bombs)
 
 func get_input():
 	velocity = Vector2.ZERO
@@ -61,8 +69,7 @@ func get_input():
 	if Input.is_action_pressed("fire_secondary"):
 		if $Bomber/Timer.is_stopped() and bombs > 0:
 			$Bomber.bomb()
-			#bombs -= 1
-			print(bombs)
+			_set_bombs(bombs - 1)
 
 var accumulated = 0
 func _physics_process(delta):
@@ -92,7 +99,7 @@ func _set_HP(new_hp) -> void:
 	hp = clamp(new_hp, 0, max_hp)
 	if hp != prev_hp:
 		$hp_bar.value = hp
-		emit_signal("hp_updated", hp)
+		emit_signal("hp_updated", hp, max_hp)
 	if hp == 0:
 		print("destroyed")
 
@@ -101,7 +108,7 @@ func _set_SH(new_shield) -> void:
 	shield = clamp(new_shield, 0, max_shield)
 	if shield != prev_shield:
 		$shield_bar.value = shield
-		emit_signal("shield_updated", shield)
+		emit_signal("shield_updated", shield, max_shield)
 	if shield <= 0:
 		$Shield.visible = false
 	else:
@@ -112,4 +119,10 @@ func _set_EN(new_energy) -> void:
 	energy = clamp(new_energy, 0, max_energy)
 	if energy != prev_energy:
 		$energy_bar.value = energy
-		emit_signal("energy_updated", energy)
+		emit_signal("energy_updated", energy, max_energy)
+
+func _set_bombs(new_bombs) -> void:
+	var prev_bombs = bombs
+	bombs = clamp(new_bombs, 0, max_bombs)
+	if bombs != prev_bombs:
+		emit_signal("bombs_updated", bombs, max_bombs)
