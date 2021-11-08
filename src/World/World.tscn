@@ -14,7 +14,27 @@ script = ExtResource( 5 )
 [node name="Enemy" parent="." instance=ExtResource( 2 )]
 position = Vector2( 568.608, 138.593 )
 
+[node name="Enemy2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 504.628, 140.277 )
+
+[node name="Enemy3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 425.494, 140.838 )
+
+[node name="Enemy4" parent="." instance=ExtResource( 2 )]
+position = Vector2( 362.075, 141.399 )
+
+[node name="Enemy5" parent="." instance=ExtResource( 2 )]
+position = Vector2( 158.909, 156.552 )
+
+[node name="Enemy6" parent="." instance=ExtResource( 2 )]
+position = Vector2( 153.297, 221.094 )
+
 [node name="Turret" parent="." instance=ExtResource( 4 )]
-position = Vector2( 595.809, 283.077 )
+position = Vector2( 490.859, 273.536 )
+speed = 0
+
+[node name="Turret2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 289.377, 281.393 )
+speed = 0
 
 [node name="HUD" parent="." instance=ExtResource( 3 )]

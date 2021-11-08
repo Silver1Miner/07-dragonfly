@@ -13,8 +13,6 @@ func bomb() -> void:
 	bomb.global_position = global_position
 	if get_parent().get("velocity"):
 		bomb.set_axis_velocity(get_parent().velocity)
-	else:
-		bomb.set_axis_velocity(Vector2(-PlayerData.SCROLL_SPEED, 0))
 	ObjectRegistry.register_bullet(bomb)
 	$Timer.wait_time = cooldown
 	$Timer.start()

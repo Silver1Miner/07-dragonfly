@@ -19,6 +19,8 @@ radius = 16.0
 [node name="Player" type="KinematicBody2D"]
 position = Vector2( 80, 200 )
 script = ExtResource( 2 )
+weapon_1 = 2
+weapon_2 = 3
 
 [node name="Timer" type="Timer" parent="."]
 
@@ -49,6 +51,9 @@ scale = Vector2( 0.09, 0.09 )
 texture = ExtResource( 4 )
 
 [node name="Gun" parent="." instance=ExtResource( 3 )]
+position = Vector2( 20, 0 )
+
+[node name="Gun2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 20, 0 )
 
 [node name="Bomber" parent="." instance=ExtResource( 6 )]

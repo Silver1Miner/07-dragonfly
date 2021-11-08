@@ -15,7 +15,6 @@ func _on_Bomb_body_entered(body: Node) -> void:
 		detonate()
 
 func detonate() -> void:
-	print("detonated")
 	var explosion: Explosion = Explosion.instance()
 	explosion.damage = 100
 	explosion.global_position = global_position

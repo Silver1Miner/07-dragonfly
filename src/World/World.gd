@@ -12,4 +12,6 @@ func connect_hud() -> void:
 		push_error("hud signal connect fail")
 	if $Player.connect("bombs_updated", $HUD, "update_bombs_display") != OK:
 		push_error("hud signal connect fail")
+	if $Player.connect("loadout_updated", $HUD, "update_loadout_display") != OK:
+		push_error("hud signal connect fail")
 	$Player.update_display()

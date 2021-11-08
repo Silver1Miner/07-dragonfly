@@ -24,9 +24,9 @@ rect_min_size = Vector2( 120, 0 )
 custom_constants/separation = 0
 
 [node name="Ship" type="Panel" parent="Sections/Top"]
-margin_right = 320.0
+margin_right = 240.0
 margin_bottom = 40.0
-rect_min_size = Vector2( 320, 40 )
+rect_min_size = Vector2( 240, 40 )
 
 [node name="Stats" type="VBoxContainer" parent="Sections/Top/Ship"]
 anchor_right = 1.0
@@ -40,7 +40,7 @@ __meta__ = {
 }
 
 [node name="HP" type="HBoxContainer" parent="Sections/Top/Ship/Stats"]
-margin_right = 312.0
+margin_right = 232.0
 margin_bottom = 20.0
 rect_min_size = Vector2( 0, 20 )
 custom_constants/separation = 0
@@ -64,7 +64,7 @@ rect_min_size = Vector2( 128, 0 )
 
 [node name="SH" type="HBoxContainer" parent="Sections/Top/Ship/Stats"]
 margin_top = 20.0
-margin_right = 312.0
+margin_right = 232.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 0, 20 )
 custom_constants/separation = 0
@@ -86,17 +86,46 @@ margin_right = 228.0
 margin_bottom = 20.0
 rect_min_size = Vector2( 128, 0 )
 
+[node name="Loadout" type="Panel" parent="Sections/Top"]
+margin_left = 240.0
+margin_right = 400.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 160, 0 )
+
+[node name="Slots" type="VBoxContainer" parent="Sections/Top/Loadout"]
+margin_left = 10.0
+margin_right = 50.0
+margin_bottom = 40.0
+custom_constants/separation = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Primary" type="Label" parent="Sections/Top/Loadout/Slots"]
+margin_right = 40.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 0, 20 )
+align = 1
+valign = 1
+
+[node name="Secondary" type="Label" parent="Sections/Top/Loadout/Slots"]
+margin_top = 20.0
+margin_right = 40.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 0, 20 )
+
 [node name="Weapons" type="Panel" parent="Sections/Top"]
-margin_left = 320.0
+margin_left = 400.0
 margin_right = 640.0
 margin_bottom = 40.0
-rect_min_size = Vector2( 320, 0 )
+rect_min_size = Vector2( 240, 0 )
 
 [node name="Ammo" type="VBoxContainer" parent="Sections/Top/Weapons"]
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -260.0
+margin_left = -230.0
+margin_right = 30.0
 custom_constants/separation = 0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -137,7 +166,7 @@ margin_top = 3.0
 margin_right = 100.0
 margin_bottom = 17.0
 rect_min_size = Vector2( 100, 0 )
-text = "Bombs: 10"
+text = "Bombs: 10/10"
 valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -148,6 +177,10 @@ margin_left = 100.0
 margin_right = 228.0
 margin_bottom = 20.0
 rect_min_size = Vector2( 128, 0 )
+value = 100.0
+
+[node name="Timer" type="Timer" parent="Sections/Top/Weapons/Ammo/Bombs/progressbar"]
+one_shot = true
 
 [node name="View" type="Control" parent="Sections"]
 margin_top = 40.0

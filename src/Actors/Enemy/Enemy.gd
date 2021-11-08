@@ -39,7 +39,6 @@ func _set_HP(new_hp) -> void:
 		destroyed()
 
 func destroyed() -> void:
-	print("destroyed")
 	var explosion = preload("res://src/Actors/Gun/Explosion.tscn")
 	var explosion_instance = explosion.instance()
 	explosion_instance.damage = 0

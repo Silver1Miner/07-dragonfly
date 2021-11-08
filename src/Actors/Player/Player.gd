@@ -16,16 +16,19 @@ var energy = 100 setget _set_EN
 var recharge_rate = 40
 var bombs = 10
 var max_bombs = 10
+export var weapon_1 = 0
+export var weapon_2 = 1
 
 signal hp_updated(hp, max_hp)
 signal shield_updated(shield, max_shield)
 signal energy_updated(energy, max_energy)
 signal bombs_updated(bombs, max_bombs)
+signal loadout_updated(weapon_1, weapon_2)
 
 func _ready() -> void:
 	add_to_group("player")
-	$Gun.add_to_group("player_bullet")
-	$Gun.target_groups = ["enemy"]
+	$Gun.load_gun_data(weapon_1)
+	$Gun2.load_gun_data(weapon_2)
 	set_bars()
 
 func set_bars() -> void:
@@ -44,6 +47,7 @@ func update_display() -> void:
 	emit_signal("shield_updated",shield, max_shield)
 	emit_signal("energy_updated",energy, max_energy)
 	emit_signal("bombs_updated",bombs, max_bombs)
+	emit_signal("loadout_updated", weapon_1, weapon_2)
 
 func get_input():
 	velocity = Vector2.ZERO
@@ -67,6 +71,10 @@ func get_input():
 			$Gun.fire()
 			_set_EN(energy - $Gun.get_energy_cost())
 	if Input.is_action_pressed("fire_secondary"):
+		if $Gun2/Timer.is_stopped() and energy > $Gun2.get_energy_cost():
+			$Gun2.fire()
+			_set_EN(energy - $Gun2.get_energy_cost())
+	if Input.is_action_pressed("fire_tertiary"):
 		if $Bomber/Timer.is_stopped() and bombs > 0:
 			$Bomber.bomb()
 			_set_bombs(bombs - 1)
