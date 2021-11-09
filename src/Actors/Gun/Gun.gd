@@ -11,10 +11,14 @@ export var lifetime :float = 2.0
 export var energy_cost :float = 10.0
 export var bullet_number :int = 1
 export var angle :float = 10.0
+var disabled = false
 var target_groups = ["enemy"]
 var bullet_groups = ["player_bullet"]
 
-func load_gun_data(gun_type) -> void:
+func load_gun_data(gun_type: String) -> void:
+	if gun_type == "Empty" or not gun_stats.has(gun_type):
+		disabled = true
+		return
 	var stats = gun_stats.get_stats(gun_type)
 	damage = stats["damage"]
 	cooldown = stats["cooldown"]
@@ -32,6 +36,8 @@ func get_energy_cost() -> float:
 	return energy_cost
 
 func fire() -> void:
+	if disabled:
+		return
 	if not $Timer.is_stopped() or not Bullet:
 		return
 	for n in range(bullet_number):

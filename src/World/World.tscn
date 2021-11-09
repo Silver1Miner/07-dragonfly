@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://src/Actors/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Actors/Enemy/Enemy.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/UI/HUD.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/Actors/Enemy/Turret.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/World/World.gd" type="Script" id=5]
+[ext_resource path="res://assets/train/TrainFull.png" type="Texture" id=6]
 
 [node name="World" type="Node"]
 script = ExtResource( 5 )
@@ -30,11 +31,16 @@ position = Vector2( 158.909, 156.552 )
 position = Vector2( 153.297, 221.094 )
 
 [node name="Turret" parent="." instance=ExtResource( 4 )]
-position = Vector2( 490.859, 273.536 )
+position = Vector2( 485.247, 277.465 )
 speed = 0
 
 [node name="Turret2" parent="." instance=ExtResource( 4 )]
 position = Vector2( 289.377, 281.393 )
 speed = 0
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 379.392, 325.514 )
+texture = ExtResource( 6 )
+vframes = 4
 
 [node name="HUD" parent="." instance=ExtResource( 3 )]

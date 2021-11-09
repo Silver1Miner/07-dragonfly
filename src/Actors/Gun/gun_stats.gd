@@ -1,12 +1,14 @@
 class_name Gun_Stats
 extends Resource
 
-func get_stats(type: int) -> Dictionary:
+func get_stats(type: String) -> Dictionary:
 	return stats[type]
 
-var stats := [
-	{ # 0
-		"name": "Machine Gun",
+func has(type: String) -> bool:
+	return (type in stats)
+
+var stats := {
+	"Machine Gun 1": {
 		"damage": 2.0,
 		"cooldown": 0.2,
 		"direction": Vector2.RIGHT,
@@ -19,8 +21,7 @@ var stats := [
 		"angle": 0,
 		"bullet": preload("res://src/Actors/Gun/Bullet.tscn")
 	},
-	{ # 1
-		"name": "Shotgun",
+	"Shotgun 1": {
 		"damage": 4.0,
 		"cooldown": 0.8,
 		"direction": Vector2.RIGHT,
@@ -33,8 +34,7 @@ var stats := [
 		"angle": 15,
 		"bullet": preload("res://src/Actors/Gun/Bullet.tscn")
 	},
-	{ # 2
-		"name": "Flamer",
+	"Flamer 1": {
 		"damage": 1.0,
 		"cooldown": 0.1,
 		"direction": Vector2.RIGHT,
@@ -47,8 +47,7 @@ var stats := [
 		"angle": 5,
 		"bullet": preload("res://src/Actors/Gun/Bullet_Flame.tscn")
 	},
-	{ # 3
-		"name": "Sniper",
+	"Sniper 1": {
 		"damage": 100.0,
 		"cooldown": 1.0,
 		"direction": Vector2.RIGHT,
@@ -61,4 +60,4 @@ var stats := [
 		"angle": 15,
 		"bullet": preload("res://src/Actors/Gun/Bullet_Bolt.tscn")
 	},
-]
+}
