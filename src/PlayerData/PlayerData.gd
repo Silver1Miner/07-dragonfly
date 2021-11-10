@@ -10,7 +10,7 @@ var player_weapon_1 = "Machine Gun 1"
 var player_weapon_2 = "Empty"
 var bombs = 10
 var lore = [0,0,0,0,0,0,0]
-var ships = [1, 0, 0, 0]
+var ships = [1, 0, 0]
 var current_ship = 0
 
 func _ready() -> void:
@@ -36,18 +36,18 @@ var treasure_2 = 0
 
 var ship_visuals = [
 	{	"name": "Dragonfly",
-		"sprite": preload("res://assets/player/ship_0002.png"),
+		"sprite": preload("res://assets/player/player-dragonfly.png"),
+		"wings": Vector2(0,0),
 		"portrait": "",
 	},
-	{	"name": "Hornet",
-		"sprite": preload("res://assets/player/ship_0001.png")
+	{	"name": "Scarab",
+		"sprite": preload("res://assets/player/player-scarab.png"),
+		"wings": Vector2(-8,0),
 	},
 	{	"name": "Scorpion",
-		"sprite": preload("res://assets/player/ship_0000.png")
+		"sprite": preload("res://assets/player/player-scorpion.png"),
+		"wings": Vector2(0, 0),
 	},
-	{	"name": "Widow",
-		"sprite": preload("res://assets/player/ship_0003.png")
-	}
 ]
 
 var item_data = {

@@ -36,6 +36,7 @@ func _ready() -> void:
 	$Gun2.load_gun_data(weapon_2)
 	set_bars()
 
+var wing_locations
 func load_player_data() -> void:
 	cash = PlayerData.cash
 	weapon_1 = PlayerData.player_weapon_1
@@ -44,6 +45,7 @@ func load_player_data() -> void:
 	shield = PlayerData.player_shield
 	bombs = PlayerData.bombs
 	$Sprite.texture = PlayerData.ship_visuals[PlayerData.current_ship]["sprite"]
+	$AnimatedSprite.position = PlayerData.ship_visuals[PlayerData.current_ship]["wings"]
 
 func save_player_data() -> void:
 	PlayerData.cash = cash

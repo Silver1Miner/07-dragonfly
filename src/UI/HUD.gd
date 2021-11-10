@@ -55,5 +55,4 @@ func update_loadout_display(weapon_1: String, weapon_2: String) -> void:
 	slot_2.text = "Slot 2: " + weapon_2
 
 func _process(_delta) -> void:
-	if !bombs_bar.get_node("Timer").is_stopped():
-		bombs_bar.value = 100 - bombs_bar.get_node("Timer").time_left * 100
+	bombs_bar.value = 100 - bombs_bar.get_node("Timer").time_left * 100

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://src/Actors/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Actors/Enemy/Enemy.tscn" type="PackedScene" id=2]
@@ -6,9 +6,12 @@
 [ext_resource path="res://src/Actors/Enemy/Turret.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/World/World.gd" type="Script" id=5]
 [ext_resource path="res://assets/train/TrainFull.png" type="Texture" id=6]
+[ext_resource path="res://src/World/Background.tscn" type="PackedScene" id=7]
 
 [node name="World" type="Node"]
 script = ExtResource( 5 )
+
+[node name="ParallaxBackground" parent="." instance=ExtResource( 7 )]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 
@@ -31,15 +34,16 @@ position = Vector2( 158.909, 156.552 )
 position = Vector2( 153.297, 221.094 )
 
 [node name="Turret" parent="." instance=ExtResource( 4 )]
-position = Vector2( 485.247, 277.465 )
+position = Vector2( 481.238, 301.074 )
 speed = 0
 
 [node name="Turret2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 289.377, 281.393 )
+position = Vector2( 286.704, 302.329 )
 speed = 0
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 379.392, 325.514 )
+position = Vector2( 376.274, 354.468 )
+scale = Vector2( 1.2, 1.2 )
 texture = ExtResource( 6 )
 vframes = 4
 
