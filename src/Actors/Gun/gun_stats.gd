@@ -8,7 +8,7 @@ func has(type: String) -> bool:
 	return (type in stats)
 
 var stats := {
-	"Machine Gun 1": {
+	"Machine Gun": {
 		"damage": 2.0,
 		"cooldown": 0.2,
 		"direction": Vector2.RIGHT,
@@ -21,7 +21,7 @@ var stats := {
 		"angle": 0,
 		"bullet": preload("res://src/Actors/Gun/Bullet.tscn")
 	},
-	"Shotgun 1": {
+	"Shotgun": {
 		"damage": 4.0,
 		"cooldown": 0.8,
 		"direction": Vector2.RIGHT,
@@ -34,7 +34,7 @@ var stats := {
 		"angle": 15,
 		"bullet": preload("res://src/Actors/Gun/Bullet.tscn")
 	},
-	"Flamer 1": {
+	"Flamer": {
 		"damage": 1.0,
 		"cooldown": 0.1,
 		"direction": Vector2.RIGHT,
@@ -47,7 +47,7 @@ var stats := {
 		"angle": 5,
 		"bullet": preload("res://src/Actors/Gun/Bullet_Flame.tscn")
 	},
-	"Sniper 1": {
+	"Bolt": {
 		"damage": 100.0,
 		"cooldown": 1.0,
 		"direction": Vector2.RIGHT,

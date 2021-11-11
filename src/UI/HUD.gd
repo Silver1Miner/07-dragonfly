@@ -14,7 +14,6 @@ onready var slot_2 = $Sections/Top/Loadout/Slots/Secondary
 var started = false
 var gun_stats :Resource = preload("res://src/Actors/Gun/gun_stats.tres")
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	color_bars()
 

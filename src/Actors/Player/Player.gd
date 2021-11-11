@@ -16,7 +16,7 @@ var shield = 80 setget _set_SH
 var max_energy = 100
 var energy = 100 setget _set_EN
 var recharge_rate = 40
-var bombs = 10
+var bombs = 0
 var max_bombs = 10
 var weapon_1 = "Empty"
 var weapon_2 = "Empty"
@@ -43,7 +43,7 @@ func load_player_data() -> void:
 	weapon_2 = PlayerData.player_weapon_2
 	hp = PlayerData.player_hp
 	shield = PlayerData.player_shield
-	bombs = PlayerData.bombs
+	bombs = PlayerData.inventory["Bombs"]
 	$Sprite.texture = PlayerData.ship_visuals[PlayerData.current_ship]["sprite"]
 	$AnimatedSprite.position = PlayerData.ship_visuals[PlayerData.current_ship]["wings"]
 
@@ -51,7 +51,7 @@ func save_player_data() -> void:
 	PlayerData.cash = cash
 	PlayerData.player_hp = hp
 	PlayerData.player_shield = shield
-	PlayerData.player_bombs = bombs
+	PlayerData.inventory["Bombs"] = bombs
 
 func set_bars() -> void:
 	$hp_bar.set_tint_progress(Color(1,0,0))

@@ -27,12 +27,6 @@ position = Vector2( 425.494, 140.838 )
 [node name="Enemy4" parent="." instance=ExtResource( 2 )]
 position = Vector2( 362.075, 141.399 )
 
-[node name="Enemy5" parent="." instance=ExtResource( 2 )]
-position = Vector2( 158.909, 156.552 )
-
-[node name="Enemy6" parent="." instance=ExtResource( 2 )]
-position = Vector2( 153.297, 221.094 )
-
 [node name="Turret" parent="." instance=ExtResource( 4 )]
 position = Vector2( 481.238, 301.074 )
 speed = 0

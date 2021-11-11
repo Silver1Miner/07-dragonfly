@@ -1,0 +1,96 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/UI/Haggle.gd" type="Script" id=1]
+
+[node name="Haggle" type="VBoxContainer"]
+margin_left = 70.0
+margin_top = 50.0
+margin_right = 570.0
+margin_bottom = 312.0
+rect_min_size = Vector2( 500, 100 )
+custom_constants/separation = 20
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_right = 500.0
+margin_bottom = 14.0
+text = "The Customer wants to buy:"
+align = 1
+
+[node name="Preview" type="CenterContainer" parent="."]
+margin_top = 34.0
+margin_right = 500.0
+margin_bottom = 98.0
+
+[node name="PreviewImage" type="TextureRect" parent="Preview"]
+margin_left = 218.0
+margin_right = 282.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 64, 64 )
+
+[node name="Dial" type="HBoxContainer" parent="."]
+margin_top = 118.0
+margin_right = 500.0
+margin_bottom = 142.0
+
+[node name="HundredThousand" type="SpinBox" parent="Dial"]
+margin_right = 74.0
+margin_bottom = 24.0
+max_value = 9.0
+
+[node name="TenThousand" type="SpinBox" parent="Dial"]
+margin_left = 78.0
+margin_right = 152.0
+margin_bottom = 24.0
+max_value = 9.0
+
+[node name="Thousand" type="SpinBox" parent="Dial"]
+margin_left = 156.0
+margin_right = 230.0
+margin_bottom = 24.0
+max_value = 9.0
+
+[node name="Hundred" type="SpinBox" parent="Dial"]
+margin_left = 234.0
+margin_right = 308.0
+margin_bottom = 24.0
+max_value = 9.0
+
+[node name="Ten" type="SpinBox" parent="Dial"]
+margin_left = 312.0
+margin_right = 386.0
+margin_bottom = 24.0
+max_value = 9.0
+
+[node name="One" type="SpinBox" parent="Dial"]
+margin_left = 390.0
+margin_right = 464.0
+margin_bottom = 24.0
+max_value = 9.0
+
+[node name="Percentage" type="Label" parent="."]
+margin_top = 162.0
+margin_right = 500.0
+margin_bottom = 182.0
+rect_min_size = Vector2( 0, 20 )
+text = "100% of Wholesale Price"
+align = 1
+valign = 1
+
+[node name="Offer" type="Button" parent="."]
+margin_top = 202.0
+margin_right = 500.0
+margin_bottom = 222.0
+text = "Make the Offer"
+
+[node name="Decline" type="Button" parent="."]
+margin_top = 242.0
+margin_right = 500.0
+margin_bottom = 262.0
+text = "Refuse Deal"
+
+[connection signal="pressed" from="Offer" to="." method="_on_Offer_pressed"]
+[connection signal="pressed" from="Decline" to="." method="_on_Decline_pressed"]

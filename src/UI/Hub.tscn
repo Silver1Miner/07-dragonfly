@@ -27,7 +27,7 @@ __meta__ = {
 [node name="Loadout" type="VBoxContainer" parent="HBoxContainer"]
 margin_right = 160.0
 margin_bottom = 280.0
-custom_constants/separation = 0
+custom_constants/separation = 16
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -56,53 +56,29 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="HBoxContainer/Loadout"]
-margin_top = 160.0
-margin_right = 160.0
-margin_bottom = 180.0
-rect_min_size = Vector2( 0, 20 )
-text = "Ship"
-align = 1
-valign = 1
-
 [node name="Ship" type="OptionButton" parent="HBoxContainer/Loadout"]
-margin_top = 180.0
+margin_top = 176.0
 margin_right = 160.0
-margin_bottom = 200.0
+margin_bottom = 196.0
 text = "Ship"
-
-[node name="Label2" type="Label" parent="HBoxContainer/Loadout"]
-margin_top = 200.0
-margin_right = 160.0
-margin_bottom = 220.0
-rect_min_size = Vector2( 0, 20 )
-text = "Primary Gun"
 align = 1
-valign = 1
 
 [node name="Primary" type="OptionButton" parent="HBoxContainer/Loadout"]
-margin_top = 220.0
+margin_top = 212.0
 margin_right = 160.0
-margin_bottom = 240.0
+margin_bottom = 232.0
 text = "Primary Weapon"
+align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label3" type="Label" parent="HBoxContainer/Loadout"]
-margin_top = 240.0
-margin_right = 160.0
-margin_bottom = 260.0
-rect_min_size = Vector2( 0, 20 )
-text = "Secondary Gun"
-align = 1
-valign = 1
-
 [node name="Secondary" type="OptionButton" parent="HBoxContainer/Loadout"]
-margin_top = 260.0
+margin_top = 248.0
 margin_right = 160.0
-margin_bottom = 280.0
+margin_bottom = 268.0
 text = "Secondary Weapon"
+align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -126,7 +102,36 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/Lore/NinePatchRect"]
+[node name="ItemInfo" type="HBoxContainer" parent="HBoxContainer/Lore/NinePatchRect"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -230.0
+margin_top = -115.0
+margin_right = 230.0
+margin_bottom = 115.0
+custom_constants/separation = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ItemList" type="ItemList" parent="HBoxContainer/Lore/NinePatchRect/ItemInfo"]
+margin_right = 230.0
+margin_bottom = 230.0
+rect_min_size = Vector2( 230, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ItemText" type="RichTextLabel" parent="HBoxContainer/Lore/NinePatchRect/ItemInfo"]
+margin_left = 230.0
+margin_right = 460.0
+margin_bottom = 230.0
+rect_min_size = Vector2( 230, 0 )
+
+[node name="LoreText" type="RichTextLabel" parent="HBoxContainer/Lore/NinePatchRect"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -139,16 +144,27 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Container" type="CenterContainer" parent="HBoxContainer/Lore"]
+[node name="Options" type="HBoxContainer" parent="HBoxContainer/Lore"]
 margin_top = 254.0
 margin_right = 480.0
 margin_bottom = 274.0
+custom_constants/separation = 30
 
-[node name="Data" type="OptionButton" parent="HBoxContainer/Lore/Container"]
-margin_left = 160.0
-margin_right = 320.0
+[node name="Control" type="Control" parent="HBoxContainer/Lore/Options"]
 margin_bottom = 20.0
-rect_min_size = Vector2( 160, 0 )
+
+[node name="Inventory" type="Button" parent="HBoxContainer/Lore/Options"]
+margin_left = 30.0
+margin_right = 230.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 200, 0 )
+text = "Inventory"
+
+[node name="Data" type="OptionButton" parent="HBoxContainer/Lore/Options"]
+margin_left = 260.0
+margin_right = 460.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 200, 0 )
 text = "Data"
 
 [node name="Choices" type="HBoxContainer" parent="."]
@@ -169,15 +185,17 @@ __meta__ = {
 margin_right = 140.0
 margin_bottom = 44.0
 rect_min_size = Vector2( 140, 30 )
-text = "Go On Mission"
+text = "Go on Raid"
 
 [node name="to_trading" type="Button" parent="Choices"]
 margin_left = 160.0
 margin_right = 300.0
 margin_bottom = 44.0
 rect_min_size = Vector2( 140, 0 )
-text = "Trade"
+text = "Go to Trading Post"
 
 [connection signal="item_selected" from="HBoxContainer/Loadout/Ship" to="." method="_on_Ship_item_selected"]
 [connection signal="item_selected" from="HBoxContainer/Loadout/Primary" to="." method="_on_Primary_item_selected"]
 [connection signal="item_selected" from="HBoxContainer/Loadout/Secondary" to="." method="_on_Secondary_item_selected"]
+[connection signal="pressed" from="Choices/to_mission" to="." method="_on_to_mission_pressed"]
+[connection signal="pressed" from="Choices/to_trading" to="." method="_on_to_trading_pressed"]

@@ -6,6 +6,10 @@ func get_lore(type: String, index: int) -> String:
 var lore = {
 	"ship": [
 """The Dragonfly Class airship
-"""
+""",
+"""The Scarab Class airship
+""",
+"""The Scorpion Class airship
+""",
 	]
 }

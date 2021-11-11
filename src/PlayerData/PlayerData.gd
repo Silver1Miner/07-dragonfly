@@ -1,16 +1,17 @@
 extends Node
 
 export var SCROLL_SPEED = 30
+var hub: PackedScene = preload("res://src/UI/Hub.tscn")
+var trading: PackedScene = preload("res://src/UI/Trading.tscn")
 
 var cash = 0
 var max_cash = 0
 var player_hp = 50
 var player_shield = 50
-var player_weapon_1 = "Machine Gun 1"
-var player_weapon_2 = "Empty"
-var bombs = 10
+var player_weapon_1 = "Machine Gun"
+var player_weapon_2 = "Shotgun"
 var lore = [0,0,0,0,0,0,0]
-var ships = [1, 0, 0]
+var ships = [1, 1, 1]
 var current_ship = 0
 
 func _ready() -> void:
@@ -22,17 +23,17 @@ func load_data() -> void:
 func save_data() -> void:
 	pass
 
-var crates = 0
-var smg_1 = 1
-var smg_2 = 0
-var shotgun_1 = 0
-var shotgun_2 = 0
-var flamer_1 = 0
-var flamer_2 = 0
-var sniper_1 = 0
-var sniper_2 = 0
-var treasure_1 = 0
-var treasure_2 = 0
+var inventory = {
+	"Bombs": 20,
+	"Crates": 0,
+	"Machine Gun": 0,
+	"Spread Gun": 1,
+	"Shotgun": 1,
+	"Scattergun": 1,
+	"Flamer": 1,
+	"Burner": 1,
+	"Bolt": 1,
+}
 
 var ship_visuals = [
 	{	"name": "Dragonfly",

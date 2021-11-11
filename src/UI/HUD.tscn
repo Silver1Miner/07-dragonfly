@@ -255,11 +255,16 @@ patch_margin_top = 13
 patch_margin_right = 12
 patch_margin_bottom = 10
 
-[node name="Panel2" type="Panel" parent="Sections/Bottom"]
+[node name="Panel2" type="NinePatchRect" parent="Sections/Bottom"]
 margin_left = 560.0
 margin_right = 640.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 80, 80 )
+texture = ExtResource( 4 )
+patch_margin_left = 22
+patch_margin_top = 19
+patch_margin_right = 11
+patch_margin_bottom = 13
 
 [node name="Textbox" parent="." instance=ExtResource( 1 )]
 visible = false
