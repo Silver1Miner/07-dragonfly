@@ -29,6 +29,5 @@ margin_left = 224.0
 margin_right = 444.0
 margin_bottom = 230.0
 rect_min_size = Vector2( 220, 0 )
-text = "Bombs pack a lot of punch, but can only be dropped. Gravity has to take care of the rest. I hope you paid attention to your physics classes!"
 
 [connection signal="item_selected" from="ItemList" to="." method="_on_ItemList_item_selected"]

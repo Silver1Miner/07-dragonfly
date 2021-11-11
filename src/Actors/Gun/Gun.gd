@@ -2,7 +2,8 @@ extends Position2D
 class_name Gun
 
 export var Bullet: PackedScene = preload("res://src/Actors/Gun/Bullet.tscn")
-export var gun_stats: Resource = preload("res://src/Actors/Gun/gun_stats.tres")
+var item_data: Resource = preload("res://src/Data/item_data.tres")
+
 export var damage :float = 2.0
 export var cooldown :float = 0.2
 export var direction :Vector2 = Vector2.RIGHT
@@ -16,10 +17,10 @@ var target_groups = ["enemy"]
 var bullet_groups = ["player_bullet"]
 
 func load_gun_data(gun_type: String) -> void:
-	if gun_type == "Empty" or not gun_stats.has(gun_type):
+	if gun_type == "Empty" or not item_data.has(gun_type):
 		disabled = true
 		return
-	var stats = gun_stats.get_stats(gun_type)
+	var stats = item_data.get_stats(gun_type)
 	damage = stats["damage"]
 	cooldown = stats["cooldown"]
 	direction = stats["direction"]

@@ -1,6 +1,6 @@
 extends Control
 
-var lore: Resource = preload("res://src/UI/lore.tres")
+var item_data: Resource = preload("res://src/Data/item_data.tres")
 onready var ship_preview = $HBoxContainer/Loadout/Preview/ShipPreview
 onready var lore_read = $HBoxContainer/Lore/NinePatchRect/LoreText
 onready var textbox = $HUD/Textbox
@@ -36,7 +36,7 @@ func populate_options() -> void:
 	available_1.append("Change Slot 1")
 	available_2.append("Change Slot 2")
 	available_ships.append("Change Ship")
-	for gun in ["Machine Gun", "Spread Gun", "Flamer", "Burner"]:
+	for gun in ["Chaingun", "Spreadgun", "Flamer", "Burner"]:
 		if PlayerData.inventory[gun] > 0:
 			available_1.append(gun)
 	for gun2 in ["Shotgun", "Scattergun", "Bolt"]:
@@ -53,8 +53,9 @@ func populate_options() -> void:
 		$HBoxContainer/Loadout/Ship.add_item(ship)
 
 func update_ship_choice() -> void:
+	$HBoxContainer/Lore/Options/Inventory.pressed = false
 	ship_preview.texture = PlayerData.ship_visuals[PlayerData.current_ship]["sprite"]
-	lore_read.text = lore.get_lore("ship", PlayerData.current_ship)
+	lore_read.text = item_data.get_entry(ship_names[PlayerData.current_ship], "lore")
 
 func _on_Ship_item_selected(index: int) -> void:
 	if index == 0:
@@ -70,6 +71,7 @@ func _on_Primary_item_selected(index: int) -> void:
 	PlayerData.player_weapon_1 = available_1[index]
 	populate_options()
 	update_loadout_display()
+	lore_read.set_text(item_data.get_entry(PlayerData.player_weapon_1, "lore"))
 
 func _on_Secondary_item_selected(index: int) -> void:
 	if index == 0:
@@ -79,6 +81,7 @@ func _on_Secondary_item_selected(index: int) -> void:
 	PlayerData.player_weapon_2 = available_2[index]
 	populate_options()
 	update_loadout_display()
+	lore_read.set_text(item_data.get_entry(PlayerData.player_weapon_2, "lore"))
 
 func _on_to_mission_pressed() -> void:
 	if get_tree().change_scene_to(PlayerData.mission) != OK:
@@ -97,7 +100,6 @@ func _on_text_finished() -> void:
 
 func _on_to_saves_pressed() -> void:
 	print("saves pressed")
-
 
 func _on_Inventory_toggled(button_pressed: bool) -> void:
 	$HBoxContainer/Lore/NinePatchRect/InventoryInfo.visible = button_pressed

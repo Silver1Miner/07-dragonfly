@@ -1,5 +1,7 @@
 extends HBoxContainer
 
+var item_data: Resource = preload("res://src/Data/item_data.tres")
+
 onready var itemlist = $ItemList
 onready var itemtext = $ItemText
 var items = []
@@ -17,3 +19,4 @@ func load_items() -> void:
 func _on_ItemList_item_selected(index: int) -> void:
 	if index < len(items):
 		print(items[index])
+		itemtext.set_text(item_data.get_entry(items[index], "lore"))

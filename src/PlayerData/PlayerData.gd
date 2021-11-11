@@ -9,7 +9,7 @@ var cash = 0
 var max_cash = 0
 var player_hp = 50
 var player_shield = 50
-var player_weapon_1 = "Machine Gun"
+var player_weapon_1 = "Chaingun"
 var player_weapon_2 = "Shotgun"
 var lore = [0,0,0,0,0,0,0]
 var ships = [1, 1, 1]
@@ -27,8 +27,8 @@ func save_data() -> void:
 var inventory = {
 	"Bombs": 20,
 	"Crates": 0,
-	"Machine Gun": 0,
-	"Spread Gun": 1,
+	"Chaingun": 0,
+	"Spreadgun": 1,
 	"Shotgun": 1,
 	"Scattergun": 1,
 	"Flamer": 1,

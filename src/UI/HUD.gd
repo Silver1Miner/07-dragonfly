@@ -12,7 +12,6 @@ onready var bombs_bar = $Sections/Top/Weapons/Ammo/Bombs/progressbar
 onready var slot_1 = $Sections/Top/Loadout/Slots/Primary
 onready var slot_2 = $Sections/Top/Loadout/Slots/Secondary
 var started = false
-var gun_stats :Resource = preload("res://src/Actors/Gun/gun_stats.tres")
 
 func _ready() -> void:
 	color_bars()
@@ -22,6 +21,14 @@ func color_bars() -> void:
 	sh_bar.set_tint_progress(Color(0,0,1))
 	en_bar.set_tint_progress(Color(0,1,0))
 	bombs_bar.set_tint_progress(Color(1,1,0))
+
+var profiles = {
+	"ava-base": preload("res://assets/avatars/ava-base.png"),
+	"ava-hurt": preload("res://assets/avatars/ava-hurt.png"),
+	"ava-upset": preload("res://assets/avatars/ava-upset.png"),
+}
+func change_avatar(avatar_name) -> void:
+	$Sections/Bottom/Panel/Profile.set_texture(profiles[avatar_name])
 
 func update_cash_display(new_cash) -> void:
 	cash_text.text = str(new_cash) + " "

@@ -52,7 +52,7 @@ margin_top = 40.0
 margin_right = 140.0
 margin_bottom = 70.0
 rect_min_size = Vector2( 0, 30 )
-text = "Browse"
+text = "Open Crate"
 
 [node name="to_hub" type="Button" parent="Choices"]
 margin_left = 150.0

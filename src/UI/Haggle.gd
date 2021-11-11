@@ -18,6 +18,9 @@ func _ready() -> void:
 		if node.connect("value_changed", self, "_on_value_changed") != OK:
 			push_error("dial connect fail")
 
+func set_target_item(item_name: String) -> void:
+	$Display/ItemName.set_text(item_name)
+
 func _on_value_changed(_value) -> void:
 	calculate_dial_value()
 	percent = current_value / base_value * 100
