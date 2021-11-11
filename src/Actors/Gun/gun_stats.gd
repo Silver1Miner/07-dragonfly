@@ -13,12 +13,25 @@ var stats := {
 		"cooldown": 0.2,
 		"direction": Vector2.RIGHT,
 		"speed": 300,
-		"lifetime": 2.0,
+		"lifetime": 3.0,
 		"energy_cost": 10.0,
 		"target_groups": ["enemy"],
 		"bullet_groups": ["player_bullet"],
 		"bullet_number": 1,
 		"angle": 0,
+		"bullet": preload("res://src/Actors/Gun/Bullet.tscn")
+	},
+	"Spread Gun": {
+		"damage": 1.0,
+		"cooldown": 0.2,
+		"direction": Vector2.RIGHT,
+		"speed": 300,
+		"lifetime": 3.0,
+		"energy_cost": 10.0,
+		"target_groups": ["enemy"],
+		"bullet_groups": ["player_bullet"],
+		"bullet_number": 2,
+		"angle": 5,
 		"bullet": preload("res://src/Actors/Gun/Bullet.tscn")
 	},
 	"Shotgun": {
@@ -34,6 +47,19 @@ var stats := {
 		"angle": 15,
 		"bullet": preload("res://src/Actors/Gun/Bullet.tscn")
 	},
+	"Scattergun": {
+		"damage": 5.0,
+		"cooldown": 0.9,
+		"direction": Vector2.RIGHT,
+		"speed": 600,
+		"lifetime": 0.3,
+		"energy_cost": 35.0,
+		"target_groups": ["enemy"],
+		"bullet_groups": ["player_bullet"],
+		"bullet_number": 3,
+		"angle": 12,
+		"bullet": preload("res://src/Actors/Gun/Bullet.tscn")
+	},
 	"Flamer": {
 		"damage": 1.0,
 		"cooldown": 0.1,
@@ -45,6 +71,19 @@ var stats := {
 		"bullet_groups": ["player_bullet"],
 		"bullet_number": 3,
 		"angle": 5,
+		"bullet": preload("res://src/Actors/Gun/Bullet_Flame.tscn")
+	},
+	"Burner": {
+		"damage": 1.0,
+		"cooldown": 0.1,
+		"direction": Vector2.RIGHT,
+		"speed": 800,
+		"lifetime": 0.2,
+		"energy_cost": 10.0,
+		"target_groups": ["enemy"],
+		"bullet_groups": ["player_bullet"],
+		"bullet_number": 2,
+		"angle": 2,
 		"bullet": preload("res://src/Actors/Gun/Bullet_Flame.tscn")
 	},
 	"Bolt": {

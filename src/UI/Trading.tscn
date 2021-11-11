@@ -18,14 +18,47 @@ anchor_bottom = 0.0
 
 [node name="Haggle" parent="." instance=ExtResource( 2 )]
 
-[node name="to_hub" type="Button" parent="."]
-margin_left = 570.0
-margin_top = 330.0
-margin_right = 630.0
-margin_bottom = 390.0
-text = "To Hub"
+[node name="Choices" type="GridContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -150.0
+margin_top = -75.0
+margin_right = 150.0
+margin_bottom = -5.0
+custom_constants/vseparation = 10
+custom_constants/hseparation = 10
+columns = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[connection signal="pressed" from="to_hub" to="." method="_on_to_hub_pressed"]
+[node name="buy" type="Button" parent="Choices"]
+margin_right = 140.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 140, 30 )
+text = "Buy"
+
+[node name="sell" type="Button" parent="Choices"]
+margin_left = 150.0
+margin_right = 290.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 140, 0 )
+text = "Sell"
+
+[node name="browse" type="Button" parent="Choices"]
+margin_top = 40.0
+margin_right = 140.0
+margin_bottom = 70.0
+rect_min_size = Vector2( 0, 30 )
+text = "Browse"
+
+[node name="to_hub" type="Button" parent="Choices"]
+margin_left = 150.0
+margin_top = 40.0
+margin_right = 290.0
+margin_bottom = 70.0
+text = "Back to Hub"
+
+[connection signal="pressed" from="Choices/to_hub" to="." method="_on_to_hub_pressed"]

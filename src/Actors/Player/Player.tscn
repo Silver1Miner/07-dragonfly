@@ -61,7 +61,7 @@ texture = ExtResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 10 )
-frame = 2
+frame = 3
 playing = true
 
 [node name="Hitbox" type="Area2D" parent="."]

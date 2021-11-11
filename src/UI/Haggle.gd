@@ -1,4 +1,4 @@
-extends VBoxContainer
+extends NinePatchRect
 
 signal offer_refused()
 signal offer_made(value)
@@ -6,22 +6,22 @@ var current_value = 0
 var base_value = 1000
 var percent = 0
 
-onready var hundredthousand = $Dial/HundredThousand
-onready var tenthousand = $Dial/TenThousand
-onready var thousand = $Dial/Thousand
-onready var hundred = $Dial/Hundred
-onready var ten = $Dial/Ten
-onready var ones = $Dial/One
+onready var hundredthousand = $Display/Dial/HundredThousand
+onready var tenthousand = $Display/Dial/TenThousand
+onready var thousand = $Display/Dial/Thousand
+onready var hundred = $Display/Dial/Hundred
+onready var ten = $Display/Dial/Ten
+onready var ones = $Display/Dial/One
 
 func _ready() -> void:
-	for node in $Dial.get_children():
+	for node in $Display/Dial.get_children():
 		if node.connect("value_changed", self, "_on_value_changed") != OK:
 			push_error("dial connect fail")
 
 func _on_value_changed(_value) -> void:
 	calculate_dial_value()
 	percent = current_value / base_value * 100
-	$Percentage.text = str(round(percent)) + "% of Wholesale Price"
+	$Display/Percentage.text = str(round(percent)) + "% of Wholesale Price"
 
 func set_dial_value(value) -> void:
 	var padded = "%0*d" % [6, value]

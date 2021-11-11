@@ -3,8 +3,11 @@ extends Control
 var lore: Resource = preload("res://src/UI/lore.tres")
 onready var ship_preview = $HBoxContainer/Loadout/Preview/ShipPreview
 onready var lore_read = $HBoxContainer/Lore/NinePatchRect/LoreText
+onready var textbox = $HUD/Textbox
 
 func _ready() -> void:
+	if textbox.connect("text_finished", self, "_on_text_finished") != OK:
+		push_error("textbox signal connect fail")
 	update_hud()
 	update_loadout_display()
 	populate_options()
@@ -36,7 +39,7 @@ func populate_options() -> void:
 	for gun in ["Machine Gun", "Spread Gun", "Flamer", "Burner"]:
 		if PlayerData.inventory[gun] > 0:
 			available_1.append(gun)
-	for gun2 in ["Shotgun", "Scattergun"]:
+	for gun2 in ["Shotgun", "Scattergun", "Bolt"]:
 		if PlayerData.inventory[gun2] > 0:
 			available_2.append(gun2)
 	for i in range(3):
@@ -77,10 +80,25 @@ func _on_Secondary_item_selected(index: int) -> void:
 	populate_options()
 	update_loadout_display()
 
-
 func _on_to_mission_pressed() -> void:
-	print("go to mission")
+	if get_tree().change_scene_to(PlayerData.mission) != OK:
+		push_error("fail to start mission")
 
 func _on_to_trading_pressed() -> void:
 	if get_tree().change_scene_to(PlayerData.trading) != OK:
 		push_error("fail to change scene")
+
+func _on_chat_pressed() -> void:
+	textbox.play_dialogue(textbox.text_dialogue)
+	$Choices.visible = false
+
+func _on_text_finished() -> void:
+	$Choices.visible = true
+
+func _on_to_saves_pressed() -> void:
+	print("saves pressed")
+
+
+func _on_Inventory_toggled(button_pressed: bool) -> void:
+	$HBoxContainer/Lore/NinePatchRect/InventoryInfo.visible = button_pressed
+	$HBoxContainer/Lore/NinePatchRect/LoreText.visible = !button_pressed

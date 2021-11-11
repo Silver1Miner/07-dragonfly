@@ -30,7 +30,9 @@ signal loadout_updated(weapon_1, weapon_2)
 signal cash_updated(cash)
 
 func _ready() -> void:
-	add_to_group("player")
+	$Hitbox.add_to_group("player")
+	$Pickup_Area.add_to_group("player")
+	$Shield.add_to_group("player")
 	load_player_data()
 	$Gun.load_gun_data(weapon_1)
 	$Gun2.load_gun_data(weapon_2)

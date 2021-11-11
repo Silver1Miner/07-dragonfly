@@ -1,16 +1,64 @@
 extends Control
 
-var text_dialogue = [
-	{"name": "",
-	"text": ""},
-	{"name": "",
-	"text": ""},
-	{"name": "",
-	"text": ""},
-]
+signal text_finished()
+var page = "0"
+var text_playing = true
+var dialogue = {}
+onready var nametag = $Panels/Center/Name
+onready var text = $Panels/Center/Speech
+var text_dialogue = {
+	"0": {"name": "Erika1",
+	"text": "The quick brown fox"},
+	"1": {"name": "Erika2",
+	"text": "jumps over the lazy dog"},
+	"2": {"name": "Erika3",
+	"text": "again and again"},
+}
 
 func _ready() -> void:
-	pass
+	$Timer.wait_time = 0.02
+	$Timer.autostart = true
+	if $Timer.connect("timeout", self, "_on_timer_timeout") != OK:
+		push_error("timer connect fail")
 
-func play_dialogue() -> void:
-	pass
+func play_dialogue(text_data) -> void:
+	visible = true
+	$Timer.start()
+	dialogue = text_data
+	page = "0"
+	text.set_bbcode(dialogue[page]["text"])
+	nametag.set_text(dialogue[page]["name"])
+	text.set_visible_characters(0)
+	set_process_input(true)
+
+func _on_next() -> void:
+	if text_playing:
+		if text.get_visible_characters() > text.get_total_character_count():
+			if int(page) < dialogue.size() - 1:
+				page = str(int(page) + 1)
+				text.set_bbcode(dialogue[page]["text"])
+				nametag.set_text(dialogue[page]["name"])
+				text.set_visible_characters(0)
+			elif int(page) >= dialogue.size() - 1:
+				end_text()
+		else:
+			text.set_visible_characters(text.get_total_character_count())
+
+func _input(event) -> void:
+	if event.is_action_pressed("ui_accept") or event.is_action_pressed("fire_primary"):
+		_on_next()
+	elif event.is_action_pressed("ui_cancel") or event.is_action_pressed("fire_secondary"):
+		end_text()
+
+func end_text() -> void:
+	emit_signal("text_finished")
+	visible = false
+
+func _on_timer_timeout() -> void:
+	text.set_visible_characters(text.get_visible_characters()+1)
+
+func _on_next_pressed() -> void:
+	_on_next()
+
+func _on_skip_pressed() -> void:
+	end_text()

@@ -13,6 +13,8 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Timer" type="Timer" parent="."]
+
 [node name="Panels" type="HBoxContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -75,3 +77,31 @@ margin_left = 560.0
 margin_right = 640.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 80, 0 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panels/Right"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -21.0
+margin_top = -28.0
+margin_right = 21.0
+margin_bottom = 28.0
+custom_constants/separation = 16
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="next" type="Button" parent="Panels/Right/VBoxContainer"]
+margin_right = 42.0
+margin_bottom = 20.0
+text = "Next"
+
+[node name="skip" type="Button" parent="Panels/Right/VBoxContainer"]
+margin_top = 36.0
+margin_right = 42.0
+margin_bottom = 56.0
+text = "Skip"
+
+[connection signal="pressed" from="Panels/Right/VBoxContainer/next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="Panels/Right/VBoxContainer/skip" to="." method="_on_skip_pressed"]
