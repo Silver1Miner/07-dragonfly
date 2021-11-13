@@ -33,6 +33,7 @@ signal cash_updated(cash)
 signal player_destroyed()
 
 func _ready() -> void:
+	add_to_group("player")
 	$Hitbox.add_to_group("player_pickup")
 	#$Pickup_Area.add_to_group("player")
 	$Shield.add_to_group("player")
@@ -109,11 +110,11 @@ func get_input():
 
 var accumulated = 0
 func _physics_process(delta):
+	PlayerData.current_position = global_position
 	if invincible:
 		$AnimationPlayer.play("flash")
 	else:
 		$AnimationPlayer.play("RESET")
-	
 	get_input()
 	var _collision = move_and_collide(velocity * delta)
 	if position.x < 16:

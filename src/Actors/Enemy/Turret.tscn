@@ -12,6 +12,6 @@ drop = null
 max_hp = 40
 hp = 40
 
-[node name="Sprite" parent="." index="3"]
+[node name="Sprite" parent="." index="5"]
 rotation = 1.5708
 texture = ExtResource( 3 )

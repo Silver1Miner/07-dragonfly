@@ -136,7 +136,7 @@ var data = {
 		"cooldown": 1.0,
 		"direction": Vector2.LEFT,
 		"speed": 50,
-		"lifetime": 5.0,
+		"lifetime": 10.0,
 		"energy_cost": 0,
 		"target_groups": ["player"],
 		"bullet_groups": ["enemy_bullet"],
