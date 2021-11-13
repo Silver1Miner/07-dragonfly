@@ -1,10 +1,61 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://src/Actors/Enemy/Enemy.gd" type="Script" id=1]
 [ext_resource path="res://assets/enemies/ship_0004.png" type="Texture" id=2]
 [ext_resource path="res://src/UI/progressbar.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/Actors/Pickups/Pickup.gd" type="Script" id=4]
+[ext_resource path="res://assets/pickups/tile_0024.png" type="Texture" id=5]
+[ext_resource path="res://src/Actors/Gun/Gun.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/Actors/Gun/Bullet_Enemy.tscn" type="PackedScene" id=7]
 
-[sub_resource type="CircleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 8, 8 )
+
+[sub_resource type="PackedScene" id=3]
+_bundled = {
+"conn_count": 1,
+"conns": PoolIntArray( 1073741827, 1073741826, 10, 9, 2, 0 ),
+"editable_instances": [  ],
+"names": PoolStringArray( "Pickup", "Area2D", "script", "Sprite", "Sprite", "texture", "CollisionShape2D", "CollisionShape2D", "shape", "_on_Pickup_area_entered", "area_entered" ),
+"node_count": 3,
+"node_paths": [ NodePath("."), NodePath("."), NodePath("."), NodePath(".") ],
+"nodes": PoolIntArray( -1, -1, 1, 0, -1, 1, 2, 0, 0, 1073741824, 0, 4, 3, -1, 1, 5, 1, 0, 1073741825, 0, 7, 6, -1, 1, 8, 2, 0 ),
+"variants": [ ExtResource( 4 ), ExtResource( 5 ), SubResource( 1 ) ],
+"version": 2
+}
+
+[sub_resource type="Animation" id=6]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "flash"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 10, 10, 10, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="CircleShape2D" id=4]
 
 [sub_resource type="CircleShape2D" id=2]
 radius = 12.0
@@ -13,13 +64,26 @@ radius = 12.0
 script = ExtResource( 1 )
 speed = 100
 direction = Vector2( 0, 0 )
+drop = SubResource( 3 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.05
+one_shot = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 6 )
+anims/flash = SubResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 1 )
+shape = SubResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="."]
 rotation = 4.71239
 texture = ExtResource( 2 )
+
+[node name="Gun" parent="." instance=ExtResource( 6 )]
+position = Vector2( -16, 0 )
+Bullet = ExtResource( 7 )
 
 [node name="Hitbox" type="Area2D" parent="."]
 
@@ -32,4 +96,5 @@ margin_top = -16.0
 margin_right = 16.0
 margin_bottom = -12.0
 
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="area_entered" from="Hitbox" to="." method="_on_Hitbox_area_entered"]

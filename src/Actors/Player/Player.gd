@@ -6,18 +6,20 @@ const SPEED_SLOW := 100
 const SPEED_NORMAL := 200
 var speed := 300 # pixels/second
 var velocity := Vector2.ZERO
+var invincible = false
 
 var max_cash = 999999
 var cash = 0 setget _set_cash
 var max_hp = 100
 var hp = 80 setget _set_HP
+var prev_hp = 100
 var max_shield = 100
 var shield = 80 setget _set_SH
 var max_energy = 100
 var energy = 100 setget _set_EN
 var recharge_rate = 40
 var bombs = 0
-var max_bombs = 10
+var max_bombs = 99
 var weapon_1 = "Empty"
 var weapon_2 = "Empty"
 var cargo = []
@@ -28,10 +30,11 @@ signal energy_updated(energy, max_energy)
 signal bombs_updated(bombs, max_bombs)
 signal loadout_updated(weapon_1, weapon_2)
 signal cash_updated(cash)
+signal player_destroyed()
 
 func _ready() -> void:
-	$Hitbox.add_to_group("player")
-	$Pickup_Area.add_to_group("player")
+	$Hitbox.add_to_group("player_pickup")
+	#$Pickup_Area.add_to_group("player")
 	$Shield.add_to_group("player")
 	load_player_data()
 	$Gun.load_gun_data(weapon_1)
@@ -106,6 +109,11 @@ func get_input():
 
 var accumulated = 0
 func _physics_process(delta):
+	if invincible:
+		$AnimationPlayer.play("flash")
+	else:
+		$AnimationPlayer.play("RESET")
+	
 	get_input()
 	var _collision = move_and_collide(velocity * delta)
 	if position.x < 16:
@@ -118,14 +126,13 @@ func _physics_process(delta):
 		position.y = 400 - 80 - 16
 	_set_EN(energy + recharge_rate * delta)
 	accumulated += 1
-	if accumulated >= 60:
+	if accumulated >= 120:
 		recharge_shield()
 		accumulated = 0
 
 func recharge_shield() -> void:
 	if energy == max_energy:
 		_set_SH(shield + 1)
-	#_set_EN(energy + recharge_rate)
 
 func _set_cash(new_cash) -> void:
 	var prev_cash = cash
@@ -134,12 +141,13 @@ func _set_cash(new_cash) -> void:
 		emit_signal("cash_updated", new_cash)
 
 func _set_HP(new_hp) -> void:
-	var prev_hp = hp
+	prev_hp = hp
 	hp = clamp(new_hp, 0, max_hp)
 	if hp != prev_hp:
 		$hp_bar.value = hp
 		emit_signal("hp_updated", hp, max_hp)
 	if hp == 0:
+		emit_signal("player_destroyed")
 		print("destroyed")
 
 func _set_SH(new_shield) -> void:
@@ -148,10 +156,14 @@ func _set_SH(new_shield) -> void:
 	if shield != prev_shield:
 		$shield_bar.value = shield
 		emit_signal("shield_updated", shield, max_shield)
-	if shield <= 0:
+	if shield <= 0.0:
 		$Shield.visible = false
+		$Shield/CollisionShape2D.shape.radius = 0
+		accumulated = -300
 	else:
 		$Shield.visible = true
+		$Shield/CollisionShape2D.shape.radius = 16
+		accumulated = -300
 
 func _set_EN(new_energy) -> void:
 	var prev_energy = energy
@@ -165,3 +177,25 @@ func _set_bombs(new_bombs) -> void:
 	bombs = clamp(new_bombs, 0, max_bombs)
 	if bombs != prev_bombs:
 		emit_signal("bombs_updated", bombs, max_bombs)
+
+
+func _on_Hitbox_area_entered(area: Area2D) -> void:
+	if invincible:
+		return
+	if area.is_in_group("enemy"):
+		_set_HP(hp - area.get_parent().max_hp)
+		invincible = true
+		$Timer.start()
+	elif area.is_in_group("enemy_bullet") or area.is_in_group("environmental"):
+		_set_HP(hp - area.damage)
+		invincible = true
+		$Timer.start()
+
+func _on_Shield_area_entered(area: Area2D) -> void:
+	if area.is_in_group("enemy"):
+		_set_SH(shield - area.get_parent().max_hp)
+	elif area.is_in_group("enemy_bullet") or area.is_in_group("environmental"):
+		_set_SH(shield - area.damage)
+
+func _on_Timer_timeout() -> void:
+	invincible = false
