@@ -5,14 +5,14 @@ export var Explosion: PackedScene
 export var damage = 100
 
 func _ready() -> void:
-	pass
+	add_to_group("environmental")
 
 func _process(_delta: float) -> void:
 	if position.y > 400 + 16:
 		detonate()
 
 func _on_Bomb_body_entered(body: Node) -> void:
-	if body.is_in_group("enemy") or body.is_in_group("player"):
+	if body.is_in_group("enemy") or body.is_in_group("player") or body.is_in_group("environmental"):
 		detonate()
 
 func detonate() -> void:

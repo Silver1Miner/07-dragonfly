@@ -49,7 +49,7 @@ func update_en_display(new_en, max_en) -> void:
 	en_bar.value = new_en
 
 func update_bombs_display(new_bombs, _max_bombs) -> void:
-	bombs_text.text = "Bombs: " + str(new_bombs)
+	bombs_text.text = "BOMB: " + str(new_bombs)
 	bombs_bar.value = 0
 	if started:
 		bombs_bar.get_node("Timer").start()
@@ -57,8 +57,8 @@ func update_bombs_display(new_bombs, _max_bombs) -> void:
 		started = true
 
 func update_loadout_display(weapon_1: String, weapon_2: String) -> void:
-	slot_1.text = "Slot 1: " + weapon_1
-	slot_2.text = "Slot 2: " + weapon_2
+	slot_1.text = "Slot1: " + weapon_1
+	slot_2.text = "Slot2: " + weapon_2
 
 func _process(_delta) -> void:
 	bombs_bar.value = 100 - bombs_bar.get_node("Timer").time_left * 100

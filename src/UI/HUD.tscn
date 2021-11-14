@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://src/UI/Textbox.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/UI/progressbar.tscn" type="PackedScene" id=2]
@@ -6,10 +6,13 @@
 [ext_resource path="res://assets/UI/glassPanel.png" type="Texture" id=4]
 [ext_resource path="res://assets/avatars/screen.png" type="Texture" id=5]
 [ext_resource path="res://assets/avatars/ava-base.png" type="Texture" id=6]
+[ext_resource path="res://assets/theme/HUD.tres" type="Theme" id=7]
+[ext_resource path="res://assets/theme/UI.tres" type="Theme" id=8]
 
 [node name="HUD" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+theme = ExtResource( 8 )
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -33,6 +36,7 @@ custom_constants/separation = 0
 margin_right = 210.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 210, 40 )
+theme = ExtResource( 7 )
 
 [node name="Stats" type="VBoxContainer" parent="Sections/Top/Ship"]
 anchor_right = 1.0
@@ -53,6 +57,7 @@ custom_constants/separation = 0
 margin_right = 80.0
 margin_bottom = 20.0
 rect_min_size = Vector2( 80, 20 )
+theme = ExtResource( 7 )
 text = " HP 100"
 valign = 1
 __meta__ = {
@@ -93,6 +98,7 @@ margin_left = 210.0
 margin_right = 270.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 60, 0 )
+theme = ExtResource( 7 )
 
 [node name="Stats" type="VBoxContainer" parent="Sections/Top/Money"]
 margin_right = 40.0
@@ -140,7 +146,7 @@ __meta__ = {
 margin_right = 140.0
 margin_bottom = 20.0
 rect_min_size = Vector2( 0, 20 )
-text = "Slot 1: Machine Gun 1"
+text = "Slot1: Machine Gun"
 valign = 1
 
 [node name="Secondary" type="Label" parent="Sections/Top/Loadout/Slots"]
@@ -148,7 +154,7 @@ margin_top = 20.0
 margin_right = 140.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 0, 20 )
-text = "Slot 2: Bolt Beam"
+text = "Slot2: Bolt Beam"
 valign = 1
 
 [node name="Weapons" type="Panel" parent="Sections/Top"]
@@ -156,6 +162,7 @@ margin_left = 430.0
 margin_right = 640.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 210, 0 )
+theme = ExtResource( 7 )
 
 [node name="Ammo" type="VBoxContainer" parent="Sections/Top/Weapons"]
 anchor_right = 1.0
@@ -198,7 +205,7 @@ custom_constants/separation = 0
 margin_right = 80.0
 margin_bottom = 20.0
 rect_min_size = Vector2( 80, 20 )
-text = " Bombs: 10"
+text = " BOMB: 10"
 valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
