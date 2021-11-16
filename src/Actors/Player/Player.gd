@@ -179,24 +179,25 @@ func _set_bombs(new_bombs) -> void:
 	if bombs != prev_bombs:
 		emit_signal("bombs_updated", bombs, max_bombs)
 
-
-func _on_Hitbox_area_entered(area: Area2D) -> void:
+func take_damage(damage_value: float) -> void:
 	if invincible:
 		return
-	if area.is_in_group("enemy"):
-		_set_HP(hp - area.get_parent().max_hp)
-		invincible = true
-		$Timer.start()
-	elif area.is_in_group("enemy_bullet") or area.is_in_group("environmental"):
-		_set_HP(hp - area.damage)
+	if shield > 0:
+		_set_SH(shield - damage_value)
+	else:
+		_set_HP(hp - damage_value)
 		invincible = true
 		$Timer.start()
 
+func _on_Hitbox_area_entered(area: Area2D) -> void:
+	if area.is_in_group("enemy") and area.get_parent().has_method("take_damage"):
+		area.get_parent().drop = null
+		area.get_parent().take_damage(hp)
+
 func _on_Shield_area_entered(area: Area2D) -> void:
-	if area.is_in_group("enemy"):
-		_set_SH(shield - area.get_parent().max_hp)
-	elif area.is_in_group("enemy_bullet") or area.is_in_group("environmental"):
-		_set_SH(shield - area.damage)
+	if area.is_in_group("enemy") and area.get_parent().has_method("take_damage"):
+		area.get_parent().drop = null
+		area.get_parent().take_damage(shield)
 
 func _on_Timer_timeout() -> void:
 	invincible = false

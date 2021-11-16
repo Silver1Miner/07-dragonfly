@@ -26,6 +26,10 @@ position = Vector2( 570.481, 105.256 )
 position = Vector2( 504.253, 108.438 )
 drop = ExtResource( 10 )
 
+[node name="Enemy3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 689.115, 200 )
+spawn_time = 10
+
 [node name="Turret" parent="." instance=ExtResource( 4 )]
 position = Vector2( 481.238, 301.074 )
 speed = 0
@@ -38,6 +42,7 @@ vframes = 4
 
 [node name="Artillery" parent="." instance=ExtResource( 11 )]
 position = Vector2( 284.544, 298.575 )
+direction = Vector2( 0, 0 )
 
 [node name="Exit" parent="." instance=ExtResource( 8 )]
 position = Vector2( 40, 40 )

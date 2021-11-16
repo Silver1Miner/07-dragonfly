@@ -12,8 +12,13 @@ func _ready() -> void:
 	$Timer.start()
 	$AnimatedSprite.play("default")
 
-func _process(delta: float) -> void:
-	position -= Vector2(PlayerData.SCROLL_SPEED, 0) * delta
+func _process(_delta: float) -> void:
+	#position -= Vector2(PlayerData.SCROLL_SPEED, 0) * delta
+	pass
 
 func _on_Timer_timeout() -> void:
 	queue_free()
+
+func _on_Explosion_area_entered(area: Area2D) -> void:
+	if area.get_parent().has_method("take_damage"):
+		area.get_parent().take_damage(damage)
