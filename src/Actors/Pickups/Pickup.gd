@@ -20,7 +20,6 @@ func _on_Pickup_area_entered(area: Area2D) -> void:
 		fct.show_value(effect_name, Vector2(0,-8), 2, PI/2)
 		match effect_name:
 			"+25 HP":
-				print(area.get_parent().hp + 25)
 				area.get_parent()._set_HP(area.get_parent().hp + 25)
 			"+25 SH":
 				area.get_parent()._set_SH(area.get_parent().shield + 25)

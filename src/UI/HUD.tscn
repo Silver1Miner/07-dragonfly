@@ -18,6 +18,10 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
+
 [node name="Sections" type="VBoxContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -293,3 +297,5 @@ patch_margin_bottom = 13
 
 [node name="Textbox" parent="." instance=ExtResource( 1 )]
 visible = false
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

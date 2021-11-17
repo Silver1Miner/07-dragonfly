@@ -69,6 +69,8 @@ _global_script_class_icons={
 [application]
 
 config/name="Dragonfly"
+config/description="Bugs, Money, and Guns"
+run/main_scene="res://src/Menu/MainMenu.tscn"
 config/icon="res://icon.png"
 config/windows_native_icon="res://icon.ico"
 

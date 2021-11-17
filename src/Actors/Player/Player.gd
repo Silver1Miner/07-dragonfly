@@ -24,7 +24,7 @@ var weapon_1 = "Empty"
 var weapon_2 = "Empty"
 var cargo = []
 
-signal hp_updated(hp, max_hp)
+signal hp_updated(hp, prev_hp, max_hp)
 signal shield_updated(shield, max_shield)
 signal energy_updated(energy, max_energy)
 signal bombs_updated(bombs, max_bombs)
@@ -48,6 +48,7 @@ func load_player_data() -> void:
 	weapon_1 = PlayerData.player_weapon_1
 	weapon_2 = PlayerData.player_weapon_2
 	hp = PlayerData.player_hp
+	prev_hp = PlayerData.player_hp
 	shield = PlayerData.player_shield
 	bombs = PlayerData.inventory["Bombs"]
 	$Sprite.texture = PlayerData.ship_visuals[PlayerData.current_ship]["sprite"]
@@ -72,7 +73,7 @@ func set_bars() -> void:
 
 func update_display() -> void:
 	emit_signal("cash_updated", cash)
-	emit_signal("hp_updated", hp, max_hp)
+	emit_signal("hp_updated", hp, prev_hp, max_hp)
 	emit_signal("shield_updated",shield, max_shield)
 	emit_signal("energy_updated",energy, max_energy)
 	emit_signal("bombs_updated",bombs, max_bombs)
@@ -146,10 +147,11 @@ func _set_HP(new_hp) -> void:
 	hp = clamp(new_hp, 0, max_hp)
 	if hp != prev_hp:
 		$hp_bar.value = hp
-		emit_signal("hp_updated", hp, max_hp)
+		emit_signal("hp_updated", hp, prev_hp, max_hp)
 	if hp == 0:
 		emit_signal("player_destroyed")
 		print("destroyed")
+		visible = false
 
 func _set_SH(new_shield) -> void:
 	var prev_shield = shield

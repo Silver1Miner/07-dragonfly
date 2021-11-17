@@ -12,6 +12,7 @@ onready var bombs_bar = $Sections/Top/Weapons/Ammo/Bombs/progressbar
 onready var slot_1 = $Sections/Top/Loadout/Slots/Primary
 onready var slot_2 = $Sections/Top/Loadout/Slots/Secondary
 var started = false
+onready var profile_pic = $Sections/Bottom/Panel/Profile
 
 func _ready() -> void:
 	color_bars()
@@ -22,6 +23,7 @@ func color_bars() -> void:
 	en_bar.set_tint_progress(Color(0,1,0))
 	bombs_bar.set_tint_progress(Color(1,1,0))
 
+var current_profile = "ava-base"
 var profiles = {
 	"ava-base": preload("res://assets/avatars/ava-base.png"),
 	"ava-hurt": preload("res://assets/avatars/ava-hurt.png"),
@@ -33,7 +35,18 @@ func change_avatar(avatar_name) -> void:
 func update_cash_display(new_cash) -> void:
 	cash_text.text = str(new_cash) + " "
 
-func update_hp_display(new_hp, max_hp) -> void:
+func update_hp_display(new_hp, old_hp, max_hp) -> void:
+	if new_hp <= 0:
+		profile_pic.self_modulate = Color(0,0,0)
+		$Sections/Bottom/Panel/Back.self_modulate = Color(0,0,0)
+	elif new_hp < 20:
+		current_profile = "ava-upset"
+	else:
+		current_profile = "ava-base"
+	if new_hp < old_hp:
+		profile_pic.texture = profiles["ava-hurt"]
+		$Timer.wait_time = 1.0
+		$Timer.start()
 	hp_text.text = " HP: " + str(round(new_hp))
 	hp_bar.max_value = max_hp
 	hp_bar.value = new_hp
@@ -62,3 +75,6 @@ func update_loadout_display(weapon_1: String, weapon_2: String) -> void:
 
 func _process(_delta) -> void:
 	bombs_bar.value = 100 - bombs_bar.get_node("Timer").time_left * 100
+
+func _on_Timer_timeout() -> void:
+	profile_pic.texture = profiles[current_profile]

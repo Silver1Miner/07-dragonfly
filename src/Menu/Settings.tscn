@@ -1,0 +1,100 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/theme/Main.tres" type="Theme" id=1]
+[ext_resource path="res://src/Menu/Settings.gd" type="Script" id=2]
+[ext_resource path="res://assets/theme/UI.tres" type="Theme" id=3]
+
+[node name="Settings" type="ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+color = Color( 0, 0, 0, 0.784314 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="back" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -75.0
+margin_top = -50.0
+margin_right = 75.0
+margin_bottom = -10.0
+rect_min_size = Vector2( 150, 40 )
+text = "BACK"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VolumeControls" type="VBoxContainer" parent="."]
+margin_left = 40.0
+margin_top = 40.0
+margin_right = 190.0
+margin_bottom = 164.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="music" type="Label" parent="VolumeControls"]
+margin_right = 150.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 0, 40 )
+text = "Music Volume"
+align = 1
+valign = 2
+
+[node name="MusicVolume" type="HSlider" parent="VolumeControls"]
+margin_top = 44.0
+margin_right = 150.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 150, 0 )
+
+[node name="sound" type="Label" parent="VolumeControls"]
+margin_top = 64.0
+margin_right = 150.0
+margin_bottom = 104.0
+rect_min_size = Vector2( 0, 40 )
+text = "Sound Volume"
+align = 1
+valign = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SoundVolume" type="HSlider" parent="VolumeControls"]
+margin_top = 108.0
+margin_right = 150.0
+margin_bottom = 124.0
+
+[node name="Credits" type="Label" parent="."]
+margin_left = 237.0
+margin_top = 32.0
+margin_right = 615.0
+margin_bottom = 322.0
+theme = ExtResource( 3 )
+text = "CREDITS
+
+Dragonfly
+by Jack Anderson
+
+Soundtrack
+'Sky Bandit' by Vav
+
+Additional CC0 Assets from:
+kenney.nl
+opengameart.org
+freesound.org
+fonts.google.com
+
+Powered by Godot Engine"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="back" to="." method="_on_back_pressed"]
+[connection signal="value_changed" from="VolumeControls/MusicVolume" to="." method="_on_MusicVolume_value_changed"]
+[connection signal="value_changed" from="VolumeControls/SoundVolume" to="." method="_on_SoundVolume_value_changed"]

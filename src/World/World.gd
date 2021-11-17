@@ -24,12 +24,17 @@ func connect_hud() -> void:
 		push_error("hud signal connect fail")
 	if $Player.connect("cash_updated", $HUD, "update_cash_display") != OK:
 		push_error("hud signal connect fail")
+	if $Player.connect("player_destroyed", self, "_on_player_destroyed") != OK:
+		push_error("player destruction signal connect fail")
 	$Player.update_display()
 
 func _on_exit_area_entered(area) -> void:
 	if area.is_in_group("player"):
 		$Pause.update_cargo_list(cargo_list_string)
 		$Pause.pause()
+
+func _on_player_destroyed() -> void:
+	$Pause.mission_failed()
 
 func _on_leave() -> void:
 	$Player.save_player_data()
