@@ -3,11 +3,13 @@ extends Position2D
 export var Bomb: PackedScene = load("res://src/Actors/Gun/Bomb.tscn")
 export var cooldown = 1.0
 export var damage = 100
+export var target_groups = ["enemy", "player"]
 
 func bomb() -> void:
 	if not $Timer.is_stopped() or not Bomb:
 		return
 	var bomb: Bomb = Bomb.instance()
+	bomb.target_groups = target_groups
 	bomb.global_position = global_position
 	bomb.damage = damage
 	if get_parent().get("velocity"):

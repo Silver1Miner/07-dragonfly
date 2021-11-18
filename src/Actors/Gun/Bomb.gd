@@ -3,6 +3,7 @@ class_name Bomb
 
 export var Explosion: PackedScene
 export var damage = 100
+export var target_groups = ["enemy", "player"]
 
 func _ready() -> void:
 	add_to_group("environmental")
@@ -12,8 +13,9 @@ func _process(_delta: float) -> void:
 		detonate()
 
 func _on_Bomb_body_entered(body: Node) -> void:
-	if body.is_in_group("enemy") or body.is_in_group("player") or body.is_in_group("environmental"):
-		detonate()
+	for target in target_groups:
+		if body.is_in_group(target) or body.is_in_group("environmental"):
+			detonate()
 
 func detonate() -> void:
 	var explosion: Explosion = Explosion.instance()

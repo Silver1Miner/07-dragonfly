@@ -78,6 +78,7 @@ config/windows_native_icon="res://icon.ico"
 
 ObjectRegistry="*res://src/AutoLoad/ObjectRegistry.tscn"
 PlayerData="*res://src/PlayerData/PlayerData.tscn"
+AudioManager="*res://src/Sound/AudioManager.tscn"
 
 [display]
 

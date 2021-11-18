@@ -26,7 +26,9 @@ func connect_hud() -> void:
 		push_error("hud signal connect fail")
 	if $Player.connect("player_destroyed", self, "_on_player_destroyed") != OK:
 		push_error("player destruction signal connect fail")
+	$HUD/Sections/Bottom/Glass.texture = null
 	$Player.update_display()
+	AudioManager.play_music("res://assets/Audio/Sky_Bandit.ogg", 0)
 
 func _on_exit_area_entered(area) -> void:
 	if area.is_in_group("player"):

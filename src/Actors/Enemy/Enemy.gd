@@ -10,6 +10,7 @@ export var max_hp = 20
 export var hp = 20 setget _set_HP
 var prev_hp = 20
 var activated = false
+var entered_screen = false
 
 func _ready() -> void:
 	add_to_group("enemy")
@@ -40,9 +41,9 @@ func _physics_process(delta):
 			direction.y = -direction.y
 		elif global_position.y > 400 - 80 - 16:
 			direction.y = -direction.y
-		if global_position.x < 0 - 36:
-			print("out of sight")
-			queue_free()
+		#if global_position.x < 0 - 36:
+		#	print("out of sight")
+		#	queue_free()
 
 func _set_HP(new_hp) -> void:
 	prev_hp = hp
@@ -82,3 +83,13 @@ func _on_Hitbox_area_entered(area: Area2D) -> void:
 func _on_Timer_timeout() -> void:
 	activated = true
 	invincible = false
+
+
+func _on_VisibilityNotifier2D_screen_exited() -> void:
+	if activated and entered_screen:
+		print("enemy exited screen")
+		queue_free()
+
+func _on_VisibilityNotifier2D_screen_entered() -> void:
+	print("enemy entered screen")
+	entered_screen = true

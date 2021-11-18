@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/train/TrainFull.png" type="Texture" id=1]
+[ext_resource path="res://src/Actors/Enemy/Train.gd" type="Script" id=2]
+[ext_resource path="res://src/Actors/Enemy/Turret.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/Actors/Enemy/Artillery.tscn" type="PackedScene" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 509.96, 35 )
+
+[node name="Train" type="KinematicBody2D"]
+position = Vector2( 260, 370 )
+collision_layer = 2
+collision_mask = 2
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 339.96, 0 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+vframes = 4
+frame = 3
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 340, 0 )
+texture = ExtResource( 1 )
+vframes = 4
+frame = 3
+
+[node name="Sprite3" type="Sprite" parent="."]
+position = Vector2( 680, 0 )
+texture = ExtResource( 1 )
+vframes = 4
+frame = 3
+
+[node name="Artillery" parent="." instance=ExtResource( 4 )]
+position = Vector2( 121.482, -40.8658 )
+
+[node name="Turret" parent="." instance=ExtResource( 3 )]
+position = Vector2( 328.404, -40.8658 )
+
+[node name="Artillery2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 673.274, -40.2712 )

@@ -40,6 +40,7 @@ func _ready() -> void:
 	load_player_data()
 	$Gun.load_gun_data(weapon_1)
 	$Gun2.load_gun_data(weapon_2)
+	$Bomber.target_groups = ["enemy"]
 	set_bars()
 
 var wing_locations
@@ -124,8 +125,8 @@ func _physics_process(delta):
 		position.x = 640 - 16
 	if position.y < 40 + 16:
 		position.y = 40 + 16
-	elif position.y > 400 - 80 - 16:
-		position.y = 400 - 80 - 16
+	elif position.y > 400 - 16:
+		position.y = 400 - 16
 	_set_EN(energy + recharge_rate * delta)
 	accumulated += 1
 	if accumulated >= 120:

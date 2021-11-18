@@ -273,7 +273,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Sections/Bottom"]
+[node name="Glass" type="NinePatchRect" parent="Sections/Bottom"]
 margin_left = 80.0
 margin_right = 560.0
 margin_bottom = 80.0
