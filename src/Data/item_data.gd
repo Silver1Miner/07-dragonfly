@@ -136,12 +136,27 @@ var data = {
 		"cooldown": 1.0,
 		"direction": Vector2.LEFT,
 		"speed": 50,
-		"lifetime": 10.0,
+		"lifetime": 15.0,
 		"energy_cost": 0,
 		"target_groups": ["player"],
 		"bullet_groups": ["enemy_bullet"],
 		"bullet_number": 1,
 		"angle": 15,
 		"bullet": preload("res://src/Actors/Gun/Bullet_Enemy.tscn")
+	},
+	"Enemy Turret Gun": {
+		"lore": "A cheap gun often used by private security forces",
+		"baseprice": 0,
+		"damage": 20.0,
+		"cooldown": 3.0,
+		"direction": Vector2.LEFT,
+		"speed": 40,
+		"lifetime": 20.0,
+		"energy_cost": 0,
+		"target_groups": ["player"],
+		"bullet_groups": ["enemy_bullet"],
+		"bullet_number": 1,
+		"angle": 15,
+		"bullet": preload("res://src/Actors/Gun/Bullet_Enemy_turret.tscn")
 	}
 }

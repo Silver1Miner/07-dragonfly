@@ -15,7 +15,7 @@ func _process(delta: float) -> void:
 func _on_Pickup_area_entered(area: Area2D) -> void:
 	if area.is_in_group("player"):
 		var fct = FCT.instance()
-		get_parent().add_child(fct)
+		get_parent().get_parent().add_child(fct)
 		fct.rect_position = get_global_position() + Vector2(0, -16)
 		fct.show_value(effect_name, Vector2(0,-8), 2, PI/2)
 		match effect_name:
@@ -29,6 +29,8 @@ func _on_Pickup_area_entered(area: Area2D) -> void:
 				area.get_parent()._set_cash(area.get_parent().cash + 25)
 			"+1 BOMB":
 				area.get_parent().set_bombs(area.get_parent().bombs + 1)
+			"+1 CRATE":
+				area.get_parent().add_cargo("crate")
 		queue_free()
 
 func _on_Timer_timeout() -> void:

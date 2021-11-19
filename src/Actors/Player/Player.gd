@@ -192,6 +192,9 @@ func take_damage(damage_value: float) -> void:
 		invincible = true
 		$Timer.start()
 
+func add_cargo(name) -> void:
+	cargo.append(name)
+
 func _on_Hitbox_area_entered(area: Area2D) -> void:
 	if area.is_in_group("enemy") and area.get_parent().has_method("take_damage"):
 		area.get_parent().drop = null

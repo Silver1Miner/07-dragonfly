@@ -32,6 +32,8 @@ func connect_hud() -> void:
 
 func _on_exit_area_entered(area) -> void:
 	if area.is_in_group("player"):
+		cargo_list = $Player.cargo
+		cargo_list_string = str(cargo_list)
 		$Pause.update_cargo_list(cargo_list_string)
 		$Pause.pause()
 
