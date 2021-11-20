@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://assets/world/sky.jpg" type="Texture" id=1]
+[ext_resource path="res://assets/world/sky2.jpg" type="Texture" id=1]
 [ext_resource path="res://assets/world/ground-pixel.png" type="Texture" id=2]
 [ext_resource path="res://src/World/Background.gd" type="Script" id=3]
 
@@ -9,7 +9,7 @@ script = ExtResource( 3 )
 camera_velocity = Vector2( -15, 0 )
 
 [node name="Sky" type="ParallaxLayer" parent="."]
-motion_mirroring = Vector2( 2560, 0 )
+motion_mirroring = Vector2( 4428, 0 )
 
 [node name="Sprite" type="Sprite" parent="Sky"]
 texture = ExtResource( 1 )

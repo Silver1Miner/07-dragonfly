@@ -12,6 +12,8 @@ func connect_hud() -> void:
 		push_error("flee signal connect fail")
 	if $Exit.connect("area_entered", self, "_on_exit_area_entered") != OK:
 		push_error("exit signal connect fail")
+	if $Exit_End.connect("area_entered", self, "_on_end_area_entered") != OK:
+		push_error("exit signal connect fail")
 	if $Player.connect("hp_updated", $HUD, "update_hp_display") != OK:
 		push_error("hud signal connect fail")
 	if $Player.connect("shield_updated", $HUD, "update_sh_display") != OK:
@@ -36,6 +38,13 @@ func _on_exit_area_entered(area) -> void:
 		cargo_list_string = str(cargo_list)
 		$Pause.update_cargo_list(cargo_list_string)
 		$Pause.pause()
+
+func _on_end_area_entered(area) -> void:
+	if area.is_in_group("player"):
+		cargo_list = $Player.cargo
+		cargo_list_string = str(cargo_list)
+		$Pause.update_cargo_list(cargo_list_string)
+		$Pause.end_mission()
 
 func _on_player_destroyed() -> void:
 	$Pause.mission_failed()
