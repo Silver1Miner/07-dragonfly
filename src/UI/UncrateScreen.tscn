@@ -2,9 +2,9 @@
 
 [ext_resource path="res://assets/theme/UI.tres" type="Theme" id=1]
 [ext_resource path="res://assets/UI/glassPanel.png" type="Texture" id=2]
-[ext_resource path="res://src/UI/ShopScreen.gd" type="Script" id=3]
+[ext_resource path="res://src/UI/UncrateScreen.gd" type="Script" id=3]
 
-[node name="Shop" type="NinePatchRect"]
+[node name="Uncrate" type="NinePatchRect"]
 margin_left = 70.0
 margin_top = 50.0
 margin_right = 570.0
@@ -38,14 +38,13 @@ __meta__ = {
 [node name="Label" type="Label" parent="Display"]
 margin_right = 480.0
 margin_bottom = 17.0
-text = "Buy from the Old Man:"
+text = "Uncrating"
 align = 1
 
 [node name="ItemDisplay" type="HBoxContainer" parent="Display"]
 margin_top = 29.0
 margin_right = 480.0
 margin_bottom = 149.0
-custom_constants/separation = 40
 
 [node name="ItemList" type="ItemList" parent="Display/ItemDisplay"]
 margin_right = 220.0
@@ -53,8 +52,8 @@ margin_bottom = 120.0
 rect_min_size = Vector2( 220, 120 )
 
 [node name="ItemText" type="RichTextLabel" parent="Display/ItemDisplay"]
-margin_left = 260.0
-margin_right = 480.0
+margin_left = 224.0
+margin_right = 444.0
 margin_bottom = 120.0
 rect_min_size = Vector2( 220, 60 )
 
@@ -62,21 +61,19 @@ rect_min_size = Vector2( 220, 60 )
 margin_top = 161.0
 margin_right = 480.0
 margin_bottom = 178.0
-text = "Offer: 1000"
+text = "Cost to Uncrate"
 align = 1
 
 [node name="Accept" type="Button" parent="Display"]
 margin_top = 190.0
 margin_right = 480.0
 margin_bottom = 207.0
-text = "Accept Offer"
+text = "Uncrate"
 
 [node name="Decline" type="Button" parent="Display"]
 margin_top = 219.0
 margin_right = 480.0
 margin_bottom = 236.0
-text = "Decline Offer"
+text = "Decline"
 
-[connection signal="item_selected" from="Display/ItemDisplay/ItemList" to="." method="_on_ItemList_item_selected"]
-[connection signal="pressed" from="Display/Accept" to="." method="_on_Accept_pressed"]
 [connection signal="pressed" from="Display/Decline" to="." method="_on_Decline_pressed"]

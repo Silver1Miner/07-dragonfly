@@ -51,6 +51,7 @@ func _on_ItemList_item_selected(index: int) -> void:
 	if current_item == "Repairs":
 		$Display/CostDisplay.text = "Charge to buy Repairs: 1000"
 		return
+	itemtext.set_text(item_data.get_entry(items[index], "lore"))
 	match current_mode:
 		shop_mode.BUY:
 			$Display/CostDisplay.text = "Charge to buy " + current_item + ": " + str(item_data.data[current_item]["buy_cost"])
@@ -59,7 +60,7 @@ func _on_ItemList_item_selected(index: int) -> void:
 
 func _on_Accept_pressed() -> void:
 	if current_mode == shop_mode.SELL:
-		PlayerData.inventory[current_item] -= 1
+		PlayerData.inventory[current_item] = clamp(PlayerData.inventory[current_item] - 1, 0, 99)
 		PlayerData.cash = clamp(PlayerData.cash + item_data.data[current_item]["sell_price"], 0, PlayerData.max_cash)
 		load_sell_items()
 	elif current_mode == shop_mode.BUY:
@@ -71,14 +72,13 @@ func _on_Accept_pressed() -> void:
 			else:
 				$Display/CostDisplay.text = "INSUFFICIENT FUNDS"
 		elif item_data.data[current_item]["buy_cost"] <= PlayerData.cash:
-			PlayerData.inventory[current_item] += 1
+			PlayerData.inventory[current_item] = clamp(PlayerData.inventory[current_item] + 1, 0, 99)
 			PlayerData.cash = clamp(PlayerData.cash - item_data.data[current_item]["buy_cost"], 0, PlayerData.max_cash)
 			$Display/CostDisplay.text = "PURCHASED"
 			load_buy_items()
 		else:
 			$Display/CostDisplay.text = "INSUFFICIENT FUNDS"
 	emit_signal("transaction")
-	
 
 func _on_Decline_pressed() -> void:
-	set_mode(current_mode)
+	visible = false

@@ -23,7 +23,7 @@ func update_hud() -> void:
 	$HUD.update_hp_display(PlayerData.player_hp, PlayerData.player_hp, 100)
 	$HUD.update_sh_display(PlayerData.player_shield, 100)
 	$HUD.update_en_display(100, 100)
-	$HUD.update_bombs_display(PlayerData.inventory["Bomb"], 10)
+	$HUD.update_bombs_display(PlayerData.inventory["Bomb"], 99)
 	$HUD.update_cash_display(PlayerData.cash)
 
 func update_loadout_display() -> void:
@@ -122,5 +122,6 @@ func populate_lore_data() -> void:
 		lore_selector.add_item(item_data.lore[index]["name"])
 
 func _on_Data_item_selected(index: int) -> void:
+	$HBoxContainer/Lore/Options/Inventory.pressed = false
 	if index > 0:
 		lore_read.set_text(item_data.get_lore(index-1))
