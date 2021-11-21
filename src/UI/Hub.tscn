@@ -125,24 +125,24 @@ __meta__ = {
 margin_top = 254.0
 margin_right = 480.0
 margin_bottom = 274.0
-custom_constants/separation = 30
+custom_constants/separation = 10
 
 [node name="Control" type="Control" parent="HBoxContainer/Lore/Options"]
 margin_bottom = 20.0
 
 [node name="Inventory" type="Button" parent="HBoxContainer/Lore/Options"]
-margin_left = 30.0
-margin_right = 230.0
+margin_left = 10.0
+margin_right = 210.0
 margin_bottom = 20.0
 rect_min_size = Vector2( 200, 20 )
 toggle_mode = true
 text = "Inventory"
 
 [node name="Data" type="OptionButton" parent="HBoxContainer/Lore/Options"]
-margin_left = 260.0
-margin_right = 460.0
+margin_left = 220.0
+margin_right = 450.0
 margin_bottom = 20.0
-rect_min_size = Vector2( 200, 20 )
+rect_min_size = Vector2( 230, 20 )
 text = "Data"
 align = 1
 
@@ -193,6 +193,7 @@ text = "Journal"
 [connection signal="item_selected" from="HBoxContainer/Loadout/Primary" to="." method="_on_Primary_item_selected"]
 [connection signal="item_selected" from="HBoxContainer/Loadout/Secondary" to="." method="_on_Secondary_item_selected"]
 [connection signal="toggled" from="HBoxContainer/Lore/Options/Inventory" to="." method="_on_Inventory_toggled"]
+[connection signal="item_selected" from="HBoxContainer/Lore/Options/Data" to="." method="_on_Data_item_selected"]
 [connection signal="pressed" from="Choices/to_mission" to="." method="_on_to_mission_pressed"]
 [connection signal="pressed" from="Choices/to_trading" to="." method="_on_to_trading_pressed"]
 [connection signal="pressed" from="Choices/chat" to="." method="_on_chat_pressed"]

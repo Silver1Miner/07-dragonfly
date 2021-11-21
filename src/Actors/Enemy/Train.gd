@@ -5,7 +5,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	position.y = position.y
-	position.x -= 10 * delta
+	position.x -= 20 * delta
 
 func _on_Hurtbox_area_entered(area: Area2D) -> void:
 	if area.is_in_group("player") and area.get_parent().has_method("take_damage"):

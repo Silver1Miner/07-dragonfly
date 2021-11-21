@@ -1,0 +1,90 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/theme/UI.tres" type="Theme" id=1]
+[ext_resource path="res://assets/UI/glassPanel.png" type="Texture" id=2]
+[ext_resource path="res://src/UI/ShopScreen.gd" type="Script" id=3]
+
+[node name="Shop" type="NinePatchRect"]
+margin_left = 70.0
+margin_top = 50.0
+margin_right = 570.0
+margin_bottom = 312.0
+rect_min_size = Vector2( 500, 100 )
+theme = ExtResource( 1 )
+texture = ExtResource( 2 )
+patch_margin_left = 15
+patch_margin_top = 19
+patch_margin_right = 20
+patch_margin_bottom = 16
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Display" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -240.0
+margin_top = -126.0
+margin_right = 240.0
+margin_bottom = 126.0
+custom_constants/separation = 12
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Display"]
+margin_right = 480.0
+margin_bottom = 17.0
+text = "Buy from the Old Man:"
+align = 1
+
+[node name="ItemDisplay" type="HBoxContainer" parent="Display"]
+margin_top = 29.0
+margin_right = 480.0
+margin_bottom = 149.0
+
+[node name="ItemList" type="ItemList" parent="Display/ItemDisplay"]
+margin_right = 220.0
+margin_bottom = 120.0
+rect_min_size = Vector2( 220, 120 )
+
+[node name="Right" type="VBoxContainer" parent="Display/ItemDisplay"]
+margin_left = 224.0
+margin_right = 444.0
+margin_bottom = 120.0
+
+[node name="ItemText" type="RichTextLabel" parent="Display/ItemDisplay/Right"]
+margin_right = 220.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 220, 60 )
+
+[node name="ShoppingCart" type="ItemList" parent="Display/ItemDisplay/Right"]
+margin_top = 64.0
+margin_right = 220.0
+margin_bottom = 119.0
+rect_min_size = Vector2( 0, 55 )
+
+[node name="CostTotal" type="Label" parent="Display"]
+margin_top = 161.0
+margin_right = 480.0
+margin_bottom = 178.0
+text = "Total Cost: 1000"
+align = 1
+
+[node name="Offer" type="Button" parent="Display"]
+margin_top = 190.0
+margin_right = 480.0
+margin_bottom = 207.0
+text = "Accept Offer"
+
+[node name="Decline" type="Button" parent="Display"]
+margin_top = 219.0
+margin_right = 480.0
+margin_bottom = 236.0
+text = "Decline Offer"
+
+[connection signal="item_activated" from="Display/ItemDisplay/ItemList" to="." method="_on_ItemList_item_activated"]
+[connection signal="item_activated" from="Display/ItemDisplay/Right/ShoppingCart" to="." method="_on_ShoppingCart_item_activated"]

@@ -20,6 +20,30 @@ var profiles = {
 	"ava-hurt": preload("res://assets/avatars/ava-hurt.png"),
 	"ava-upset": preload("res://assets/avatars/ava-upset.png")
 }
+var new_game_text = {
+	"0": {"name": "Ava", "profile": "ava-base",
+	"text": "Hello, captain. I am your onbard ship AI, Ava. Welcome to your main control panel!"},
+	"1": {"name": "Ava", "profile": "ava-base",
+	"text": "Here you can customize my outer chasis and my weapons loadout, or check my cargo inventory."},
+	"2": {"name": "Ava", "profile": "ava-base",
+	"text": "We can go to the trading hub to buy equipment and sell loot, or go rob a train to get more loot."},
+	"3": {"name": "Ava", "profile": "ava-base",
+	"text": "Oh yeah, you're a train robber, apparently. But I don't judge. You do what you need to do to survive, captain."},
+}
+var chat_scenes = {
+	0: {"0": {"name": "Ava", "profile": "ava-base",
+	"text": "Chat 0"},},
+	1: {"0": {"name": "Ava", "profile": "ava-base",
+	"text": "Chat 1"},},
+	2: {"0": {"name": "Ava", "profile": "ava-base",
+	"text": "Chat 2"},},
+	3: {"0": {"name": "Ava", "profile": "ava-base",
+	"text": "Chat 3"},},
+	4: {"0": {"name": "Ava", "profile": "ava-base",
+	"text": "Chat 4"},},
+	5: {"0": {"name": "Ava", "profile": "ava-base",
+	"text": "I don't have anything interesting to say, sir."}}
+}
 
 func _ready() -> void:
 	$Timer.wait_time = 0.02

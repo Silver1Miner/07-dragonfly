@@ -31,9 +31,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -75.0
-margin_top = 30.0
+margin_top = 50.0
 margin_right = 75.0
-margin_bottom = 120.0
+margin_bottom = 140.0
 custom_constants/separation = 10
 __meta__ = {
 "_edit_use_anchors_": false
@@ -88,7 +88,6 @@ __meta__ = {
 }
 
 [node name="Failure" type="VBoxContainer" parent="."]
-visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -103,17 +102,18 @@ __meta__ = {
 
 [node name="Label" type="Label" parent="Failure"]
 margin_right = 150.0
-margin_bottom = 57.0
+margin_bottom = 77.0
 text = "MISSION FAILED
+
 Ava Died
 "
 align = 1
 valign = 1
 
 [node name="Restart" type="Button" parent="Failure"]
-margin_top = 61.0
+margin_top = 81.0
 margin_right = 150.0
-margin_bottom = 101.0
+margin_bottom = 121.0
 rect_min_size = Vector2( 150, 40 )
 text = "Restart"
 __meta__ = {
@@ -121,7 +121,6 @@ __meta__ = {
 }
 
 [node name="Success" type="VBoxContainer" parent="."]
-visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -136,17 +135,19 @@ __meta__ = {
 
 [node name="Label" type="Label" parent="Success"]
 margin_right = 150.0
-margin_bottom = 57.0
+margin_bottom = 77.0
+rect_min_size = Vector2( 0, 60 )
 text = "MISSION COMPLETE
+
 Time to go home
 "
 align = 1
 valign = 1
 
 [node name="victory_end" type="Button" parent="Success"]
-margin_top = 61.0
+margin_top = 81.0
 margin_right = 150.0
-margin_bottom = 101.0
+margin_bottom = 121.0
 rect_min_size = Vector2( 150, 40 )
 text = "Return to Hub"
 __meta__ = {

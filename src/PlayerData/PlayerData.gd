@@ -12,9 +12,11 @@ var player_hp = 50
 var player_shield = 100
 var player_weapon_1 = "Chaingun"
 var player_weapon_2 = "Bolt"
-var lore = [0,0,0,0,0,0,0]
+var lore_found = 4 # max 4
 var ships = [1, 1, 1]
 var current_ship = 0
+var current_chat_scene = -1
+var new_game = false
 
 func _ready() -> void:
 	load_data()
@@ -26,8 +28,8 @@ func save_data() -> void:
 	pass
 
 var inventory = {
-	"Bombs": 20,
-	"Crates": 0,
+	"Bombs": 10,
+	"Crate": 0,
 	"Chaingun": 0,
 	"Spreadgun": 1,
 	"Shotgun": 1,

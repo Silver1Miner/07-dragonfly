@@ -4,6 +4,7 @@ var item_data: Resource = preload("res://src/Data/item_data.tres")
 onready var ship_preview = $HBoxContainer/Loadout/Preview/ShipPreview
 onready var lore_read = $HBoxContainer/Lore/NinePatchRect/LoreText
 onready var textbox = $HUD/Textbox
+onready var lore_selector = $HBoxContainer/Lore/Options/Data
 
 func _ready() -> void:
 	if textbox.connect("text_finished", self, "_on_text_finished") != OK:
@@ -11,6 +12,11 @@ func _ready() -> void:
 	update_hud()
 	update_loadout_display()
 	populate_options()
+	populate_lore_data()
+	if PlayerData.new_game:
+		textbox.play_dialogue(textbox.new_game_text)
+		$Choices.visible = false
+		PlayerData.new_game = false
 
 func update_hud() -> void:
 	$HUD.update_hp_display(PlayerData.player_hp, PlayerData.player_hp, 100)
@@ -92,7 +98,9 @@ func _on_to_trading_pressed() -> void:
 		push_error("fail to change scene")
 
 func _on_chat_pressed() -> void:
-	textbox.play_dialogue(textbox.text_dialogue)
+	if PlayerData.current_chat_scene < 5:
+		PlayerData.current_chat_scene += 1
+	textbox.play_dialogue(textbox.chat_scenes[PlayerData.current_chat_scene])
 	$Choices.visible = false
 
 func _on_text_finished() -> void:
@@ -104,3 +112,13 @@ func _on_to_saves_pressed() -> void:
 func _on_Inventory_toggled(button_pressed: bool) -> void:
 	$HBoxContainer/Lore/NinePatchRect/InventoryInfo.visible = button_pressed
 	$HBoxContainer/Lore/NinePatchRect/LoreText.visible = !button_pressed
+
+func populate_lore_data() -> void:
+	lore_selector.clear()
+	lore_selector.add_item("DATA")
+	for index in PlayerData.lore_found:
+		lore_selector.add_item(item_data.lore[index]["name"])
+
+func _on_Data_item_selected(index: int) -> void:
+	if index > 0:
+		lore_read.set_text(item_data.get_lore(index-1))

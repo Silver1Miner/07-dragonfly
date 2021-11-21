@@ -125,8 +125,8 @@ func _physics_process(delta):
 		position.x = 640 - 16
 	if position.y < 40 + 16:
 		position.y = 40 + 16
-	elif position.y > 400 - 16:
-		position.y = 400 - 16
+	elif position.y > 400 - 7 - 80:
+		position.y = 400 - 7 - 80
 	_set_EN(energy + recharge_rate * delta)
 	accumulated += 1
 	if accumulated >= 120:

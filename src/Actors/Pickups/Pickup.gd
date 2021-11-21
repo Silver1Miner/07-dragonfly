@@ -31,6 +31,9 @@ func _on_Pickup_area_entered(area: Area2D) -> void:
 				area.get_parent().set_bombs(area.get_parent().bombs + 1)
 			"+1 CRATE":
 				area.get_parent().add_cargo("crate")
+			"DATA ACQUIRED":
+				if PlayerData.lore_found < 4:
+					PlayerData.lore_found += 1
 		queue_free()
 
 func _on_Timer_timeout() -> void:

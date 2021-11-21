@@ -34,7 +34,7 @@ spawn_time = 10
 
 [node name="Exit_End" parent="." instance=ExtResource( 4 )]
 position = Vector2( 640, 0 )
-wait_time = 180
+wait_time = 133
 
 [node name="Exit" parent="." instance=ExtResource( 8 )]
 position = Vector2( 40, 40 )

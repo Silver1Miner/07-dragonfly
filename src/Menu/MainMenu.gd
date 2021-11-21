@@ -6,6 +6,7 @@ func _ready() -> void:
 
 func _on_new_pressed() -> void:
 	print("new game")
+	PlayerData.new_game = true
 	if get_tree().change_scene_to(PlayerData.hub) != OK:
 		push_error("fail to change scene")
 

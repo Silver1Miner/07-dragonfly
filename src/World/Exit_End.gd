@@ -9,7 +9,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if active:
-		position.x -= 10 * delta
+		position.x -= 50 * delta
 
 func _on_Timer_timeout() -> void:
 	active = true

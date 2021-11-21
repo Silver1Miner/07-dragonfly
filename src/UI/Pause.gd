@@ -49,6 +49,7 @@ func _on_leave_pressed() -> void:
 	get_tree().paused = false
 	emit_signal("leave")
 	visible = false
+	AudioManager.play_music("res://assets/Audio/Sky-Bandit-Intro.ogg", 0)
 
 func _on_Restart_pressed() -> void:
 	get_tree().paused = false

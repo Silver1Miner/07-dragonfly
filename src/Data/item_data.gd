@@ -13,6 +13,32 @@ func get_stats(type: String) -> Dictionary:
 		return data[type]
 	return {}
 
+func get_lore(index) -> String:
+	if index < len(lore):
+		return lore[index]["text"]
+	return "lore entry not found"
+
+var lore = [
+	{"name": "Moon Elder", "text": """The Story of the Moon Elder is an ancient legend.
+"""},
+	{"name": "Unter Freight", "text": """Unter Freight is a shipping company.
+"""},
+	{"name": "Banned Ships", "text": """The following airships are banned due to their use by pirate groups:
+
+Dragonfly
+Scarab
+Scorpion
+
+Any airship of these models will be shot on sight.
+"""},
+	{"name": "Bounty Hunter's Message", "text": """You're not special you know.
+
+Did you think that you're the only one the Old Man has tricked into doing his dirty work?
+
+He's got hundreds of naive fools just like you, hundreds of pirates he tricks into serving as his parasites.
+"""},
+]
+
 var data = {
 	"Dragonfly": {
 			"lore": """The Dragonfly Class airship"""},
@@ -117,7 +143,7 @@ var data = {
 	"Bolt": {
 		"lore": """The Bolt Beam""",
 		"baseprice": 1000,
-		"damage": 100.0,
+		"damage": 50.0,
 		"cooldown": 1.0,
 		"direction": Vector2.RIGHT,
 		"speed": 0,
