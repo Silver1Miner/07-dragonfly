@@ -51,7 +51,7 @@ func load_player_data() -> void:
 	hp = PlayerData.player_hp
 	prev_hp = PlayerData.player_hp
 	shield = PlayerData.player_shield
-	bombs = PlayerData.inventory["Bombs"]
+	bombs = PlayerData.inventory["Bomb"]
 	$Sprite.texture = PlayerData.ship_visuals[PlayerData.current_ship]["sprite"]
 	$AnimatedSprite.position = PlayerData.ship_visuals[PlayerData.current_ship]["wings"]
 
@@ -59,7 +59,7 @@ func save_player_data() -> void:
 	PlayerData.cash = cash
 	PlayerData.player_hp = hp
 	PlayerData.player_shield = shield
-	PlayerData.inventory["Bombs"] = bombs
+	PlayerData.inventory["Bomb"] = bombs
 
 func set_bars() -> void:
 	$hp_bar.set_tint_progress(Color(1,0,0))

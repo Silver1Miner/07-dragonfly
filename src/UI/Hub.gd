@@ -17,12 +17,14 @@ func _ready() -> void:
 		textbox.play_dialogue(textbox.new_game_text)
 		$Choices.visible = false
 		PlayerData.new_game = false
+	$HUD.change_avatar("ava-base")
 
 func update_hud() -> void:
 	$HUD.update_hp_display(PlayerData.player_hp, PlayerData.player_hp, 100)
 	$HUD.update_sh_display(PlayerData.player_shield, 100)
 	$HUD.update_en_display(100, 100)
-	$HUD.update_bombs_display(PlayerData.inventory["Bombs"], 10)
+	$HUD.update_bombs_display(PlayerData.inventory["Bomb"], 10)
+	$HUD.update_cash_display(PlayerData.cash)
 
 func update_loadout_display() -> void:
 	update_ship_choice()

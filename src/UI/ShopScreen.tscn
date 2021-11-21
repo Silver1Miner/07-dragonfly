@@ -51,30 +51,20 @@ margin_right = 220.0
 margin_bottom = 120.0
 rect_min_size = Vector2( 220, 120 )
 
-[node name="Right" type="VBoxContainer" parent="Display/ItemDisplay"]
+[node name="ItemText" type="RichTextLabel" parent="Display/ItemDisplay"]
 margin_left = 224.0
 margin_right = 444.0
 margin_bottom = 120.0
-
-[node name="ItemText" type="RichTextLabel" parent="Display/ItemDisplay/Right"]
-margin_right = 220.0
-margin_bottom = 60.0
 rect_min_size = Vector2( 220, 60 )
 
-[node name="ShoppingCart" type="ItemList" parent="Display/ItemDisplay/Right"]
-margin_top = 64.0
-margin_right = 220.0
-margin_bottom = 119.0
-rect_min_size = Vector2( 0, 55 )
-
-[node name="CostTotal" type="Label" parent="Display"]
+[node name="CostDisplay" type="Label" parent="Display"]
 margin_top = 161.0
 margin_right = 480.0
 margin_bottom = 178.0
-text = "Total Cost: 1000"
+text = "Offer: 1000"
 align = 1
 
-[node name="Offer" type="Button" parent="Display"]
+[node name="Accept" type="Button" parent="Display"]
 margin_top = 190.0
 margin_right = 480.0
 margin_bottom = 207.0
@@ -86,5 +76,6 @@ margin_right = 480.0
 margin_bottom = 236.0
 text = "Decline Offer"
 
-[connection signal="item_activated" from="Display/ItemDisplay/ItemList" to="." method="_on_ItemList_item_activated"]
-[connection signal="item_activated" from="Display/ItemDisplay/Right/ShoppingCart" to="." method="_on_ShoppingCart_item_activated"]
+[connection signal="item_selected" from="Display/ItemDisplay/ItemList" to="." method="_on_ItemList_item_selected"]
+[connection signal="pressed" from="Display/Accept" to="." method="_on_Accept_pressed"]
+[connection signal="pressed" from="Display/Decline" to="." method="_on_Decline_pressed"]

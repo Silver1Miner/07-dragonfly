@@ -6,8 +6,8 @@ var trading: PackedScene = preload("res://src/UI/Trading.tscn")
 var mission: PackedScene = preload("res://src/World/World.tscn")
 
 var current_position = Vector2.ZERO
-var cash = 0
-var max_cash = 0
+var cash = 1000
+var max_cash = 999999
 var player_hp = 50
 var player_shield = 100
 var player_weapon_1 = "Chaingun"
@@ -28,9 +28,9 @@ func save_data() -> void:
 	pass
 
 var inventory = {
-	"Bombs": 10,
-	"Crate": 0,
-	"Chaingun": 0,
+	"Bomb": 10,
+	"Crate": 1,
+	"Chaingun": 1,
 	"Spreadgun": 1,
 	"Shotgun": 1,
 	"Scattergun": 1,

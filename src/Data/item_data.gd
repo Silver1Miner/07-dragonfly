@@ -46,13 +46,22 @@ var data = {
 		"lore": """The Scarab Class airship"""},
 	"Scorpion": {
 		"lore": """The Scorpion Class airship"""},
-	"Bombs": {
+	"Bomb": {
 		"lore": """Bombs pack a lot of punch, but can only be dropped. Gravity has to take care of the rest. I hope you paid attention to your physics classes!""",
 		"baseprice": 1000,
+		"buy_cost": 1000,
+		"sell_price": 800,
+	},
+	"Crate": {
+		"lore": """An unopened shipping crate. It can be expensive to open, but who knows what treasures could be contained inside?""",
+		"buy_cost": 1000,
+		"sell_price": 800,
 	},
 	"Chaingun": {
 		"lore": """The Chain Gun""",
 		"baseprice": 1000,
+		"buy_cost": 1000,
+		"sell_price": 800,
 		"damage": 2.0,
 		"cooldown": 0.2,
 		"direction": Vector2.RIGHT,
@@ -68,6 +77,8 @@ var data = {
 	"Spreadgun": {
 		"lore": """The Spreadgun spreads the love out""",
 		"baseprice": 1000,
+		"buy_cost": 1000,
+		"sell_price": 800,
 		"damage": 1.0,
 		"cooldown": 0.2,
 		"direction": Vector2.RIGHT,
@@ -83,6 +94,8 @@ var data = {
 	"Shotgun": {
 		"lore": """The shotgun packs a punch at close range""",
 		"baseprice": 1000,
+		"buy_cost": 1000,
+		"sell_price": 800,
 		"damage": 4.0,
 		"cooldown": 0.8,
 		"direction": Vector2.RIGHT,
@@ -98,6 +111,8 @@ var data = {
 	"Scattergun": {
 		"lore": """The scattergun spreads the love.""",
 		"baseprice": 1000,
+		"buy_cost": 1000,
+		"sell_price": 800,
 		"damage": 5.0,
 		"cooldown": 0.9,
 		"direction": Vector2.RIGHT,
@@ -113,6 +128,8 @@ var data = {
 	"Flamer": {
 		"lore": """The flamer flames""",
 		"baseprice": 1000,
+		"buy_cost": 1000,
+		"sell_price": 800,
 		"damage": 1.0,
 		"cooldown": 0.1,
 		"direction": Vector2.RIGHT,
@@ -128,6 +145,8 @@ var data = {
 	"Burner": {
 		"lore": """The burner blasts""",
 		"baseprice": 1000,
+		"buy_cost": 1000,
+		"sell_price": 800,
 		"damage": 1.0,
 		"cooldown": 0.1,
 		"direction": Vector2.RIGHT,
@@ -143,6 +162,8 @@ var data = {
 	"Bolt": {
 		"lore": """The Bolt Beam""",
 		"baseprice": 1000,
+		"buy_cost": 1000,
+		"sell_price": 800,
 		"damage": 50.0,
 		"cooldown": 1.0,
 		"direction": Vector2.RIGHT,
@@ -158,6 +179,8 @@ var data = {
 	"Enemy Chain Gun": {
 		"lore": "A cheap gun often used by private security forces",
 		"baseprice": 0,
+		"buy_cost": 1000,
+		"sell_price": 800,
 		"damage": 20.0,
 		"cooldown": 1.0,
 		"direction": Vector2.LEFT,
@@ -173,6 +196,8 @@ var data = {
 	"Enemy Turret Gun": {
 		"lore": "A cheap gun often used by private security forces",
 		"baseprice": 0,
+		"buy_cost": 1000,
+		"sell_price": 800,
 		"damage": 20.0,
 		"cooldown": 3.0,
 		"direction": Vector2.LEFT,
