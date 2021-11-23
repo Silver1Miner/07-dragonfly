@@ -3,6 +3,7 @@ extends Control
 func _ready() -> void:
 	if OS.get_name() == "HTML5":
 		$Options/quit.visible = false
+	AudioManager.play_music("res://assets/Audio/LazyDragonfly.ogg", 0)
 
 func _on_new_pressed() -> void:
 	print("new game")

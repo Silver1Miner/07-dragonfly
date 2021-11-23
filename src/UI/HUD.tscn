@@ -1,10 +1,9 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://src/UI/Textbox.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/UI/progressbar.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/UI/HUD.gd" type="Script" id=3]
 [ext_resource path="res://assets/UI/glassPanel.png" type="Texture" id=4]
-[ext_resource path="res://assets/avatars/screen.png" type="Texture" id=5]
 [ext_resource path="res://assets/avatars/ava-base.png" type="Texture" id=6]
 [ext_resource path="res://assets/theme/HUD.tres" type="Theme" id=7]
 [ext_resource path="res://assets/theme/UI.tres" type="Theme" id=8]
@@ -253,11 +252,11 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -24.0
-margin_top = -24.0
-margin_right = 24.0
-margin_bottom = 24.0
-texture = ExtResource( 5 )
+margin_left = -35.0
+margin_top = -35.0
+margin_right = 35.0
+margin_bottom = 35.0
+texture = ExtResource( 4 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -268,10 +267,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -16.0
-margin_top = -16.0
-margin_right = 16.0
-margin_bottom = 16.0
+margin_left = -32.0
+margin_top = -32.0
+margin_right = 32.0
+margin_bottom = 32.0
 rect_min_size = Vector2( 32, 32 )
 texture = ExtResource( 6 )
 expand = true

@@ -71,9 +71,9 @@ margin_bottom = 124.0
 
 [node name="Credits" type="Label" parent="."]
 margin_left = 237.0
-margin_top = 32.0
+margin_top = 20.0
 margin_right = 615.0
-margin_bottom = 322.0
+margin_bottom = 337.0
 theme = ExtResource( 3 )
 text = "CREDITS
 
@@ -82,6 +82,8 @@ by Jack Anderson
 
 Soundtrack
 'Sky Bandit' by Vav
+
+Character Portraits made in Mannequin
 
 Additional CC0 Assets from:
 kenney.nl

@@ -28,12 +28,16 @@ var profiles = {
 	"ava-base": preload("res://assets/avatars/ava-base.png"),
 	"ava-hurt": preload("res://assets/avatars/ava-hurt.png"),
 	"ava-upset": preload("res://assets/avatars/ava-upset.png"),
+	"ava-excited": preload("res://assets/avatars/ava-excited.png")
 }
 func change_avatar(avatar_name) -> void:
 	$Sections/Bottom/Panel/Profile.set_texture(profiles[avatar_name])
 
 func update_cash_display(new_cash) -> void:
 	cash_text.text = str(new_cash) + " "
+	profile_pic.texture = profiles["ava-excited"]
+	$Timer.wait_time = 0.8
+	$Timer.start()
 
 func update_hp_display(new_hp, old_hp, max_hp) -> void:
 	if new_hp <= 0:
@@ -45,7 +49,7 @@ func update_hp_display(new_hp, old_hp, max_hp) -> void:
 		current_profile = "ava-base"
 	if new_hp < old_hp:
 		profile_pic.texture = profiles["ava-hurt"]
-		$Timer.wait_time = 1.0
+		$Timer.wait_time = 0.8
 		$Timer.start()
 	hp_text.text = " HP: " + str(round(new_hp))
 	hp_bar.max_value = max_hp
