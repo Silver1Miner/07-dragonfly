@@ -19,3 +19,4 @@ func bomb() -> void:
 	ObjectRegistry.register_bullet(bomb)
 	$Timer.wait_time = cooldown
 	$Timer.start()
+	$AudioStreamPlayer2D.play()

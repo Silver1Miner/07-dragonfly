@@ -34,6 +34,7 @@ func _on_Pickup_area_entered(area: Area2D) -> void:
 			"DATA ACQUIRED":
 				if PlayerData.lore_found < 4:
 					PlayerData.lore_found += 1
+		AudioManager.play_sound("res://assets/Audio/powerUp8.ogg")
 		queue_free()
 
 func _on_Timer_timeout() -> void:

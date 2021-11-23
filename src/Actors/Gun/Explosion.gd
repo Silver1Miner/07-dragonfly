@@ -11,6 +11,7 @@ func _ready() -> void:
 	$Timer.wait_time = lifetime
 	$Timer.start()
 	$AnimatedSprite.play("default")
+	AudioManager.play_sound("res://assets/Audio/Splode.wav")
 
 func _process(_delta: float) -> void:
 	#position -= Vector2(PlayerData.SCROLL_SPEED, 0) * delta

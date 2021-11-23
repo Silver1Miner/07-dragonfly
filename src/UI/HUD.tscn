@@ -274,6 +274,7 @@ margin_right = 16.0
 margin_bottom = 16.0
 rect_min_size = Vector2( 32, 32 )
 texture = ExtResource( 6 )
+expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }

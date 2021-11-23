@@ -72,7 +72,8 @@ var data = {
 		"bullet_groups": ["player_bullet"],
 		"bullet_number": 1,
 		"angle": 0,
-		"bullet": preload("res://src/Actors/Gun/Bullet.tscn")
+		"bullet": preload("res://src/Actors/Gun/Bullet.tscn"),
+		"sound": "res://assets/Audio/guns/258257__wadaltmon__m3-grease-gun-firing.wav"
 	},
 	"Spreadgun": {
 		"lore": """The Spreadgun spreads the love out""",
@@ -89,7 +90,8 @@ var data = {
 		"bullet_groups": ["player_bullet"],
 		"bullet_number": 2,
 		"angle": 5,
-		"bullet": preload("res://src/Actors/Gun/Bullet.tscn")
+		"bullet": preload("res://src/Actors/Gun/Bullet.tscn"),
+		"sound": "res://assets/Audio/guns/258198__wadaltmon__thompson-smg-shot.wav"
 	},
 	"Shotgun": {
 		"lore": """The shotgun packs a punch at close range""",
@@ -106,7 +108,8 @@ var data = {
 		"bullet_groups": ["player_bullet"],
 		"bullet_number": 2,
 		"angle": 15,
-		"bullet": preload("res://src/Actors/Gun/Bullet.tscn")
+		"bullet": preload("res://src/Actors/Gun/Bullet.tscn"),
+		"sound": "res://assets/Audio/guns/163455__lemudcrab__shotgun-shot.wav"
 	},
 	"Scattergun": {
 		"lore": """The scattergun spreads the love.""",
@@ -123,7 +126,8 @@ var data = {
 		"bullet_groups": ["player_bullet"],
 		"bullet_number": 3,
 		"angle": 12,
-		"bullet": preload("res://src/Actors/Gun/Bullet.tscn")
+		"bullet": preload("res://src/Actors/Gun/Bullet.tscn"),
+		"sound": "res://assets/Audio/guns/522484__filmmakersmanual__shotgun-firing-2.wav"
 	},
 	"Flamer": {
 		"lore": """The flamer flames""",
@@ -140,7 +144,8 @@ var data = {
 		"bullet_groups": ["player_bullet"],
 		"bullet_number": 3,
 		"angle": 5,
-		"bullet": preload("res://src/Actors/Gun/Bullet_Flame.tscn")
+		"bullet": preload("res://src/Actors/Gun/Bullet_Flame.tscn"),
+		"sound": "res://assets/Audio/guns/381862__cribbler__fireblast-lightly.wav"
 	},
 	"Burner": {
 		"lore": """The burner blasts""",
@@ -157,7 +162,8 @@ var data = {
 		"bullet_groups": ["player_bullet"],
 		"bullet_number": 2,
 		"angle": 2,
-		"bullet": preload("res://src/Actors/Gun/Bullet_Flame.tscn")
+		"bullet": preload("res://src/Actors/Gun/Bullet_Flame.tscn"),
+		"sound": "res://assets/Audio/guns/447941__breviceps__blast-flamethrower-cooldown.wav"
 	},
 	"Bolt": {
 		"lore": """The Bolt Beam""",
@@ -174,7 +180,8 @@ var data = {
 		"bullet_groups": ["player_bullet"],
 		"bullet_number": 1,
 		"angle": 15,
-		"bullet": preload("res://src/Actors/Gun/Bullet_Bolt.tscn")
+		"bullet": preload("res://src/Actors/Gun/Bullet_Bolt.tscn"),
+		"sound": "res://assets/Audio/guns/517058__invisible-inks__scifi-sniper-rifle.ogg"
 	},
 	"Enemy Chain Gun": {
 		"lore": "A cheap gun often used by private security forces",
@@ -191,7 +198,8 @@ var data = {
 		"bullet_groups": ["enemy_bullet"],
 		"bullet_number": 1,
 		"angle": 15,
-		"bullet": preload("res://src/Actors/Gun/Bullet_Enemy.tscn")
+		"bullet": preload("res://src/Actors/Gun/Bullet_Enemy.tscn"),
+		"sound": "res://assets/Audio/guns/258257__wadaltmon__m3-grease-gun-firing.wav"
 	},
 	"Enemy Turret Gun": {
 		"lore": "A cheap gun often used by private security forces",
@@ -208,6 +216,7 @@ var data = {
 		"bullet_groups": ["enemy_bullet"],
 		"bullet_number": 1,
 		"angle": 15,
-		"bullet": preload("res://src/Actors/Gun/Bullet_Enemy_turret.tscn")
+		"bullet": preload("res://src/Actors/Gun/Bullet_Enemy_turret.tscn"),
+		"sound": "res://assets/Audio/guns/163455__lemudcrab__shotgun-shot.wav"
 	}
 }

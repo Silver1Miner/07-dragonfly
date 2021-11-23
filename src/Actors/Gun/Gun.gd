@@ -32,6 +32,7 @@ func load_gun_data(gun_type: String) -> void:
 	bullet_groups = stats["bullet_groups"]
 	angle = stats["angle"]
 	Bullet = stats["bullet"]
+	$AudioStreamPlayer2D.stream = load(stats["sound"])
 
 func get_energy_cost() -> float:
 	return energy_cost
@@ -47,6 +48,7 @@ func fire() -> void:
 		if n > 0:
 			var bullet2: Bullet = Bullet.instance()
 			fire_bullet(bullet2, -n)
+	$AudioStreamPlayer2D.play()
 	$Timer.wait_time = cooldown
 	$Timer.start()
 
