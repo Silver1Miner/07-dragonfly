@@ -23,6 +23,7 @@ var max_bombs = 99
 var weapon_1 = "Empty"
 var weapon_2 = "Empty"
 var cargo = []
+var crates_gained = 0
 
 signal hp_updated(hp, prev_hp, max_hp)
 signal shield_updated(shield, max_shield)

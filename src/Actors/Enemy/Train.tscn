@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
+[ext_resource path="res://src/Actors/Pickups/Pickup_Data.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Actors/Enemy/Train.gd" type="Script" id=2]
 [ext_resource path="res://src/Actors/Enemy/Turret.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/Actors/Enemy/Artillery.tscn" type="PackedScene" id=4]
@@ -79,3 +80,6 @@ position = Vector2( 773.211, -45.2836 )
 
 [node name="Pickup_Crate3" parent="." instance=ExtResource( 5 )]
 position = Vector2( 802.479, -46.0379 )
+
+[node name="Pickup_Data" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1731.95, -45.1778 )

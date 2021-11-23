@@ -30,7 +30,8 @@ func _on_Pickup_area_entered(area: Area2D) -> void:
 			"+1 BOMB":
 				area.get_parent().set_bombs(area.get_parent().bombs + 1)
 			"+1 CRATE":
-				area.get_parent().add_cargo("crate")
+				#area.get_parent().add_cargo("crate")
+				area.get_parent().crates_gained += 1
 			"DATA ACQUIRED":
 				if PlayerData.lore_found < 4:
 					PlayerData.lore_found += 1
