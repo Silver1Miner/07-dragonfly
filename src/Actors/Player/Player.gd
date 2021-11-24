@@ -35,7 +35,8 @@ signal player_destroyed()
 
 func _ready() -> void:
 	add_to_group("player")
-	$Hitbox.add_to_group("player_pickup")
+	#$Hitbox.add_to_group("player_pickup")
+	$Pickup.add_to_group("player_pickup")
 	#$Pickup_Area.add_to_group("player")
 	$Shield.add_to_group("player")
 	load_player_data()

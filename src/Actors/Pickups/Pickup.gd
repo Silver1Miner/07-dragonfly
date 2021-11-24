@@ -13,7 +13,7 @@ func _process(delta: float) -> void:
 		queue_free()
 
 func _on_Pickup_area_entered(area: Area2D) -> void:
-	if area.is_in_group("player"):
+	if area.is_in_group("player_pickup"):
 		var fct = FCT.instance()
 		get_parent().get_parent().add_child(fct)
 		fct.rect_position = get_global_position() + Vector2(0, -16)

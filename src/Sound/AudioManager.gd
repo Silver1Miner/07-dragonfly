@@ -14,7 +14,7 @@ func _ready() -> void:
 		add_child(p)
 		available.append(p)
 		p.connect("finished", self, "_on_sound_finished", [p])
-		p.bus = "sound"
+		p.bus = "Sound"
 
 func _on_sound_finished(next_stream):
 	available.append(next_stream)

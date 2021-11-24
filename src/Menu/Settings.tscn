@@ -51,6 +51,9 @@ margin_top = 44.0
 margin_right = 150.0
 margin_bottom = 60.0
 rect_min_size = Vector2( 150, 0 )
+max_value = 1.0
+step = 0.1
+value = 1.0
 
 [node name="sound" type="Label" parent="VolumeControls"]
 margin_top = 64.0
@@ -68,6 +71,9 @@ __meta__ = {
 margin_top = 108.0
 margin_right = 150.0
 margin_bottom = 124.0
+max_value = 1.0
+step = 0.1
+value = 1.0
 
 [node name="Credits" type="Label" parent="."]
 margin_left = 237.0

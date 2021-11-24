@@ -9,7 +9,6 @@ var invincible = false
 export var max_hp = 20
 export var hp = 20 setget _set_HP
 var prev_hp = 20
-var activated = false
 var entered_screen = false
 
 func _ready() -> void:
@@ -27,7 +26,7 @@ func set_bars() -> void:
 	$hp_bar.value = hp
 
 func _physics_process(delta):
-	if activated:
+	if entered_screen:
 		$Aim/Gun.fire()
 		if invincible:
 			$AnimationPlayer.play("flash")
@@ -54,7 +53,7 @@ func _set_HP(new_hp) -> void:
 		destroyed()
 
 func take_damage(damage_value: float) -> void:
-	if invincible or !activated:
+	if invincible or !entered_screen:
 		return
 	_set_HP(hp - damage_value)
 	invincible = true
@@ -80,16 +79,15 @@ func _on_Hitbox_area_entered(area: Area2D) -> void:
 	if area.is_in_group("player") and area.get_parent().has_method("take_damage"):
 		area.get_parent().take_damage(hp)
 
-func _on_Timer_timeout() -> void:
-	activated = true
-	invincible = false
-
-
 func _on_VisibilityNotifier2D_screen_exited() -> void:
-	if activated and entered_screen:
+	if entered_screen:
 		print("enemy exited screen")
 		queue_free()
 
 func _on_VisibilityNotifier2D_screen_entered() -> void:
 	print("enemy entered screen")
 	entered_screen = true
+	invincible = false
+
+func _on_Timer_timeout() -> void:
+	invincible = false

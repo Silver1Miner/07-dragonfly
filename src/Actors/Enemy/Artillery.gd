@@ -11,6 +11,6 @@ func _ready() -> void:
 
 func _physics_process(_delta):
 	$Aim.look_at(PlayerData.current_position)
-	if activated and entered_screen:
+	if entered_screen:
 		bomb_velocity = (PlayerData.current_position - global_position).normalized() * bomb_speed
 		$Aim/Bomber.bomb()

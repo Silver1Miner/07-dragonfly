@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://src/Actors/Pickups/Pickup_Data.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Actors/Enemy/Train.gd" type="Script" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://src/Actors/Enemy/Artillery.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/Actors/Pickups/Pickup_Crate.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/train/train-car.png" type="Texture" id=6]
+[ext_resource path="res://src/Actors/Enemy/Enemy.tscn" type="PackedScene" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1000, 35 )
@@ -63,14 +64,42 @@ texture = ExtResource( 6 )
 position = Vector2( 3400, 0 )
 texture = ExtResource( 6 )
 
+[node name="Sprite12" type="Sprite" parent="."]
+position = Vector2( 3740, 0 )
+texture = ExtResource( 6 )
+
+[node name="Sprite13" type="Sprite" parent="."]
+position = Vector2( 4080, 0 )
+texture = ExtResource( 6 )
+
+[node name="Sprite14" type="Sprite" parent="."]
+position = Vector2( 4420, 0 )
+texture = ExtResource( 6 )
+
+[node name="Sprite15" type="Sprite" parent="."]
+position = Vector2( 4760, 0 )
+texture = ExtResource( 6 )
+
+[node name="Sprite16" type="Sprite" parent="."]
+position = Vector2( 5100, 0 )
+texture = ExtResource( 6 )
+
+[node name="Sprite17" type="Sprite" parent="."]
+position = Vector2( 5440, 0 )
+texture = ExtResource( 6 )
+
+[node name="Sprite18" type="Sprite" parent="."]
+position = Vector2( 5780, 0 )
+texture = ExtResource( 6 )
+
 [node name="Artillery" parent="." instance=ExtResource( 4 )]
-position = Vector2( 121.482, -50.0582 )
+position = Vector2( 1225.48, -51.0582 )
 
 [node name="Turret" parent="." instance=ExtResource( 3 )]
-position = Vector2( 396.245, -53.0874 )
+position = Vector2( 555.245, -53.0874 )
 
 [node name="Artillery2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 673.274, -48.7565 )
+position = Vector2( 1289.77, -51.7565 )
 
 [node name="Pickup_Crate" parent="." instance=ExtResource( 5 )]
 position = Vector2( 738.567, -45.1278 )
@@ -82,4 +111,73 @@ position = Vector2( 773.211, -45.2836 )
 position = Vector2( 802.479, -46.0379 )
 
 [node name="Pickup_Data" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1731.95, -45.1778 )
+position = Vector2( 5645, -43.6158 )
+
+[node name="Enemy" parent="." instance=ExtResource( 7 )]
+position = Vector2( 509.165, -163.664 )
+
+[node name="Enemy2" parent="." instance=ExtResource( 7 )]
+position = Vector2( 228.939, -160.314 )
+
+[node name="Enemy3" parent="." instance=ExtResource( 7 )]
+position = Vector2( 561.084, -165.373 )
+
+[node name="Enemy4" parent="." instance=ExtResource( 7 )]
+position = Vector2( 608.541, -165.132 )
+
+[node name="Turret2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2169.55, -53.2326 )
+
+[node name="Turret4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2312.37, -53.0337 )
+
+[node name="Turret5" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2366.54, -53.0337 )
+
+[node name="Artillery4" parent="." instance=ExtResource( 4 )]
+position = Vector2( 3279.67, -54.9236 )
+
+[node name="Artillery5" parent="." instance=ExtResource( 4 )]
+position = Vector2( 3338.89, -54.2936 )
+
+[node name="Artillery6" parent="." instance=ExtResource( 4 )]
+position = Vector2( 3397.47, -55.5536 )
+
+[node name="Artillery7" parent="." instance=ExtResource( 4 )]
+position = Vector2( 2760.61, -53.0337 )
+
+[node name="Turret6" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2659.19, -54.2936 )
+
+[node name="Turret7" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2950.86, -51.7738 )
+
+[node name="Turret9" parent="." instance=ExtResource( 3 )]
+position = Vector2( 896.129, -54.9236 )
+
+[node name="Turret8" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1588.75, -52.4037 )
+
+[node name="Turret3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2252.1, -52.8083 )
+
+[node name="Artillery3" parent="." instance=ExtResource( 4 )]
+position = Vector2( 4630.41, -53.6598 )
+
+[node name="Artillery8" parent="." instance=ExtResource( 4 )]
+position = Vector2( 4673.5, -52.5 )
+
+[node name="Artillery9" parent="." instance=ExtResource( 4 )]
+position = Vector2( 4717.5, -53.5 )
+
+[node name="Artillery10" parent="." instance=ExtResource( 4 )]
+position = Vector2( 4766.01, -53.5 )
+
+[node name="Turret10" parent="." instance=ExtResource( 3 )]
+position = Vector2( 4803.81, -53 )
+
+[node name="Turret11" parent="." instance=ExtResource( 3 )]
+position = Vector2( 4847.31, -52.5 )
+
+[node name="Turret12" parent="." instance=ExtResource( 3 )]
+position = Vector2( 4888.31, -52.5 )
