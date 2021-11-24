@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://src/Actors/Pickups/Pickup_Data.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Actors/Enemy/Train.gd" type="Script" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://src/Actors/Pickups/Pickup_Crate.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/train/train-car.png" type="Texture" id=6]
 [ext_resource path="res://src/Actors/Enemy/Enemy.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/theme/UI.tres" type="Theme" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1000, 35 )
@@ -102,13 +103,13 @@ position = Vector2( 555.245, -53.0874 )
 position = Vector2( 1289.77, -51.7565 )
 
 [node name="Pickup_Crate" parent="." instance=ExtResource( 5 )]
-position = Vector2( 738.567, -45.1278 )
+position = Vector2( 714.314, -45.1278 )
 
 [node name="Pickup_Crate2" parent="." instance=ExtResource( 5 )]
-position = Vector2( 773.211, -45.2836 )
+position = Vector2( 747.855, -45.5986 )
 
 [node name="Pickup_Crate3" parent="." instance=ExtResource( 5 )]
-position = Vector2( 802.479, -46.0379 )
+position = Vector2( 781.199, -45.7042 )
 
 [node name="Pickup_Data" parent="." instance=ExtResource( 1 )]
 position = Vector2( 5645, -43.6158 )
@@ -181,3 +182,51 @@ position = Vector2( 4847.31, -52.5 )
 
 [node name="Turret12" parent="." instance=ExtResource( 3 )]
 position = Vector2( 4888.31, -52.5 )
+
+[node name="Label" type="Label" parent="."]
+self_modulate = Color( 1, 1, 1, 0.784314 )
+margin_left = -69.7455
+margin_top = -264.0
+margin_right = 128.255
+margin_bottom = -181.0
+theme = ExtResource( 8 )
+custom_constants/line_spacing = 8
+text = "Move: WASD or Arrow Keys
+Fast (Hold): Shift
+Slow (Hold): Ctrl"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="."]
+self_modulate = Color( 1, 1, 1, 0.784314 )
+margin_left = 166.39
+margin_top = -263.411
+margin_right = 364.39
+margin_bottom = -174.411
+theme = ExtResource( 8 )
+custom_constants/line_spacing = 8
+text = "Fire Gun1: Z or Mouse 1
+Fire Gun2: X or Mouse 2
+Drop Bomb: C or Mouse 3"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="."]
+self_modulate = Color( 1, 1, 1, 0.784314 )
+margin_left = 399.232
+margin_top = -251.286
+margin_right = 580.232
+margin_bottom = -162.286
+theme = ExtResource( 8 )
+custom_constants/line_spacing = 8
+text = "Fly to the Upper Left 
+to flee at any time"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}

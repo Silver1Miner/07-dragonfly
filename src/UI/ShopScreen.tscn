@@ -51,6 +51,7 @@ custom_constants/separation = 40
 margin_right = 220.0
 margin_bottom = 120.0
 rect_min_size = Vector2( 220, 120 )
+fixed_icon_size = Vector2( 20, 20 )
 
 [node name="ItemText" type="RichTextLabel" parent="Display/ItemDisplay"]
 margin_left = 260.0

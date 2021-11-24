@@ -1,7 +1,7 @@
 extends Enemy
 
 export var cooldown = 4.0
-export var bomb_speed = 300
+export var bomb_speed = 400
 var bomb_velocity = Vector2.LEFT
 
 func _ready() -> void:

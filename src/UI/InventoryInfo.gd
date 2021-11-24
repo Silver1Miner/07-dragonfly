@@ -14,7 +14,7 @@ func load_items() -> void:
 		if PlayerData.inventory[item] > 0:
 			items.append(item)
 	for item in items:
-		itemlist.add_item(item + " x" + str(PlayerData.inventory[item]))
+		itemlist.add_item(item + " x" + str(PlayerData.inventory[item]),load(item_data.get_entry(item,"icon")))
 
 func _on_ItemList_item_selected(index: int) -> void:
 	if index < len(items):

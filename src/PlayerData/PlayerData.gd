@@ -28,9 +28,8 @@ func save_data() -> void:
 	pass
 
 var inventory = {
-	"Bomb": 10,
-	"Spiderweb Silk": 1,
 	"Crate": 10,
+	"Bomb": 10,
 	"Chaingun": 1,
 	"Spreadgun": 1,
 	"Shotgun": 1,
@@ -38,6 +37,8 @@ var inventory = {
 	"Flamer": 1,
 	"Burner": 1,
 	"Bolt": 1,
+	"Spiderweb Silk": 1,
+	"Gold Bugs": 1,
 }
 
 var ship_visuals = [
@@ -55,6 +56,3 @@ var ship_visuals = [
 		"wings": Vector2(0, 0),
 	},
 ]
-
-var item_data = {
-}

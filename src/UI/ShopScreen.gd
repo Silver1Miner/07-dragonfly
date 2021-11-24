@@ -33,7 +33,7 @@ func load_buy_items() -> void:
 	itemlist.clear()
 	for item in shop_inventory:
 		items.append(item)
-		itemlist.add_item(item)
+		itemlist.add_item(item, load(item_data.get_entry(item,"icon")))
 
 var items = []
 func load_sell_items() -> void:
@@ -43,7 +43,7 @@ func load_sell_items() -> void:
 		if PlayerData.inventory[item] > 0:
 			items.append(item)
 	for item in items:
-		itemlist.add_item(item + " x" + str(PlayerData.inventory[item]))
+		itemlist.add_item(item + " x" + str(PlayerData.inventory[item]), load(item_data.get_entry(item,"icon")))
 
 var current_item = ""
 func _on_ItemList_item_selected(index: int) -> void:

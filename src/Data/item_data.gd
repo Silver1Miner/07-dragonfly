@@ -60,6 +60,12 @@ I've already taken out hundreds of other little pirates he made into his little 
 ]
 
 var data = {
+	"Repairs": {
+		"lore": """Repair your ship to full hull integrity""",
+		"buy_cost": 1000,
+		"sell_price": 1000,
+		"icon": "res://assets/items/icon.png",
+	},
 	"Dragonfly": {
 			"lore": """The Dragonfly Class ornithopter airship is immediately recognizable for its bright colors and agile flight. Despite some superficial similarities, it should not be confused with the Firefly class airship."""},
 	"Scarab": {
@@ -69,8 +75,14 @@ var data = {
 	"Spiderweb Silk": {
 		"lore": """A valuable commodity, light and yet more durable than steel. In addition to industrial applications, it is also woven into textiles, and even used as a medium of exchange in some regions.""",
 		"buy_cost": 5000,
-		"sell_price": 4000,
-		"icon": "",
+		"sell_price": 2000,
+		"icon": "res://assets/items/Tent.png",
+	},
+	"Gold Bugs": {
+		"lore": """A very valuable commodity, though heavy and expensive to transport.""",
+		"buy_cost": 6000,
+		"sell_price": 5000,
+		"icon": "res://assets/items/5.png"
 	},
 	"Bomb": {
 		"lore": """Bombs pack a lot of punch, but can only be dropped. Gravity has to take care of the rest. I hope you paid attention to your physics classes!""",
@@ -80,7 +92,7 @@ var data = {
 		"icon": "res://assets/guns/tile_0012.png"
 	},
 	"Crate": {
-		"lore": """An unopened shipping crate. It can be expensive to open, but who knows what treasures could be contained inside?""",
+		"lore": """A locked and unopened shipping crate. It costs a fee to break open, but who knows what treasures could be contained inside?""",
 		"buy_cost": 1000,
 		"sell_price": 800,
 		"icon": "res://assets/crates/treasure chest0000.png"
@@ -101,7 +113,8 @@ var data = {
 		"bullet_number": 1,
 		"angle": 0,
 		"bullet": preload("res://src/Actors/Gun/Bullet.tscn"),
-		"sound": "res://assets/Audio/guns/258257__wadaltmon__m3-grease-gun-firing.wav"
+		"sound": "res://assets/Audio/guns/258257__wadaltmon__m3-grease-gun-firing.wav",
+		"icon": "res://assets/guns/milit.png"
 	},
 	"Spreadgun": {
 		"lore": """The Myrmecia Spreadgun is a multi-barreled rapid-fire weapon generally used by security forces for suppressive fire and crowd control.""",
@@ -119,43 +132,46 @@ var data = {
 		"bullet_number": 2,
 		"angle": 5,
 		"bullet": preload("res://src/Actors/Gun/Bullet.tscn"),
-		"sound": "res://assets/Audio/guns/258198__wadaltmon__thompson-smg-shot.wav"
+		"sound": "res://assets/Audio/guns/258198__wadaltmon__thompson-smg-shot.wav",
+		"icon": "res://assets/guns/md5.png"
 	},
 	"Shotgun": {
 		"lore": """The Goliath Beetle Burst gun was originally used in mining and demolition, clearning obstacles through a burst of powerful short-range energy pellets.""",
 		"baseprice": 1000,
 		"buy_cost": 1000,
 		"sell_price": 800,
-		"damage": 4.0,
+		"damage": 20.0,
 		"cooldown": 0.8,
 		"direction": Vector2.RIGHT,
-		"speed": 600,
-		"lifetime": 0.4,
+		"speed": 900,
+		"lifetime": 0.2,
 		"energy_cost": 30.0,
 		"target_groups": ["enemy"],
 		"bullet_groups": ["player_bullet"],
-		"bullet_number": 2,
-		"angle": 15,
+		"bullet_number": 4,
+		"angle": 4,
 		"bullet": preload("res://src/Actors/Gun/Bullet.tscn"),
-		"sound": "res://assets/Audio/guns/163455__lemudcrab__shotgun-shot.wav"
+		"sound": "res://assets/Audio/guns/163455__lemudcrab__shotgun-shot.wav",
+		"icon": "res://assets/guns/x90.png",
 	},
 	"Scattergun": {
-		"lore": """The Titan Beetle Burst gun was a prototype demolition tool that uses short-range energy pellets, eventually abandoned due to the difficulties in limiting the size of pellet spread.""",
+		"lore": """The Titan Beetle Burst gun was a prototype demolition tool that uses short-range energy pellets, eventually abandoned due to the difficulties in limiting pellet spread.""",
 		"baseprice": 1000,
 		"buy_cost": 1000,
 		"sell_price": 800,
-		"damage": 5.0,
+		"damage": 20.0,
 		"cooldown": 0.9,
 		"direction": Vector2.RIGHT,
-		"speed": 600,
-		"lifetime": 0.3,
-		"energy_cost": 35.0,
+		"speed": 900,
+		"lifetime": 0.15,
+		"energy_cost": 10.0,
 		"target_groups": ["enemy"],
 		"bullet_groups": ["player_bullet"],
-		"bullet_number": 3,
-		"angle": 12,
+		"bullet_number": 6,
+		"angle": 6,
 		"bullet": preload("res://src/Actors/Gun/Bullet.tscn"),
-		"sound": "res://assets/Audio/guns/522484__filmmakersmanual__shotgun-firing-2.wav"
+		"sound": "res://assets/Audio/guns/522484__filmmakersmanual__shotgun-firing-2.wav",
+		"icon": "res://assets/guns/raging_pitbull.png"
 	},
 	"Flamer": {
 		"lore": """The Bombardier Bettle Flamer is technically not a flamethrower, but a long range torch.""",
@@ -173,7 +189,8 @@ var data = {
 		"bullet_number": 3,
 		"angle": 5,
 		"bullet": preload("res://src/Actors/Gun/Bullet_Flame.tscn"),
-		"sound": "res://assets/Audio/guns/381862__cribbler__fireblast-lightly.wav"
+		"sound": "res://assets/Audio/guns/381862__cribbler__fireblast-lightly.wav",
+		"icon": "res://assets/guns/mg5000.png",
 	},
 	"Burner": {
 		"lore": """Though the Firebug Burner is technically not a flamethrower, the tool has nevertheless been classified as one under planetary law in order to regulate ownership.""",
@@ -191,7 +208,8 @@ var data = {
 		"bullet_number": 2,
 		"angle": 2,
 		"bullet": preload("res://src/Actors/Gun/Bullet_Flame.tscn"),
-		"sound": "res://assets/Audio/guns/447941__breviceps__blast-flamethrower-cooldown.wav"
+		"sound": "res://assets/Audio/guns/447941__breviceps__blast-flamethrower-cooldown.wav",
+		"icon": "res://assets/guns/mg6000.png",
 	},
 	"Bolt": {
 		"lore": """The Scorpion Stinger Bolt Beam is a scaled-down version of the now infamous Bolt Beam used by spaceships. Though smaller in absolute size, it is perhaps even more dangerous in atmospheric air battles than in space.""",
@@ -209,7 +227,8 @@ var data = {
 		"bullet_number": 1,
 		"angle": 15,
 		"bullet": preload("res://src/Actors/Gun/Bullet_Bolt.tscn"),
-		"sound": "res://assets/Audio/guns/517058__invisible-inks__scifi-sniper-rifle.ogg"
+		"sound": "res://assets/Audio/guns/517058__invisible-inks__scifi-sniper-rifle.ogg",
+		"icon": "res://assets/guns/pow9.png"
 	},
 	"Enemy Chain Gun": {
 		"lore": "A cheap gun often used by private security forces",
@@ -227,7 +246,7 @@ var data = {
 		"bullet_number": 1,
 		"angle": 15,
 		"bullet": preload("res://src/Actors/Gun/Bullet_Enemy.tscn"),
-		"sound": "res://assets/Audio/guns/258257__wadaltmon__m3-grease-gun-firing.wav"
+		"sound": "res://assets/Audio/guns/258257__wadaltmon__m3-grease-gun-firing.wav",
 	},
 	"Enemy Turret Gun": {
 		"lore": "A cheap gun often used by private security forces",
@@ -237,7 +256,7 @@ var data = {
 		"damage": 20.0,
 		"cooldown": 3.0,
 		"direction": Vector2.LEFT,
-		"speed": 40,
+		"speed": 80,
 		"lifetime": 20.0,
 		"energy_cost": 0,
 		"target_groups": ["player"],
