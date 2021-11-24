@@ -25,22 +25,27 @@ func _on_transaction() -> void:
 	$HUD.update_bombs_display(PlayerData.inventory["Bomb"], 99)
 
 func _on_to_hub_pressed() -> void:
+	AudioManager.play_sound("res://assets/Audio/select_005.ogg")
 	if get_tree().change_scene_to(PlayerData.hub) != OK:
 		push_error("fail to change scene")
 
 func _on_buy_pressed() -> void:
+	AudioManager.play_sound("res://assets/Audio/select_005.ogg")
 	$Shop.set_mode(0) # BUY 0
 	$Shop.visible = true
 	$Uncrate.visible = false
 	print("enter buy screen")
 
 func _on_sell_pressed() -> void:
+	AudioManager.play_sound("res://assets/Audio/select_005.ogg")
 	$Shop.set_mode(1) # SELL 1
 	$Shop.visible = true
 	$Uncrate.visible = false
 	print("enter buy screen")
 
 func _on_crate_pressed() -> void:
+	AudioManager.play_sound("res://assets/Audio/select_005.ogg")
 	$Shop.visible = false
 	$Uncrate.visible = true
+	$Uncrate.refresh()
 	print("enter crate open screen")

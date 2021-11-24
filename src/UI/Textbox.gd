@@ -32,7 +32,12 @@ var new_game_text = {
 }
 var chat_scenes = {
 	0: {"0": {"name": "Ava", "profile": "ava-base",
-	"text": "Chat 0"},},
+	"text": "Chat 0"},
+	"1": {"name": "Ava", "profile": "ava-base",
+	"text": "Chat 0"},
+	"2": {"name": "Ava", "profile": "ava-base",
+	"text": "Chat 0"},
+	},
 	1: {"0": {"name": "Ava", "profile": "ava-base",
 	"text": "Chat 1"},},
 	2: {"0": {"name": "Ava", "profile": "ava-base",
@@ -76,10 +81,10 @@ func _on_next() -> void:
 		else:
 			text.set_visible_characters(text.get_total_character_count())
 
-func _input(event) -> void:
-	if event.is_action_pressed("ui_accept"):
+func _unhandled_input(event) -> void:
+	if event.is_action_pressed("ui_accept") or event.is_action_pressed("fire_primary"):
 		_on_next()
-	elif event.is_action_pressed("ui_cancel"):
+	elif event.is_action_pressed("ui_cancel") or event.is_action_pressed("fire_secondary"):
 		end_text()
 
 func end_text() -> void:

@@ -71,9 +71,6 @@ margin_bottom = 210.0
 rect_min_size = Vector2( 150, 30 )
 text = "QUIT"
 
-[node name="Settings" parent="." instance=ExtResource( 4 )]
-visible = false
-
 [node name="version" type="Label" parent="."]
 anchor_left = 1.0
 anchor_right = 1.0
@@ -103,6 +100,9 @@ valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Settings" parent="." instance=ExtResource( 4 )]
+visible = false
 
 [connection signal="pressed" from="Options/new" to="." method="_on_new_pressed"]
 [connection signal="pressed" from="Options/load" to="." method="_on_load_pressed"]

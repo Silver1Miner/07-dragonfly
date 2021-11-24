@@ -18,12 +18,16 @@ func _ready() -> void:
 	crate_animation.frame = 0
 	result_panel.visible = false
 
+func refresh() -> void:
+	uncrate_button.disabled = (PlayerData.inventory["Crate"] <= 0 or PlayerData.cash < 60)
+
 func update_crate_number(new_number) -> void:
 	crate_number.text = "Crates Remaining: " + str(new_number)
 
 func _on_Accept_pressed() -> void:
 	uncrate_button.disabled = true
 	decline_button.disabled = true
+	AudioManager.play_sound("res://assets/Audio/ui/doorOpen_2.ogg")
 	crate_animation.play("open")
 	roll()
 

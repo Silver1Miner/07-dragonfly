@@ -66,12 +66,14 @@ func update_ship_choice() -> void:
 	lore_read.text = item_data.get_entry(ship_names[PlayerData.current_ship], "lore")
 
 func _on_Ship_item_selected(index: int) -> void:
+	AudioManager.play_sound("res://assets/Audio/select_005.ogg")
 	if index == 0:
 		return
 	PlayerData.current_ship = index - 1
 	update_ship_choice()
 
 func _on_Primary_item_selected(index: int) -> void:
+	AudioManager.play_sound("res://assets/Audio/select_005.ogg")
 	if index == 0:
 		return
 	PlayerData.inventory[PlayerData.player_weapon_1] += 1
@@ -82,6 +84,7 @@ func _on_Primary_item_selected(index: int) -> void:
 	lore_read.set_text(item_data.get_entry(PlayerData.player_weapon_1, "lore"))
 
 func _on_Secondary_item_selected(index: int) -> void:
+	AudioManager.play_sound("res://assets/Audio/select_005.ogg")
 	if index == 0:
 		return
 	PlayerData.inventory[PlayerData.player_weapon_2] += 1
@@ -92,16 +95,21 @@ func _on_Secondary_item_selected(index: int) -> void:
 	lore_read.set_text(item_data.get_entry(PlayerData.player_weapon_2, "lore"))
 
 func _on_to_mission_pressed() -> void:
+	AudioManager.play_sound("res://assets/Audio/ui/select_008.ogg")
 	if get_tree().change_scene_to(PlayerData.mission) != OK:
 		push_error("fail to start mission")
 
 func _on_to_trading_pressed() -> void:
+	AudioManager.play_sound("res://assets/Audio/ui/select_008.ogg")
 	if get_tree().change_scene_to(PlayerData.trading) != OK:
 		push_error("fail to change scene")
 
 func _on_chat_pressed() -> void:
+	AudioManager.play_sound("res://assets/Audio/ui/select_008.ogg")
 	if PlayerData.current_chat_scene < 5:
 		PlayerData.current_chat_scene += 1
+	else:
+		PlayerData.current_chat_scene = 0
 	textbox.play_dialogue(textbox.chat_scenes[PlayerData.current_chat_scene])
 	$Choices.visible = false
 
@@ -109,9 +117,11 @@ func _on_text_finished() -> void:
 	$Choices.visible = true
 
 func _on_to_saves_pressed() -> void:
+	AudioManager.play_sound("res://assets/Audio/ui/select_008.ogg")
 	print("saves pressed")
 
 func _on_Inventory_toggled(button_pressed: bool) -> void:
+	AudioManager.play_sound("res://assets/Audio/ui/select_008.ogg")
 	$HBoxContainer/Lore/NinePatchRect/InventoryInfo.visible = button_pressed
 	$HBoxContainer/Lore/NinePatchRect/LoreText.visible = !button_pressed
 
@@ -122,6 +132,7 @@ func populate_lore_data() -> void:
 		lore_selector.add_item(item_data.lore[index]["name"])
 
 func _on_Data_item_selected(index: int) -> void:
+	AudioManager.play_sound("res://assets/Audio/ui/select_008.ogg")
 	$HBoxContainer/Lore/Options/Inventory.pressed = false
 	if index > 0:
 		lore_read.set_text(item_data.get_lore(index-1))
