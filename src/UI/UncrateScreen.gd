@@ -13,7 +13,7 @@ onready var result_label = $Result/ResultDisplay/ResultLabel
 onready var result_icon = $Result/ResultDisplay/ResultIcon
 
 func _ready() -> void:
-	uncrate_button.disabled = (PlayerData.inventory["Crate"] <= 0)
+	uncrate_button.disabled = (PlayerData.inventory["Crate"] <= 0 or PlayerData.cash < 60)
 	update_crate_number(PlayerData.inventory["Crate"])
 	crate_animation.frame = 0
 	result_panel.visible = false
@@ -34,7 +34,7 @@ func _on_ResultClose_pressed() -> void:
 	crate_animation.frame = 0
 	crate_animation.playing = false
 	result_panel.visible = false
-	uncrate_button.disabled = (PlayerData.inventory["Crate"] <= 0)
+	uncrate_button.disabled = (PlayerData.inventory["Crate"] <= 0 or PlayerData.cash < 60)
 	decline_button.disabled = false
 
 func _on_AnimatedSprite_animation_finished() -> void:
@@ -43,6 +43,7 @@ func _on_AnimatedSprite_animation_finished() -> void:
 
 func roll() -> void:
 	PlayerData.inventory["Crate"] = clamp(PlayerData.inventory["Crate"]-1, 0, 99)
+	PlayerData.cash = clamp(PlayerData.cash - 60, 0, PlayerData.max_cash)
 	update_crate_number(PlayerData.inventory["Crate"])
 	randomize()
 	var roll = rand_range(0, 99)

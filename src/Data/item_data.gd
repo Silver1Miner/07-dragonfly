@@ -19,35 +19,55 @@ func get_lore(index) -> String:
 	return "lore entry not found"
 
 var lore = [
-	{"name": "Moon Elder", "text": """The Story of the Moon Elder is an ancient legend.
+	{"name": "Old Man of the Moon",
+"text": """The Old Man below the Moon appears in several ancient legends about love and marriage. He is said to use a red string to tie together future mates.
+
+Despite the age of the story, it has gained a resurgence of popularity in more recent times, albeit in a slightly modified form.
+
+In the modern myth, pirates, bandits, and thieves pass around stories of an old man who is a perfect fence, able to buy and sell anything they desire.
+
+All major shipping corporations, governments, and private security firms have continuously confirmed that there is no truth to this modern myth.
 """},
-	{"name": "Unter Freight", "text": """Unter Freight is a shipping company.
+	{"name": "Unter Freight",
+"text": """Unter Freight is a railway shipping company with strong ties to the Relentless Shipping congolomerate. Unter maintains the single largest railway network on the planet, colloquially known as 'The Spider Web.'
+
+Unfortunately, this position has made Unter a popular target for pirates, who often attempt to rob their trains in transit. For this reason, Unter has invested heavily in arming its trains with defense turrets, as well as contracting private security firms to deal with such annoyances.
 """},
-	{"name": "Banned Ships", "text": """The following airships are banned due to their use by pirate groups:
+	{"name": "Banned Ships",
+"text": """By order of the Unter Freight company:
+
+The following airships are banned due to popularity among pirate groups:
 
 Dragonfly
 Scarab
 Scorpion
 
-Any airship of these models will be shot on sight.
+Any airship of these models will be assumed to be a pirate shot on sight.
 """},
-	{"name": "Bounty Hunter's Message", "text": """You're not special you know.
+	{"name": "Bounty Hunter's Letter",
+"text": """A fragment from a damaged letter:
+
+'...through me.
+
+You're not special you know.
 
 Did you think that you're the only one the Old Man has tricked into doing his dirty work?
 
-He's got hundreds of naive fools just like you, hundreds of pirates he tricks into serving as his parasites.
+He's got hundreds of naive fools just like you. The Bug job, the Star Scope job, every single one was the same: a naive kid he tricked into doing his dirty work, only to get blown up by me in the end.
+
+I've already taken out hundreds of other little pirates he made into his little puppets. Keep this up, and you'll be the next...'
 """},
 ]
 
 var data = {
 	"Dragonfly": {
-			"lore": """The Dragonfly Class airship"""},
+			"lore": """The Dragonfly Class ornithopter airship is immediately recognizable for its bright colors and agile flight. Despite some superficial similarities, it should not be confused with the Firefly class airship."""},
 	"Scarab": {
-		"lore": """The Scarab Class airship"""},
+		"lore": """The Scarab Class ornithopter airship, known for its bright metallic color, was originally a popular choice for recycling and sanitation companies."""},
 	"Scorpion": {
-		"lore": """The Scorpion Class airship"""},
+		"lore": """The Scorpion Class ornithopter airship, named for the positin of its mounted weapons, was originally designed for use in private security but soon abandoned for newer models."""},
 	"Spiderweb Silk": {
-		"lore": "An incredibly valuable commodity. Light and yet more durable than steel.",
+		"lore": """A valuable commodity, light and yet more durable than steel. In addition to industrial applications, it is also woven into textiles, and even used as a medium of exchange in some regions.""",
 		"buy_cost": 5000,
 		"sell_price": 4000,
 		"icon": "",
@@ -66,7 +86,7 @@ var data = {
 		"icon": "res://assets/crates/treasure chest0000.png"
 	},
 	"Chaingun": {
-		"lore": """The Chain Gun""",
+		"lore": """The Clavata 'Bullet Ant' Chaingun is an old but reliable rapid-fire weapon that boasts near pin-point accuracy.""",
 		"baseprice": 1000,
 		"buy_cost": 1000,
 		"sell_price": 800,
@@ -84,7 +104,7 @@ var data = {
 		"sound": "res://assets/Audio/guns/258257__wadaltmon__m3-grease-gun-firing.wav"
 	},
 	"Spreadgun": {
-		"lore": """The Spreadgun spreads the love out""",
+		"lore": """The Myrmecia Spreadgun is a multi-barreled rapid-fire weapon generally used by security forces for suppressive fire and crowd control.""",
 		"baseprice": 1000,
 		"buy_cost": 1000,
 		"sell_price": 800,
@@ -102,7 +122,7 @@ var data = {
 		"sound": "res://assets/Audio/guns/258198__wadaltmon__thompson-smg-shot.wav"
 	},
 	"Shotgun": {
-		"lore": """The shotgun packs a punch at close range""",
+		"lore": """The Goliath Beetle Burst gun was originally used in mining and demolition, clearning obstacles through a burst of powerful short-range energy pellets.""",
 		"baseprice": 1000,
 		"buy_cost": 1000,
 		"sell_price": 800,
@@ -120,7 +140,7 @@ var data = {
 		"sound": "res://assets/Audio/guns/163455__lemudcrab__shotgun-shot.wav"
 	},
 	"Scattergun": {
-		"lore": """The scattergun spreads the love.""",
+		"lore": """The Titan Beetle Burst gun was a prototype demolition tool that uses short-range energy pellets, eventually abandoned due to the difficulties in limiting the size of pellet spread.""",
 		"baseprice": 1000,
 		"buy_cost": 1000,
 		"sell_price": 800,
@@ -138,7 +158,7 @@ var data = {
 		"sound": "res://assets/Audio/guns/522484__filmmakersmanual__shotgun-firing-2.wav"
 	},
 	"Flamer": {
-		"lore": """The flamer flames""",
+		"lore": """The Bombardier Bettle Flamer is technically not a flamethrower, but a long range torch.""",
 		"baseprice": 1000,
 		"buy_cost": 1000,
 		"sell_price": 800,
@@ -156,7 +176,7 @@ var data = {
 		"sound": "res://assets/Audio/guns/381862__cribbler__fireblast-lightly.wav"
 	},
 	"Burner": {
-		"lore": """The burner blasts""",
+		"lore": """Though the Firebug Burner is technically not a flamethrower, the tool has nevertheless been classified as one under planetary law in order to regulate ownership.""",
 		"baseprice": 1000,
 		"buy_cost": 1000,
 		"sell_price": 800,
@@ -174,7 +194,7 @@ var data = {
 		"sound": "res://assets/Audio/guns/447941__breviceps__blast-flamethrower-cooldown.wav"
 	},
 	"Bolt": {
-		"lore": """The Bolt Beam""",
+		"lore": """The Scorpion Stinger Bolt Beam is a scaled-down version of the now infamous Bolt Beam used by spaceships. Though smaller in absolute size, it is perhaps even more dangerous in atmospheric air battles than in space.""",
 		"baseprice": 1000,
 		"buy_cost": 1000,
 		"sell_price": 800,
