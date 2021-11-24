@@ -6,8 +6,8 @@
 [ext_resource path="res://src/Actors/Enemy/Artillery.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/Actors/Pickups/Pickup_Crate.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/train/train-car.png" type="Texture" id=6]
-[ext_resource path="res://src/Actors/Enemy/Enemy.tscn" type="PackedScene" id=7]
 [ext_resource path="res://assets/theme/UI.tres" type="Theme" id=8]
+[ext_resource path="res://src/Actors/Enemy/Enemy_Small.tscn" type="PackedScene" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1000, 35 )
@@ -21,6 +21,54 @@ script = ExtResource( 2 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 800, 0 )
 shape = SubResource( 1 )
+
+[node name="Label" type="Label" parent="."]
+self_modulate = Color( 1, 1, 1, 0.784314 )
+margin_left = -69.7455
+margin_top = -264.0
+margin_right = 128.255
+margin_bottom = -181.0
+theme = ExtResource( 8 )
+custom_constants/line_spacing = 8
+text = "Move: WASD or Arrow Keys
+Fast (Hold): Shift
+Slow (Hold): Ctrl"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="."]
+self_modulate = Color( 1, 1, 1, 0.784314 )
+margin_left = 166.39
+margin_top = -263.411
+margin_right = 364.39
+margin_bottom = -174.411
+theme = ExtResource( 8 )
+custom_constants/line_spacing = 8
+text = "Fire Gun1: Z or Mouse 1
+Fire Gun2: X or Mouse 2
+Drop Bomb: C or Mouse 3"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="."]
+self_modulate = Color( 1, 1, 1, 0.784314 )
+margin_left = 399.232
+margin_top = -251.286
+margin_right = 580.232
+margin_bottom = -162.286
+theme = ExtResource( 8 )
+custom_constants/line_spacing = 8
+text = "Fly to the Upper Left 
+to flee at any time"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 6 )
@@ -114,18 +162,6 @@ position = Vector2( 781.199, -45.7042 )
 [node name="Pickup_Data" parent="." instance=ExtResource( 1 )]
 position = Vector2( 5645, -43.6158 )
 
-[node name="Enemy" parent="." instance=ExtResource( 7 )]
-position = Vector2( 509.165, -163.664 )
-
-[node name="Enemy2" parent="." instance=ExtResource( 7 )]
-position = Vector2( 228.939, -160.314 )
-
-[node name="Enemy3" parent="." instance=ExtResource( 7 )]
-position = Vector2( 561.084, -165.373 )
-
-[node name="Enemy4" parent="." instance=ExtResource( 7 )]
-position = Vector2( 608.541, -165.132 )
-
 [node name="Turret2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 2169.55, -53.2326 )
 
@@ -183,50 +219,59 @@ position = Vector2( 4847.31, -52.5 )
 [node name="Turret12" parent="." instance=ExtResource( 3 )]
 position = Vector2( 4888.31, -52.5 )
 
-[node name="Label" type="Label" parent="."]
-self_modulate = Color( 1, 1, 1, 0.784314 )
-margin_left = -69.7455
-margin_top = -264.0
-margin_right = 128.255
-margin_bottom = -181.0
-theme = ExtResource( 8 )
-custom_constants/line_spacing = 8
-text = "Move: WASD or Arrow Keys
-Fast (Hold): Shift
-Slow (Hold): Ctrl"
-align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Enemy_Small" parent="." instance=ExtResource( 9 )]
+position = Vector2( 282.898, -160.481 )
 
-[node name="Label2" type="Label" parent="."]
-self_modulate = Color( 1, 1, 1, 0.784314 )
-margin_left = 166.39
-margin_top = -263.411
-margin_right = 364.39
-margin_bottom = -174.411
-theme = ExtResource( 8 )
-custom_constants/line_spacing = 8
-text = "Fire Gun1: Z or Mouse 1
-Fire Gun2: X or Mouse 2
-Drop Bomb: C or Mouse 3"
-align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Enemy_Small2" parent="." instance=ExtResource( 9 )]
+position = Vector2( 506.866, -130.816 )
 
-[node name="Label3" type="Label" parent="."]
-self_modulate = Color( 1, 1, 1, 0.784314 )
-margin_left = 399.232
-margin_top = -251.286
-margin_right = 580.232
-margin_bottom = -162.286
-theme = ExtResource( 8 )
-custom_constants/line_spacing = 8
-text = "Fly to the Upper Left 
-to flee at any time"
-align = 1
-autowrap = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Enemy_Small3" parent="." instance=ExtResource( 9 )]
+position = Vector2( 564.607, -155.713 )
+
+[node name="Enemy_Small4" parent="." instance=ExtResource( 9 )]
+position = Vector2( 617.315, -187.497 )
+
+[node name="Enemy_Small5" parent="." instance=ExtResource( 9 )]
+position = Vector2( 1225.97, -148.636 )
+
+[node name="Enemy_Small6" parent="." instance=ExtResource( 9 )]
+position = Vector2( 1271.4, -186.054 )
+
+[node name="Enemy_Small7" parent="." instance=ExtResource( 9 )]
+position = Vector2( 1313.72, -225.253 )
+
+[node name="Enemy_Small8" parent="." instance=ExtResource( 9 )]
+position = Vector2( 1777.88, -108.1 )
+
+[node name="Enemy_Small9" parent="." instance=ExtResource( 9 )]
+position = Vector2( 1832.23, -153.09 )
+
+[node name="Enemy_Small10" parent="." instance=ExtResource( 9 )]
+position = Vector2( 1882.12, -192.29 )
+
+[node name="Enemy_Small11" parent="." instance=ExtResource( 9 )]
+position = Vector2( 2190.43, -309.889 )
+
+[node name="Enemy_Small12" parent="." instance=ExtResource( 9 )]
+position = Vector2( 2243, -276.034 )
+
+[node name="Enemy_Small13" parent="." instance=ExtResource( 9 )]
+position = Vector2( 2290.66, -236.389 )
+
+[node name="Enemy_Small14" parent="." instance=ExtResource( 9 )]
+position = Vector2( 4558.88, -205.653 )
+
+[node name="Enemy_Small15" parent="." instance=ExtResource( 9 )]
+position = Vector2( 4600.3, -247.08 )
+
+[node name="Enemy_Small16" parent="." instance=ExtResource( 9 )]
+position = Vector2( 4646.18, -287.616 )
+
+[node name="Enemy_Small17" parent="." instance=ExtResource( 9 )]
+position = Vector2( 4759.33, -155.763 )
+
+[node name="Enemy_Small18" parent="." instance=ExtResource( 9 )]
+position = Vector2( 4805.65, -195.408 )
+
+[node name="Enemy_Small19" parent="." instance=ExtResource( 9 )]
+position = Vector2( 4859.11, -235.053 )

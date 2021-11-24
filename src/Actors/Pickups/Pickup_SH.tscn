@@ -1,12 +1,10 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://src/Actors/Pickups/Pickup.tscn" type="PackedScene" id=1]
-
-[sub_resource type="StreamTexture" id=1]
-load_path = "res://.import/tile_0026.png-62ab16282978ff1fc4841e5b113c66c2.stex"
+[ext_resource path="res://assets/pickups/powerupBlue_shield.png" type="Texture" id=2]
 
 [node name="Pickup_SH" instance=ExtResource( 1 )]
 effect_name = "+25 SH"
 
 [node name="Sprite" parent="." index="0"]
-texture = SubResource( 1 )
+texture = ExtResource( 2 )

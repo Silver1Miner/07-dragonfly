@@ -1,16 +1,23 @@
 extends RigidBody2D
 class_name Bomb
 
+export var hp = 5
 export var Explosion: PackedScene
 export var damage = 100
 export var target_groups = ["enemy", "player"]
 
 func _ready() -> void:
 	add_to_group("environmental")
+	$Hitbox.add_to_group("environmental")
 
 func _process(_delta: float) -> void:
 	$Sprite.rotation = linear_velocity.angle()
 	if position.y > 400 + 16:
+		detonate()
+
+func take_damage(damage_value: float) -> void:
+	hp -= damage_value
+	if hp <= 0:
 		detonate()
 
 func _on_Bomb_body_entered(body: Node) -> void:
