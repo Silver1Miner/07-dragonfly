@@ -50,6 +50,7 @@ func _on_ItemList_item_selected(index: int) -> void:
 	current_item = items[index]
 	if current_item == "Repairs":
 		$Display/CostDisplay.text = "Charge to buy Repairs: 1000"
+		itemtext.set_text("Get your ship patched up back up to full health.")
 		return
 	itemtext.set_text(item_data.get_entry(items[index], "lore"))
 	match current_mode:

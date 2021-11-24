@@ -46,16 +46,24 @@ var data = {
 		"lore": """The Scarab Class airship"""},
 	"Scorpion": {
 		"lore": """The Scorpion Class airship"""},
+	"Spiderweb Silk": {
+		"lore": "An incredibly valuable commodity. Light and yet more durable than steel.",
+		"buy_cost": 5000,
+		"sell_price": 4000,
+		"icon": "",
+	},
 	"Bomb": {
 		"lore": """Bombs pack a lot of punch, but can only be dropped. Gravity has to take care of the rest. I hope you paid attention to your physics classes!""",
 		"baseprice": 1000,
 		"buy_cost": 1000,
 		"sell_price": 800,
+		"icon": "res://assets/guns/tile_0012.png"
 	},
 	"Crate": {
 		"lore": """An unopened shipping crate. It can be expensive to open, but who knows what treasures could be contained inside?""",
 		"buy_cost": 1000,
 		"sell_price": 800,
+		"icon": "res://assets/crates/treasure chest0000.png"
 	},
 	"Chaingun": {
 		"lore": """The Chain Gun""",

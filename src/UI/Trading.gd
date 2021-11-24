@@ -6,6 +6,8 @@ var current_item: String = "Shotgun"
 func _ready() -> void:
 	if $Shop.connect("transaction", self, "_on_transaction") != OK:
 		push_error("shop signal connect fail")
+	if $Uncrate.connect("transaction", self, "_on_transaction") != OK:
+		push_error("uncrate signal connect fail")
 	$Shop.visible = false
 	$Uncrate.visible = false
 	$HUD.change_avatar("ava-upset")
