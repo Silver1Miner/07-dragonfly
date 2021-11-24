@@ -22,15 +22,15 @@ hp = 80
 [node name="CollisionShape2D" parent="." index="2"]
 shape = SubResource( 1 )
 
-[node name="Gun" parent="." index="3"]
-position = Vector2( 0, 0 )
-
 [node name="CollisionShape2D" parent="Hitbox" index="0"]
 shape = SubResource( 2 )
 
-[node name="Sprite" parent="." index="5"]
+[node name="Sprite" parent="." index="4"]
 rotation = 0.0
 texture = ExtResource( 3 )
 
-[node name="GunSprite" type="Sprite" parent="." index="8"]
+[node name="Gun" parent="Aim" index="0"]
+position = Vector2( 16, 0 )
+
+[node name="GunSprite" type="Sprite" parent="Aim" index="1"]
 texture = ExtResource( 4 )

@@ -77,10 +77,6 @@ anims/flash = SubResource( 5 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 4 )
 
-[node name="Gun" parent="." instance=ExtResource( 6 )]
-position = Vector2( -16, 0 )
-Bullet = ExtResource( 7 )
-
 [node name="Hitbox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
@@ -89,6 +85,12 @@ shape = SubResource( 2 )
 [node name="Sprite" type="Sprite" parent="."]
 rotation = -1.5708
 texture = ExtResource( 2 )
+
+[node name="Aim" type="Position2D" parent="."]
+
+[node name="Gun" parent="Aim" instance=ExtResource( 6 )]
+position = Vector2( -16, 0 )
+Bullet = ExtResource( 7 )
 
 [node name="hp_bar" parent="." instance=ExtResource( 3 )]
 margin_left = -16.0

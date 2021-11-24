@@ -16,7 +16,7 @@ func _ready() -> void:
 	add_to_group("enemy")
 	$Hitbox.add_to_group("enemy")
 	set_bars()
-	$Gun.load_gun_data("Enemy Chain Gun")
+	$Aim/Gun.load_gun_data("Enemy Chain Gun")
 	if spawn_time > 0:
 		$Timer.wait_time = spawn_time
 	$Timer.start()
@@ -28,7 +28,7 @@ func set_bars() -> void:
 
 func _physics_process(delta):
 	if activated:
-		$Gun.fire()
+		$Aim/Gun.fire()
 		if invincible:
 			$AnimationPlayer.play("flash")
 		else:

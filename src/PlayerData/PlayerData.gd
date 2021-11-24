@@ -10,8 +10,8 @@ var cash = 100
 var max_cash = 999999
 var player_hp = 50
 var player_shield = 100
-var player_weapon_1 = "Chaingun"
-var player_weapon_2 = "Bolt"
+var player_weapon_1 = "Spreadgun"
+var player_weapon_2 = "Shotgun"
 var lore_found = 4 # max 4
 var ships = [1, 1, 1]
 var current_ship = 0
@@ -19,10 +19,10 @@ var current_chat_scene = -1
 var new_game = false
 
 func _ready() -> void:
-	load_data()
+	pass
 
 func load_data() -> void:
-	pass
+	print("loaded game")
 
 func save_data() -> void:
 	pass

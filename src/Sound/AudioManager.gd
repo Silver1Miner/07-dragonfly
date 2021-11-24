@@ -9,7 +9,7 @@ func play_music(music_path: String, start:float = 0) -> void:
 var available = []
 var queue = []
 func _ready() -> void:
-	for i in 8:
+	for i in 32:
 		var p = AudioStreamPlayer.new()
 		add_child(p)
 		available.append(p)

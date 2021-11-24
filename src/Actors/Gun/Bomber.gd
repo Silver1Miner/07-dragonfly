@@ -14,8 +14,8 @@ func bomb() -> void:
 	bomb.damage = damage
 	if get_parent().get("velocity"):
 		bomb.set_axis_velocity(get_parent().velocity)
-	elif get_parent().get("bomb_velocity"):
-		bomb.set_axis_velocity(get_parent().bomb_velocity)
+	elif get_parent().get_parent().get("bomb_velocity"):
+		bomb.set_axis_velocity(get_parent().get_parent().bomb_velocity)
 	ObjectRegistry.register_bullet(bomb)
 	$Timer.wait_time = cooldown
 	$Timer.start()

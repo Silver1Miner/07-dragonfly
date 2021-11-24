@@ -9,6 +9,7 @@ func _ready() -> void:
 	add_to_group("environmental")
 
 func _process(_delta: float) -> void:
+	$Sprite.rotation = linear_velocity.angle()
 	if position.y > 400 + 16:
 		detonate()
 

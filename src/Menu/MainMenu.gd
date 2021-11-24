@@ -12,7 +12,7 @@ func _on_new_pressed() -> void:
 		push_error("fail to change scene")
 
 func _on_load_pressed() -> void:
-	print("load game")
+	PlayerData.load_data()
 	if get_tree().change_scene_to(PlayerData.hub) != OK:
 		push_error("fail to change scene")
 
