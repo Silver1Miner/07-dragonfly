@@ -212,7 +212,7 @@ var data = {
 		"icon": "res://assets/guns/mg6000.png",
 	},
 	"Bolt": {
-		"lore": """The Scorpion Stinger Bolt Beam is a scaled-down version of the now infamous Bolt Beam used by spaceships. Though smaller in absolute size, it is perhaps even more dangerous in atmospheric air battles than in space.""",
+		"lore": """The Scorpion Stinger Bolt Beam is a scaled-down version of the now infamous Bolt Beam used by space ships. Though smaller in absolute size, pound for pound, it is perhaps even more dangerous in atmospheric air battles than its big brother is in space.""",
 		"baseprice": 1000,
 		"buy_cost": 1000,
 		"sell_price": 800,

@@ -42,9 +42,8 @@ func _on_exit_area_entered(area) -> void:
 
 func _on_end_area_entered(area) -> void:
 	if area.is_in_group("player"):
-		cargo_list = $Player.cargo
-		cargo_list_string = str(cargo_list)
-		$Pause.update_cargo_list(cargo_list_string)
+		crates_gained = player.crates_gained
+		$Pause.update_cargo_list("Crates x" + str(crates_gained))
 		$Pause.end_mission()
 
 func _on_player_destroyed() -> void:

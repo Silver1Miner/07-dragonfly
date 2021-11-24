@@ -32,6 +32,7 @@ func mission_failed() -> void:
 	visible = true
 
 func end_mission() -> void:
+	$cargo.visible = true
 	$Failure.visible = false
 	$Success.visible = true
 	$Options.visible = false

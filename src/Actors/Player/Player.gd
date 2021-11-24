@@ -56,6 +56,7 @@ func load_player_data() -> void:
 	bombs = PlayerData.inventory["Bomb"]
 	$Sprite.texture = PlayerData.ship_visuals[PlayerData.current_ship]["sprite"]
 	$AnimatedSprite.position = PlayerData.ship_visuals[PlayerData.current_ship]["wings"]
+	$Gun2.position = PlayerData.ship_visuals[PlayerData.current_ship]["Gun2"]
 
 func save_player_data() -> void:
 	PlayerData.cash = cash
