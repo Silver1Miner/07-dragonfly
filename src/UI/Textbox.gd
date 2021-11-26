@@ -27,8 +27,6 @@ var new_game_text = {
 	"text": "Here you can customize my outer chasis and my weapons loadout, or check my cargo inventory."},
 	"2": {"name": "Ava", "profile": "ava-base",
 	"text": "We can go to the trading hub to buy equipment and sell loot, or go rob a train to get more loot."},
-	"3": {"name": "Ava", "profile": "ava-base",
-	"text": "Oh yeah, you're a train robber, apparently. But I don't judge. You do what you need to do to survive, captain."},
 }
 var chat_scenes = {
 	0: {"0": {"name": "Ava", "profile": "ava-base",

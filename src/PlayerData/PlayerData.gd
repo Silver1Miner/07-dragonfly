@@ -1,6 +1,8 @@
 extends Node
 
 export var SCROLL_SPEED = 30
+var text_scroll: PackedScene = preload("res://src/UI/TextScroll.tscn")
+var main_menu: PackedScene = preload("res://src/Menu/MainMenu.tscn")
 var hub: PackedScene = preload("res://src/UI/Hub.tscn")
 var trading: PackedScene = preload("res://src/UI/Trading.tscn")
 var mission: PackedScene = preload("res://src/World/World.tscn")

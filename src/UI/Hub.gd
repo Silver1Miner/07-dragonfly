@@ -66,14 +66,14 @@ func update_ship_choice() -> void:
 	lore_read.text = item_data.get_entry(ship_names[PlayerData.current_ship], "lore")
 
 func _on_Ship_item_selected(index: int) -> void:
-	AudioManager.play_sound("res://assets/Audio/select_005.ogg")
+	AudioManager.play_sound("res://assets/Audio/ui/select_005.ogg")
 	if index == 0:
 		return
 	PlayerData.current_ship = index - 1
 	update_ship_choice()
 
 func _on_Primary_item_selected(index: int) -> void:
-	AudioManager.play_sound("res://assets/Audio/select_005.ogg")
+	AudioManager.play_sound("res://assets/Audio/ui/select_005.ogg")
 	if index == 0:
 		return
 	PlayerData.inventory[PlayerData.player_weapon_1] += 1
@@ -84,7 +84,7 @@ func _on_Primary_item_selected(index: int) -> void:
 	lore_read.set_text(item_data.get_entry(PlayerData.player_weapon_1, "lore"))
 
 func _on_Secondary_item_selected(index: int) -> void:
-	AudioManager.play_sound("res://assets/Audio/select_005.ogg")
+	AudioManager.play_sound("res://assets/Audio/ui/select_005.ogg")
 	if index == 0:
 		return
 	PlayerData.inventory[PlayerData.player_weapon_2] += 1

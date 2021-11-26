@@ -1,8 +1,13 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://assets/theme/Main.tres" type="Theme" id=1]
 [ext_resource path="res://src/Menu/Settings.gd" type="Script" id=2]
 [ext_resource path="res://assets/theme/UI.tres" type="Theme" id=3]
+[ext_resource path="res://assets/theme/Oxanium-Light.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 14
+font_data = ExtResource( 4 )
 
 [node name="Settings" type="ColorRect"]
 anchor_right = 1.0
@@ -81,23 +86,29 @@ margin_top = 20.0
 margin_right = 615.0
 margin_bottom = 337.0
 theme = ExtResource( 3 )
-text = "CREDITS
+custom_fonts/font = SubResource( 1 )
+text = "Credits
 
 Dragonfly
 by Jack Anderson
 
-Soundtrack
-'Sky Bandit' by Vav
+Soundtrack by Vav
 
 Character Portraits made in Mannequin
 
-Additional CC0 Assets from:
-kenney.nl
-opengameart.org
-freesound.org
-fonts.google.com
 Powered by Godot Engine"
 align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="credits" type="Button" parent="."]
+margin_left = 360.0
+margin_top = 240.0
+margin_right = 494.0
+margin_bottom = 270.0
+rect_min_size = Vector2( 90, 30 )
+text = "FULL CREDITS"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -105,3 +116,4 @@ __meta__ = {
 [connection signal="pressed" from="back" to="." method="_on_back_pressed"]
 [connection signal="value_changed" from="VolumeControls/MusicVolume" to="." method="_on_MusicVolume_value_changed"]
 [connection signal="value_changed" from="VolumeControls/SoundVolume" to="." method="_on_SoundVolume_value_changed"]
+[connection signal="pressed" from="credits" to="." method="_on_credits_pressed"]

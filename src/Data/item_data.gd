@@ -71,7 +71,7 @@ var data = {
 	"Scarab": {
 		"lore": """The Scarab Class ornithopter airship, known for its bright metallic color, was originally a popular choice for recycling and sanitation companies."""},
 	"Scorpion": {
-		"lore": """The Scorpion Class ornithopter airship, named for the positin of its mounted weapons, was originally designed for use in private security but soon abandoned for newer models."""},
+		"lore": """The Scorpion Class ornithopter airship, named for the positioning of its mounted weapons, was originally designed for use in private security but soon abandoned for newer models."""},
 	"Spiderweb Silk": {
 		"lore": """A valuable commodity, light and yet more durable than steel. In addition to industrial applications, it is also woven into textiles, and even used as a medium of exchange in some regions.""",
 		"buy_cost": 5000,
