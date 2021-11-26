@@ -24,6 +24,7 @@ func _on_Load_pressed() -> void:
 	print("load file ", str(current_slot))
 	PlayerData.load_data(PlayerData.load_game(current_slot))
 	visible = false
+	AudioManager.play_music("res://assets/Audio/Bridge_To_Your_Heart.mp3")
 	if get_tree().change_scene_to(PlayerData.hub) != OK:
 		push_error("fail to change scene")
 

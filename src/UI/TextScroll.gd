@@ -107,13 +107,12 @@ var credits = [
 		"Dragonfly",
 		"by Jack Anderson"
 	],[
-		"VEN STUDIOS",
-		"Jack Anderson"
-	],[
 		"SOUNDTRACK",
 		"'Sky Bandit' by Vav",
 		"'Victory' by Vav",
 		"'Defeat' by Vav",
+		"'Bridge to Your Heart' by Vav",
+		"'Lazy Dragonfly' by Jack"
 	],[
 		"Additional CC0 Assets from",
 		"opengameart.org",
