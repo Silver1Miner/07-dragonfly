@@ -103,11 +103,11 @@ __meta__ = {
 }
 
 [node name="credits" type="Button" parent="."]
-margin_left = 360.0
+margin_left = 350.0
 margin_top = 240.0
-margin_right = 494.0
+margin_right = 500.0
 margin_bottom = 270.0
-rect_min_size = Vector2( 90, 30 )
+rect_min_size = Vector2( 150, 30 )
 text = "FULL CREDITS"
 __meta__ = {
 "_edit_use_anchors_": false

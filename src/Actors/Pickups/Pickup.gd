@@ -28,7 +28,7 @@ func _on_Pickup_area_entered(area: Area2D) -> void:
 			"+25 CASH":
 				area.get_parent()._set_cash(area.get_parent().cash + 25)
 			"+1 BOMB":
-				area.get_parent().set_bombs(area.get_parent().bombs + 1)
+				area.get_parent()._set_bombs(area.get_parent().bombs + 1)
 			"+1 CRATE":
 				#area.get_parent().add_cargo("crate")
 				area.get_parent().crates_gained += 1

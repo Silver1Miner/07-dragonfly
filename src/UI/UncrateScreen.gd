@@ -32,6 +32,7 @@ func _on_Accept_pressed() -> void:
 	roll()
 
 func _on_Decline_pressed() -> void:
+	AudioManager.play_sound("res://assets/Audio/ui/back_002.ogg")
 	visible = false
 
 func _on_ResultClose_pressed() -> void:
@@ -52,7 +53,23 @@ func roll() -> void:
 	randomize()
 	var roll = rand_range(0, 99)
 	if roll < 1:
+		get_prize("Gold Bugs")
+	elif roll >= 1 and roll < 5:
 		get_prize("Spiderweb Silk")
+	elif roll >= 5 and roll < 10:
+		get_prize("Chaingun")
+	elif roll >= 10 and roll < 15:
+		get_prize("Spreadgun")
+	elif roll >= 20 and roll < 25:
+		get_prize("Shotgun")
+	elif roll >= 25 and roll < 30:
+		get_prize("Scattergun")
+	elif roll >= 30 and roll < 35:
+		get_prize("Flamer")
+	elif roll >= 35 and roll < 40:
+		get_prize("Burner")
+	elif roll >= 40 and roll < 45:
+		get_prize("Bolt")
 	else:
 		get_prize("Bomb")
 

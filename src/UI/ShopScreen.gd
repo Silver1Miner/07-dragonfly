@@ -47,6 +47,7 @@ func load_sell_items() -> void:
 
 var current_item = ""
 func _on_ItemList_item_selected(index: int) -> void:
+	AudioManager.play_sound("res://assets/Audio/ui/select_008.ogg")
 	current_item = items[index]
 	if current_item == "Repairs":
 		$Display/CostDisplay.text = "Charge to buy Repairs: 1000"
@@ -64,22 +65,30 @@ func _on_Accept_pressed() -> void:
 		PlayerData.inventory[current_item] = clamp(PlayerData.inventory[current_item] - 1, 0, 99)
 		PlayerData.cash = clamp(PlayerData.cash + item_data.data[current_item]["sell_price"], 0, PlayerData.max_cash)
 		load_sell_items()
+		AudioManager.play_sound("res://assets/Audio/ui/select_005.ogg")
+		emit_signal("transaction")
 	elif current_mode == shop_mode.BUY:
 		if current_item == "Repairs":
 			if PlayerData.cash >= 1000:
 				PlayerData.player_hp = 100
 				PlayerData.cash = clamp(PlayerData.cash - 1000, 0, PlayerData.max_cash)
 				$Display/CostDisplay.text = "PURCHASED"
+				emit_signal("transaction")
+				AudioManager.play_sound("res://assets/Audio/ui/select_005.ogg")
 			else:
 				$Display/CostDisplay.text = "INSUFFICIENT FUNDS"
+				AudioManager.play_sound("res://assets/Audio/ui/back_002.ogg")
 		elif item_data.data[current_item]["buy_cost"] <= PlayerData.cash:
 			PlayerData.inventory[current_item] = clamp(PlayerData.inventory[current_item] + 1, 0, 99)
 			PlayerData.cash = clamp(PlayerData.cash - item_data.data[current_item]["buy_cost"], 0, PlayerData.max_cash)
 			$Display/CostDisplay.text = "PURCHASED"
+			emit_signal("transaction")
+			AudioManager.play_sound("res://assets/Audio/ui/select_005.ogg")
 			load_buy_items()
 		else:
 			$Display/CostDisplay.text = "INSUFFICIENT FUNDS"
-	emit_signal("transaction")
+			AudioManager.play_sound("res://assets/Audio/ui/back_002.ogg")
 
 func _on_Decline_pressed() -> void:
+	AudioManager.play_sound("res://assets/Audio/ui/back_002.ogg")
 	visible = false

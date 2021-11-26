@@ -138,7 +138,7 @@ func _physics_process(delta):
 
 func recharge_shield() -> void:
 	if energy == max_energy:
-		_set_SH(shield + 1)
+		_set_SH(shield + 5)
 
 func _set_cash(new_cash) -> void:
 	var prev_cash = cash
@@ -190,6 +190,8 @@ func take_damage(damage_value: float) -> void:
 		return
 	if shield > 0:
 		_set_SH(shield - damage_value)
+		invincible = true
+		$Timer.start()
 	else:
 		_set_HP(hp - damage_value)
 		invincible = true

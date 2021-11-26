@@ -1,8 +1,8 @@
 extends Control
 
 var next_level = PlayerData.hub
-const section_time := 1.0
-const line_time := 0.4
+const section_time := 2.0
+const line_time := 0.8
 const speed_up_multiplier := 10.0
 
 var base_speed := 20
@@ -23,14 +23,12 @@ var lines := []
 var text := []
 
 func _ready() -> void:
-	if skip_button.connect("pressed", self, "_on_skip_button_pressed") != OK:
-		push_error("skip button connect fail")
 	if PlayerData.new_game:
-		base_speed = 50
+		base_speed = 30
 		text = intro_text
 		next_level = PlayerData.hub
 	else:
-		base_speed = 50
+		base_speed = 30
 		text = credits
 		next_level = PlayerData.main_menu
 
@@ -86,15 +84,15 @@ func _unhandled_input(event) -> void:
 	if event.is_action_released("ui_down") and !event.is_echo():
 		speed_up = false
 
-func _on_skip_button_pressed() -> void:
+func _on_Skip_pressed() -> void:
 	finish()
 
 var intro_text = [
 	[
-		"Life on the desert planet Hive can be hard",
-		"Hive is completely dominated by shipping corporations,",
+		"Life on the desert planet Hive can be hard.",
 	],[
-		"Most residents on Hive are slaves to these corporations.",
+		"Hive is a company planet, completely dominated by shipping corporations.",
+		"Most residents on Hive are workers bound to these corporations.",
 		"But a small few choose a different life.",
 	],[
 		"Together with your trusty Airship and its onboard AI,",
@@ -132,3 +130,6 @@ var credits = [
 		"You, for playing"
 	]
 ]
+
+
+

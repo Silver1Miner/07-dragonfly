@@ -20,42 +20,40 @@ func get_lore(index) -> String:
 
 var lore = [
 	{"name": "Old Man of the Moon",
-"text": """The Old Man below the Moon appears in several ancient legends about love and marriage. He is said to use a red string to tie together future mates.
+"text": """The Old Man below the Moon appears in several ancient legends about love and marriage. He is said to use a red string to tie together future mates. Legends vary as to where he ties the strings, such as the ankle or around a finger.
 
 Despite the age of the story, it has gained a resurgence of popularity in more recent times, albeit in a slightly modified form.
 
-In the modern myth, pirates, bandits, and thieves pass around stories of an old man who is a perfect fence, able to buy and sell anything they desire.
+In the modern myth, pirates, bandits, and thieves pass around stories of an old man who is a perfect supplier, middle man, and fence, willing to buy and able to sell anything they desire.
 
-All major shipping corporations, governments, and private security firms have continuously confirmed that there is no truth to this modern myth.
+All major shipping corporations, governments, and private security firms have continuously issued statements that there is no truth to this modern myth and that no such Old Man exists.
 """},
 	{"name": "Unter Freight",
-"text": """Unter Freight is a railway shipping company with strong ties to the Relentless Shipping congolomerate. Unter maintains the single largest railway network on the planet, colloquially known as 'The Spider Web.'
+"text": """Unter Freight is a railway shipping company with strong ties to the Relentless Shipping congolomerate. Unter maintains the single largest railway network on the planet, colloquially known as 'The Spider Web,' on which it runs its freight trains, colloquially known as 'the Silk Worms.'
 
-Unfortunately, this position has made Unter a popular target for pirates, who often attempt to rob their trains in transit. For this reason, Unter has invested heavily in arming its trains with defense turrets, as well as contracting private security firms to deal with such annoyances.
+Unfortunately, this position has made Unter a popular target for pirates, who often attempt to rob their trains in transit. For this reason, Unter has invested heavily in arming its trains with defense turrets, deploying escort drones, and contracting private security firms to deal with such annoyances.
 """},
 	{"name": "Banned Ships",
 "text": """By order of the Unter Freight company:
 
-The following airships are banned due to popularity among pirate groups:
+The following airships are banned due to their popularity among pirate groups:
 
 Dragonfly
 Scarab
 Scorpion
 
-Any airship of these models will be assumed to be a pirate shot on sight.
+Any airship of these models will be assumed to be a pirate and shot on sight.
 """},
 	{"name": "Bounty Hunter's Letter",
 "text": """A fragment from a damaged letter:
 
-'...through me.
-
-You're not special you know.
+'...through me. You're not special you know.
 
 Did you think that you're the only one the Old Man has tricked into doing his dirty work?
 
 He's got hundreds of naive fools just like you. The Bug job, the Star Scope job, every single one was the same: a naive kid he tricked into doing his dirty work, only to get blown up by me in the end.
 
-I've already taken out hundreds of other little pirates he made into his little puppets. Keep this up, and you'll be the next...'
+I've already taken out hundreds of other little pirates he made into his little puppets. Keep this up, and you'll be the next to...'
 """},
 ]
 
@@ -75,39 +73,39 @@ var data = {
 	"Spiderweb Silk": {
 		"lore": """A valuable commodity, light and yet more durable than steel. In addition to industrial applications, it is also woven into textiles, and even used as a medium of exchange in some regions.""",
 		"buy_cost": 5000,
-		"sell_price": 2000,
+		"sell_price": 1000,
 		"icon": "res://assets/items/Tent.png",
 	},
 	"Gold Bugs": {
 		"lore": """A very valuable commodity, though heavy and expensive to transport.""",
 		"buy_cost": 6000,
-		"sell_price": 5000,
+		"sell_price": 3000,
 		"icon": "res://assets/items/5.png"
 	},
 	"Bomb": {
 		"lore": """Bombs pack a lot of punch, but can only be dropped. Gravity has to take care of the rest. I hope you paid attention to your physics classes!""",
 		"baseprice": 1000,
-		"buy_cost": 1000,
-		"sell_price": 800,
+		"buy_cost": 50,
+		"sell_price": 50,
 		"icon": "res://assets/guns/tile_0012.png"
 	},
 	"Crate": {
 		"lore": """A locked and unopened shipping crate. It costs a fee to break open, but who knows what treasures could be contained inside?""",
-		"buy_cost": 1000,
-		"sell_price": 800,
+		"buy_cost": 100,
+		"sell_price": 100,
 		"icon": "res://assets/crates/treasure chest0000.png"
 	},
 	"Chaingun": {
 		"lore": """The Clavata 'Bullet Ant' Chaingun is an old but reliable rapid-fire weapon that boasts near pin-point accuracy.""",
 		"baseprice": 1000,
-		"buy_cost": 1000,
-		"sell_price": 800,
-		"damage": 4.0,
+		"buy_cost": 600,
+		"sell_price": 500,
+		"damage": 3.0,
 		"cooldown": 0.08,
 		"direction": Vector2.RIGHT,
 		"speed": 300,
 		"lifetime": 3.0,
-		"energy_cost": 10.0,
+		"energy_cost": 8.0,
 		"target_groups": ["enemy", "environmental"],
 		"bullet_groups": ["player_bullet"],
 		"bullet_number": 1,
@@ -119,8 +117,8 @@ var data = {
 	"Spreadgun": {
 		"lore": """The Myrmecia Spreadgun is a multi-barreled rapid-fire weapon generally used by security forces for suppressive fire and crowd control.""",
 		"baseprice": 1000,
-		"buy_cost": 1000,
-		"sell_price": 800,
+		"buy_cost": 800,
+		"sell_price": 700,
 		"damage": 3.0,
 		"cooldown": 0.1,
 		"direction": Vector2.RIGHT,
@@ -140,13 +138,13 @@ var data = {
 		"baseprice": 1000,
 		"buy_cost": 1000,
 		"sell_price": 800,
-		"damage": 18.0,
+		"damage": 25.0,
 		"cooldown": 0.8,
 		"direction": Vector2.RIGHT,
 		"speed": 900,
 		"lifetime": 0.2,
-		"energy_cost": 30.0,
-		"target_groups": ["enemy", "environmental"],
+		"energy_cost": 40.0,
+		"target_groups": ["enemy","environmental"],
 		"bullet_groups": ["player_bullet"],
 		"bullet_number": 4,
 		"angle": 4,
@@ -157,27 +155,27 @@ var data = {
 	"Scattergun": {
 		"lore": """The Titan Beetle Burst gun was a prototype demolition tool that uses short-range energy pellets, eventually abandoned due to the difficulties in limiting pellet spread.""",
 		"baseprice": 1000,
-		"buy_cost": 1000,
-		"sell_price": 800,
-		"damage": 18.0,
+		"buy_cost": 1200,
+		"sell_price": 1000,
+		"damage": 28.0,
 		"cooldown": 0.9,
 		"direction": Vector2.RIGHT,
 		"speed": 900,
 		"lifetime": 0.15,
-		"energy_cost": 10.0,
+		"energy_cost": 50.0,
 		"target_groups": ["enemy", "environmental"],
 		"bullet_groups": ["player_bullet"],
 		"bullet_number": 6,
-		"angle": 6,
+		"angle": 5,
 		"bullet": preload("res://src/Actors/Gun/Bullet.tscn"),
 		"sound": "res://assets/Audio/guns/522484__filmmakersmanual__shotgun-firing-2.wav",
 		"icon": "res://assets/guns/raging_pitbull.png"
 	},
 	"Flamer": {
-		"lore": """The Bombardier Bettle Flamer is technically not a flamethrower, but a long range torch.""",
+		"lore": """The Bombardier Beetle Flamer was invented to serve the functions of an airship flamethrower while technically not being a flamethrower. It was nevertheless banned under planetary law immediately after release.""",
 		"baseprice": 1000,
-		"buy_cost": 1000,
-		"sell_price": 800,
+		"buy_cost": 1200,
+		"sell_price": 1000,
 		"damage": 2.0,
 		"cooldown": 0.1,
 		"direction": Vector2.RIGHT,
@@ -193,10 +191,10 @@ var data = {
 		"icon": "res://assets/guns/mg5000.png",
 	},
 	"Burner": {
-		"lore": """Though the Firebug Burner is technically not a flamethrower, the tool has nevertheless been classified as one under planetary law in order to regulate ownership.""",
+		"lore": """The Firebug Burner is technically not a flamethrower but a long range torch. However, the tool has nevertheless been classified as a flamethrower under planetary law in order to regulate ownership.""",
 		"baseprice": 1000,
-		"buy_cost": 1000,
-		"sell_price": 800,
+		"buy_cost": 1500,
+		"sell_price": 1200,
 		"damage": 2.5,
 		"cooldown": 0.1,
 		"direction": Vector2.RIGHT,
@@ -212,11 +210,11 @@ var data = {
 		"icon": "res://assets/guns/mg6000.png",
 	},
 	"Bolt": {
-		"lore": """The Scorpion Stinger Bolt Beam is a scaled-down version of the now infamous Bolt Beam used by space ships. Though smaller in absolute size, pound for pound, it is perhaps even more dangerous in atmospheric air battles than its big brother is in space.""",
+		"lore": """The Scorpion Stinger Bolt Beam is a scaled-down version of the now infamous Bolt Beam that is a favorite of space pirates. Though smaller in absolute size, it is, pound for pound, even more dangerous in atmospheric air battles than its big brother is in space.""",
 		"baseprice": 1000,
-		"buy_cost": 1000,
-		"sell_price": 800,
-		"damage": 50.0,
+		"buy_cost": 3000,
+		"sell_price": 2000,
+		"damage": 40.0,
 		"cooldown": 1.0,
 		"direction": Vector2.RIGHT,
 		"speed": 0,
@@ -233,12 +231,12 @@ var data = {
 	"Enemy Chain Gun": {
 		"lore": "A cheap gun often used by private security forces",
 		"baseprice": 0,
-		"buy_cost": 1000,
-		"sell_price": 800,
+		"buy_cost": 100,
+		"sell_price": 100,
 		"damage": 20.0,
-		"cooldown": 1.0,
+		"cooldown": 2.0,
 		"direction": Vector2.LEFT,
-		"speed": 50,
+		"speed": 100,
 		"lifetime": 15.0,
 		"energy_cost": 0,
 		"target_groups": ["player"],
@@ -251,8 +249,8 @@ var data = {
 	"Enemy Turret Gun": {
 		"lore": "A cheap gun often used by private security forces",
 		"baseprice": 0,
-		"buy_cost": 1000,
-		"sell_price": 800,
+		"buy_cost": 100,
+		"sell_price": 100,
 		"damage": 20.0,
 		"cooldown": 3.0,
 		"direction": Vector2.LEFT,

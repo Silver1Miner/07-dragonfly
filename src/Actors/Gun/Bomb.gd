@@ -12,7 +12,7 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	$Sprite.rotation = linear_velocity.angle()
-	if position.y > 400 + 16:
+	if position.y > 400:
 		detonate()
 
 func take_damage(damage_value: float) -> void:
@@ -30,4 +30,7 @@ func detonate() -> void:
 	explosion.damage = damage
 	explosion.global_position = global_position
 	ObjectRegistry.register_bullet(explosion)
+	queue_free()
+
+func _on_VisibilityNotifier2D_screen_exited() -> void:
 	queue_free()

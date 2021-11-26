@@ -8,7 +8,7 @@ var trading: PackedScene = preload("res://src/UI/Trading.tscn")
 var mission: PackedScene = preload("res://src/World/World.tscn")
 
 var current_position = Vector2.ZERO
-var cash = 100
+var cash = 6000
 var max_cash = 999999
 var player_hp = 50
 var player_shield = 100

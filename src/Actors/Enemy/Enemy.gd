@@ -14,6 +14,7 @@ var entered_screen = false
 func _ready() -> void:
 	add_to_group("enemy")
 	$Hitbox.add_to_group("enemy")
+	$Hitbox.visible = false
 	set_bars()
 	$Aim/Gun.load_gun_data("Enemy Chain Gun")
 	if spawn_time > 0:
@@ -80,12 +81,14 @@ func _on_Hitbox_area_entered(area: Area2D) -> void:
 		area.get_parent().take_damage(hp)
 
 func _on_VisibilityNotifier2D_screen_exited() -> void:
-	if entered_screen:
-		print("enemy exited screen")
-		queue_free()
+	#if entered_screen:
+	#	print("enemy exited screen")
+	#	queue_free()
+	queue_free()
 
 func _on_VisibilityNotifier2D_screen_entered() -> void:
 	print("enemy entered screen")
+	$Hitbox.visible = true
 	entered_screen = true
 	invincible = false
 

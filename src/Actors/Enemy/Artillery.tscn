@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://src/Actors/Enemy/Enemy.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Actors/Enemy/Artillery.gd" type="Script" id=2]
@@ -6,13 +6,14 @@
 [ext_resource path="res://assets/enemies/turret-base.png" type="Texture" id=4]
 [ext_resource path="res://assets/enemies/turret-cannon.png" type="Texture" id=5]
 [ext_resource path="res://src/Actors/Gun/Bomb_Enemy.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/Actors/Pickups/Pickup_Bomb.tscn" type="PackedScene" id=7]
 
 [sub_resource type="CircleShape2D" id=1]
 
 [node name="Artillery" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 speed = 0
-drop = null
+drop = ExtResource( 7 )
 max_hp = 100
 hp = 100
 
@@ -20,7 +21,6 @@ hp = 100
 shape = SubResource( 1 )
 
 [node name="Sprite" parent="." index="4"]
-rotation = 0.0
 texture = ExtResource( 4 )
 
 [node name="Bomber" parent="Aim" index="0" instance=ExtResource( 3 )]

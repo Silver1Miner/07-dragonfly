@@ -2,7 +2,7 @@ extends Area2D
 class_name Explosion
 
 export var damage = 0
-export var size_scale = 2
+export var size_scale = 4
 var lifetime = 0.5
 
 func _ready() -> void:

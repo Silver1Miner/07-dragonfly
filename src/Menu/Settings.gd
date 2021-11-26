@@ -5,6 +5,7 @@ func _ready() -> void:
 
 
 func _on_back_pressed() -> void:
+	AudioManager.play_sound("res://assets/Audio/ui/back_002.ogg")
 	visible = false
 
 

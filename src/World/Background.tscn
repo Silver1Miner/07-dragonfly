@@ -27,7 +27,7 @@ centered = false
 offset = Vector2( 0, 100 )
 
 [node name="Dust" type="ParallaxLayer" parent="."]
-motion_scale = Vector2( 64, 1 )
+motion_scale = Vector2( 128, 1 )
 motion_mirroring = Vector2( 640, 0 )
 
 [node name="Sprite" type="Sprite" parent="Dust"]

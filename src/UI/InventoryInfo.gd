@@ -17,6 +17,7 @@ func load_items() -> void:
 		itemlist.add_item(item + " x" + str(PlayerData.inventory[item]),load(item_data.get_entry(item,"icon")))
 
 func _on_ItemList_item_selected(index: int) -> void:
+	AudioManager.play_sound("res://assets/Audio/ui/select_008.ogg")
 	if index < len(items):
 		print(items[index])
 		itemtext.set_text(item_data.get_entry(items[index], "lore"))

@@ -5,6 +5,7 @@
 
 [node name="Pickup_EN" instance=ExtResource( 1 )]
 effect_name = "+25 EN"
+speed = 40
 
 [node name="Sprite" parent="." index="0"]
 texture = ExtResource( 2 )

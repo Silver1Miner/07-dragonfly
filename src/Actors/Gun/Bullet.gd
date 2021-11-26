@@ -34,3 +34,8 @@ func _on_Bullet_area_entered(area: Area2D) -> void:
 				explosion.global_position = global_position
 				ObjectRegistry.register_bullet(explosion)
 				queue_free()
+
+
+func _on_VisibilityNotifier2D_screen_exited() -> void:
+	if !piercing:
+		queue_free()
