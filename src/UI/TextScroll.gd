@@ -62,6 +62,8 @@ func _process(delta: float) -> void:
 func finish():
 	if not finished:
 		finished = true
+		if next_level == PlayerData.hub:
+			AudioManager.play_music("res://assets/Audio/Bridge_To_Your_Heart.mp3")
 		if get_tree().change_scene_to(next_level) != OK:
 			push_error("fail to change scene")
 

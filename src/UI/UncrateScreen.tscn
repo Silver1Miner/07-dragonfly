@@ -134,11 +134,18 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ResultIcon" type="TextureRect" parent="Result/ResultDisplay"]
+[node name="CenterContainer" type="CenterContainer" parent="Result/ResultDisplay"]
 margin_right = 280.0
 margin_bottom = 100.0
 rect_min_size = Vector2( 0, 100 )
-stretch_mode = 4
+
+[node name="ResultIcon" type="TextureRect" parent="Result/ResultDisplay/CenterContainer"]
+margin_left = 124.0
+margin_top = 34.0
+margin_right = 156.0
+margin_bottom = 66.0
+rect_min_size = Vector2( 32, 32 )
+expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }

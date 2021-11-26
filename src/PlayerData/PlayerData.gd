@@ -14,20 +14,113 @@ var player_hp = 50
 var player_shield = 100
 var player_weapon_1 = "Spreadgun"
 var player_weapon_2 = "Bolt"
-var lore_found = 4 # max 4
+var lore_found = 0 # max 4
 var ships = [1, 1, 1]
 var current_ship = 0
 var current_chat_scene = -1
 var new_game = false
 
-func _ready() -> void:
-	pass
+var current_slot := 0
+var current_save = {
+	"cash": 100,
+	"player_hp": 100,
+	"player_shield": 100,
+	"player_weapon_1": "Chaingun",
+	"player_weapon_2": "Shotgun",
+	"lore_found": 0,
+	"current_ship": 0,
+	"current_chat_scene": -1,
+	"inventory": {
+		"Crate": 0,
+		"Bomb": 10,
+		"Chaingun": 0,
+		"Spreadgun": 0,
+		"Shotgun": 0,
+		"Scattergun": 0,
+		"Flamer": 0,
+		"Burner": 0,
+		"Bolt": 0,
+		"Spiderweb Silk": 0,
+		"Gold Bugs": 0,
+	}
+}
+var default_save = {
+	"cash": 100,
+	"player_hp": 100,
+	"player_shield": 100,
+	"player_weapon_1": "Chaingun",
+	"player_weapon_2": "Shotgun",
+	"lore_found": 0,
+	"current_ship": 0,
+	"current_chat_scene": -1,
+	"inventory": {
+		"Crate": 0,
+		"Bomb": 10,
+		"Chaingun": 0,
+		"Spreadgun": 0,
+		"Shotgun": 0,
+		"Scattergun": 0,
+		"Flamer": 0,
+		"Burner": 0,
+		"Bolt": 0,
+		"Spiderweb Silk": 0,
+		"Gold Bugs": 0,
+	}
+}
 
-func load_data() -> void:
-	print("loaded game")
+func _ready() -> void:
+	current_save = load_game(current_slot)
+	load_data(current_save)
+
+func load_data(data: Dictionary) -> void:
+	cash = data["cash"]
+	player_hp = data["player_hp"]
+	player_shield = data["player_shield"]
+	player_weapon_1 = data["player_weapon_1"]
+	player_weapon_2 = data["player_weapon_2"]
+	lore_found = data["lore_found"]
+	current_ship = data["current_ship"]
+	current_chat_scene = data["current_chat_scene"]
+	inventory = data["inventory"]
 
 func save_data() -> void:
-	pass
+	current_save["cash"] = cash
+	current_save["player_hp"] = player_hp
+	current_save["player_shield"] = player_shield
+	current_save["player_weapon_1"] = player_weapon_1
+	current_save["player_weapon_2"] = player_weapon_2
+	current_save["lore_found"] = lore_found
+	current_save["current_ship"] = current_ship
+	current_save["current_chat_scene"] = current_chat_scene
+	current_save["inventory"] = inventory
+
+func load_game(slot) -> Dictionary:
+	print("loaded game ", str(slot))
+	var F = File.new() #
+	var D = Directory.new() 
+	if D.dir_exists("user://save"):
+		if F.open(str("user://save/",slot,".save"), File.READ_WRITE) == OK:
+			var temp_d = F.get_var()
+			print(temp_d)
+			return temp_d
+		else:
+			print("save file doesn't exist, creating one") 
+			save_game(slot) 
+			return default_save
+	else:
+		print("directory doesn't exist, creating one")
+		D.make_dir("user://save")
+		save_game(slot)
+		return default_save
+
+func save_game(slot) -> void:
+	print("save data ", str(slot))
+	save_data()
+	print(current_save)
+	var F = File.new()
+	F.open(str("user://save/",slot,".save"), File.WRITE)
+	F.store_var(current_save)
+	F.close()
 
 var inventory = {
 	"Crate": 10,

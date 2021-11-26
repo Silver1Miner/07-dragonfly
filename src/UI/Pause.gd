@@ -4,6 +4,8 @@ signal leave()
 
 var victory_music = preload("res://assets/Audio/Victory_Loop.ogg")
 var defeat_music = preload("res://assets/Audio/Defeat_Loop.ogg")
+var crates_gained := 0
+onready var player = get_node("../Player")
 
 func _ready() -> void:
 	visible = false
@@ -19,8 +21,10 @@ func _input(event: InputEvent) -> void:
 				pause()
 
 func pause() -> void:
+	crates_gained = player.crates_gained
+	update_cargo_list("Crates x" + str(crates_gained))
 	$PauseMusic.stream = defeat_music
-	$PauseMusic.play(1.34)
+	$PauseMusic.play()
 	$Failure.visible = false
 	$Success.visible = false
 	$cargo.visible = true
@@ -62,7 +66,7 @@ func _on_leave_pressed() -> void:
 	get_tree().paused = false
 	emit_signal("leave")
 	visible = false
-	AudioManager.play_music("res://assets/Audio/LazyDragonfly.ogg", 1.334)
+	AudioManager.play_music("res://assets/Audio/Bridge_To_Your_Heart.mp3")
 
 func _on_Restart_pressed() -> void:
 	$PauseMusic.stop()
@@ -76,4 +80,5 @@ func _on_victory_end_pressed() -> void:
 	get_tree().paused = false
 	emit_signal("leave")
 	visible = false
-	AudioManager.play_music("res://assets/Audio/LazyDragonfly.ogg", 1.334)
+	AudioManager.play_music("res://assets/Audio/Bridge_To_Your_Heart.mp3")
+	#AudioManager.play_music("res://assets/Audio/LazyDragonfly.ogg", 1.334)

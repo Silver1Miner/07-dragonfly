@@ -83,7 +83,7 @@ var data = {
 		"icon": "res://assets/items/5.png"
 	},
 	"Bomb": {
-		"lore": """Bombs pack a lot of punch, but can only be dropped. Gravity has to take care of the rest. I hope you paid attention to your physics classes!""",
+		"lore": """Bombs pack a lot of punch, but can only be dropped. Gravity has to take care of the rest. Their initial speed depends on your speed, so I hope you paid attention to your physics classes!""",
 		"baseprice": 1000,
 		"buy_cost": 50,
 		"sell_price": 50,

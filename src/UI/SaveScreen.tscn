@@ -1,0 +1,101 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/theme/UI.tres" type="Theme" id=1]
+[ext_resource path="res://assets/UI/glassPanel.png" type="Texture" id=2]
+[ext_resource path="res://src/UI/SaveScreen.gd" type="Script" id=3]
+
+[node name="SaveScreen" type="ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 500, 100 )
+theme = ExtResource( 1 )
+color = Color( 0, 0, 0, 0.784314 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Save" type="NinePatchRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -250.0
+margin_top = -131.0
+margin_right = 250.0
+margin_bottom = 131.0
+rect_min_size = Vector2( 500, 262 )
+texture = ExtResource( 2 )
+patch_margin_left = 16
+patch_margin_top = 17
+patch_margin_right = 15
+patch_margin_bottom = 16
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Display" type="VBoxContainer" parent="Save"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -240.0
+margin_top = -126.0
+margin_right = 240.0
+margin_bottom = 126.0
+custom_constants/separation = 16
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Save/Display"]
+margin_right = 480.0
+margin_bottom = 17.0
+text = "Saves"
+align = 1
+
+[node name="ItemList" type="ItemList" parent="Save/Display"]
+margin_top = 33.0
+margin_right = 480.0
+margin_bottom = 118.0
+rect_min_size = Vector2( 220, 85 )
+fixed_icon_size = Vector2( 20, 20 )
+
+[node name="Control" type="Control" parent="Save/Display"]
+margin_top = 134.0
+margin_right = 480.0
+margin_bottom = 134.0
+
+[node name="Save" type="Button" parent="Save/Display"]
+margin_top = 150.0
+margin_right = 480.0
+margin_bottom = 167.0
+text = "Save"
+
+[node name="Load" type="Button" parent="Save/Display"]
+margin_top = 183.0
+margin_right = 480.0
+margin_bottom = 200.0
+text = "Load"
+
+[node name="Close" type="Button" parent="Save/Display"]
+margin_top = 216.0
+margin_right = 480.0
+margin_bottom = 233.0
+text = "Close"
+
+[node name="ToMain" type="Button" parent="."]
+margin_left = 450.0
+margin_top = 80.0
+margin_right = 553.0
+margin_bottom = 97.0
+text = "To Main Menu"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="item_selected" from="Save/Display/ItemList" to="." method="_on_ItemList_item_selected"]
+[connection signal="pressed" from="Save/Display/Save" to="." method="_on_Save_pressed"]
+[connection signal="pressed" from="Save/Display/Load" to="." method="_on_Load_pressed"]
+[connection signal="pressed" from="Save/Display/Close" to="." method="_on_Close_pressed"]
+[connection signal="pressed" from="ToMain" to="." method="_on_ToMain_pressed"]

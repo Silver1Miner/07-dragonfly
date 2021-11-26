@@ -10,7 +10,7 @@ onready var result_panel = $Result
 onready var crate_animation = $Display/CrateDisplay/CenterContainer/AnimatedSprite
 onready var crate_number = $Display/CrateDisplay/CrateNumber
 onready var result_label = $Result/ResultDisplay/ResultLabel
-onready var result_icon = $Result/ResultDisplay/ResultIcon
+onready var result_icon = $Result/ResultDisplay/CenterContainer/ResultIcon
 
 func _ready() -> void:
 	uncrate_button.disabled = (PlayerData.inventory["Crate"] <= 0 or PlayerData.cash < 60)
@@ -20,6 +20,7 @@ func _ready() -> void:
 
 func refresh() -> void:
 	uncrate_button.disabled = (PlayerData.inventory["Crate"] <= 0 or PlayerData.cash < 60)
+	crate_animation.visible = (PlayerData.inventory["Crate"] > 0)
 
 func update_crate_number(new_number) -> void:
 	crate_number.text = "Crates Remaining: " + str(new_number)
@@ -36,6 +37,7 @@ func _on_Decline_pressed() -> void:
 	visible = false
 
 func _on_ResultClose_pressed() -> void:
+	refresh()
 	crate_animation.frame = 0
 	crate_animation.playing = false
 	result_panel.visible = false

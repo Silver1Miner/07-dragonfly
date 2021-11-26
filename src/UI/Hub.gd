@@ -118,7 +118,8 @@ func _on_text_finished() -> void:
 
 func _on_to_saves_pressed() -> void:
 	AudioManager.play_sound("res://assets/Audio/ui/select_008.ogg")
-	print("saves pressed")
+	$SaveScreen.load_slot_names()
+	$SaveScreen.visible = true
 
 func _on_Inventory_toggled(button_pressed: bool) -> void:
 	AudioManager.play_sound("res://assets/Audio/ui/select_008.ogg")
@@ -136,3 +137,8 @@ func _on_Data_item_selected(index: int) -> void:
 	$HBoxContainer/Lore/Options/Inventory.pressed = false
 	if index > 0:
 		lore_read.set_text(item_data.get_lore(index-1))
+
+func _on_ToMain_pressed() -> void:
+	AudioManager.play_sound("res://assets/Audio/ui/back_002.ogg")
+	if get_tree().change_scene_to(PlayerData.main_menu) != OK:
+		push_error("fail to change scene")

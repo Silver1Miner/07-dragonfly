@@ -4,7 +4,7 @@ onready var pause_menu = $Pause
 onready var player = $Player
 var cargo_list = []
 var cargo_list_string = ""
-var crates_gained = 0
+#var crates_gained = 0
 
 func _ready() -> void:
 	connect_hud()
@@ -35,15 +35,15 @@ func connect_hud() -> void:
 
 func _on_exit_area_entered(area) -> void:
 	if area.is_in_group("player"):
-		crates_gained = player.crates_gained
+		#crates_gained = player.crates_gained
 		#cargo_list_string = str(cargo_list)
-		$Pause.update_cargo_list("Crates x" + str(crates_gained))
+		$Pause.update_cargo_list("Crates x" + str(pause_menu.crates_gained))
 		$Pause.pause()
 
 func _on_end_area_entered(area) -> void:
 	if area.is_in_group("player"):
-		crates_gained = player.crates_gained
-		$Pause.update_cargo_list("Crates x" + str(crates_gained))
+		#crates_gained = player.crates_gained
+		$Pause.update_cargo_list("Crates x" + str(pause_menu.crates_gained))
 		$Pause.end_mission()
 
 func _on_player_destroyed() -> void:
@@ -51,7 +51,7 @@ func _on_player_destroyed() -> void:
 
 func _on_leave() -> void:
 	$Player.save_player_data()
-	PlayerData.inventory["Crate"] += crates_gained
+	PlayerData.inventory["Crate"] += pause_menu.crates_gained
 	#for cargo in cargo_list:
 	#	if cargo in PlayerData.inventory:
 	#		PlayerData.inventory[cargo] += 1
