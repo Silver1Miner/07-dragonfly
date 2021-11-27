@@ -46,13 +46,13 @@ var chat_scenes = {
 	"2": {"name": "Ava", "profile": "ava-base",
 	"text": "If my shield falls low, you can hold off on firing my guns for a short while and wait for my shield to recharge!"},},
 	2: {"0": {"name": "Ava", "profile": "ava-base",
-	"text": "The Old Man runs the trading hub. I don't know why he's called Old Man though; he doesn't look very old."},
+	"text": "The Old Man runs the trading hub. I don't know why he's called the Old Man though; he doesn't look very old."},
 	"1": {"name": "Ava", "profile": "ava-base",
 	"text": "He's a great resource for us. He buys loot from us, and sells equipment and repairs."},
 	"2": {"name": "Ava", "profile": "ava-base",
 	"text": "He also knows how to safely break open locked shipping crates, and will open any crate for us for a small fee."},},
 	3: {"0": {"name": "Ava", "profile": "ava-base",
-	"text": "The Old Man is willing to buy unopened crates from us, or open crates for us for a small fee."},
+	"text": "The Old Man is willing to buy unopened crates from us, or we can pay him to open crates for us."},
 	"1": {"name": "Ava", "profile": "ava-base",
 	"text": "If we pay for a crate to be opened, we get to keep whatever's inside."},
 	"2": {"name": "Ava", "profile": "ava-base",
@@ -64,9 +64,9 @@ var chat_scenes = {
 	"2": {"name": "Ava", "profile": "ava-base",
 	"text": "On the other hand, it's probably better to take a small loss than to get blown up!"},},
 	5: {"0": {"name": "Ava", "profile": "ava-base",
-	"text": "I don't have anything more interesting to say, sir."},
+	"text": "I don't have anything new or interesting to say, sir."},
 	"1": {"name": "Ava", "profile": "ava-upset",
-	"text": "I'll have to repeat myself. Sorry I couldn't be more interesting, sir."},
+	"text": "I'll be repeating myself from now on. Sorry I couldn't be more interesting, sir."},
 	}
 }
 
@@ -115,7 +115,9 @@ func _on_timer_timeout() -> void:
 	text.set_visible_characters(text.get_visible_characters()+1)
 
 func _on_next_pressed() -> void:
+	AudioManager.play_sound("res://assets/Audio/ui/select_008.ogg")
 	_on_next()
 
 func _on_skip_pressed() -> void:
+	AudioManager.play_sound("res://assets/Audio/ui/back_002.ogg")
 	end_text()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://src/Actors/Pickups/Pickup_Data.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Actors/Enemy/Train.gd" type="Script" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://src/Actors/Pickups/Pickup.tscn" type="PackedScene" id=7]
 [ext_resource path="res://assets/theme/UI.tres" type="Theme" id=8]
 [ext_resource path="res://src/Actors/Enemy/Enemy_Small.tscn" type="PackedScene" id=9]
+[ext_resource path="res://src/Actors/Enemy/Enemy_Big.tscn" type="PackedScene" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1000, 35 )
@@ -147,7 +148,7 @@ position = Vector2( 1225.48, -51.0582 )
 position = Vector2( 555.245, -53.0874 )
 
 [node name="Artillery2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 1920.75, -53.1723 )
+position = Vector2( 2731.24, -52.1129 )
 
 [node name="Pickup_Crate" parent="." instance=ExtResource( 5 )]
 position = Vector2( 932.947, -45.9687 )
@@ -252,7 +253,7 @@ position = Vector2( 2243, -276.034 )
 position = Vector2( 2290.66, -236.389 )
 
 [node name="Enemy_Small14" parent="." instance=ExtResource( 9 )]
-position = Vector2( 4558.88, -205.653 )
+position = Vector2( 4349.11, -191.88 )
 
 [node name="Enemy_Small15" parent="." instance=ExtResource( 9 )]
 position = Vector2( 4600.3, -247.08 )
@@ -261,13 +262,13 @@ position = Vector2( 4600.3, -247.08 )
 position = Vector2( 4646.18, -287.616 )
 
 [node name="Enemy_Small17" parent="." instance=ExtResource( 9 )]
-position = Vector2( 4759.33, -155.763 )
+position = Vector2( 4837.73, -165.298 )
 
 [node name="Enemy_Small18" parent="." instance=ExtResource( 9 )]
-position = Vector2( 4805.65, -195.408 )
+position = Vector2( 4896.76, -206.003 )
 
 [node name="Enemy_Small19" parent="." instance=ExtResource( 9 )]
-position = Vector2( 4859.11, -235.053 )
+position = Vector2( 4958.7, -262.599 )
 
 [node name="Pickup_Crate4" parent="." instance=ExtResource( 5 )]
 position = Vector2( 1983.74, -48.4411 )
@@ -312,16 +313,16 @@ position = Vector2( 3543.91, -170.371 )
 position = Vector2( 5279.84, -249.415 )
 
 [node name="Enemy_Small26" parent="." instance=ExtResource( 9 )]
-position = Vector2( 5311.8, -209.052 )
+position = Vector2( 5314.98, -207.993 )
 
 [node name="Enemy_Small27" parent="." instance=ExtResource( 9 )]
 position = Vector2( 5280.69, -166.167 )
 
 [node name="Enemy_Small28" parent="." instance=ExtResource( 9 )]
-position = Vector2( 5376.55, -248.574 )
+position = Vector2( 5380.79, -233.742 )
 
 [node name="Enemy_Small29" parent="." instance=ExtResource( 9 )]
-position = Vector2( 5386.64, -160.28 )
+position = Vector2( 5383.46, -168.756 )
 
 [node name="Enemy_Small30" parent="." instance=ExtResource( 9 )]
 position = Vector2( 4084.42, -230.075 )
@@ -337,3 +338,9 @@ position = Vector2( 2826.67, -45.8034 )
 
 [node name="Pickup3" parent="." instance=ExtResource( 7 )]
 position = Vector2( 4291.93, -45.4436 )
+
+[node name="Enemy_Big" parent="." instance=ExtResource( 10 )]
+position = Vector2( 4741.49, -281.536 )
+
+[node name="Enemy_Big2" parent="." instance=ExtResource( 10 )]
+position = Vector2( 1928.3, -249.752 )
