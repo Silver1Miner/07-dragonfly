@@ -65,9 +65,9 @@ func save_player_data() -> void:
 	PlayerData.inventory["Bomb"] = bombs
 
 func set_bars() -> void:
-	$hp_bar.set_tint_progress(Color(1,0,0))
-	$shield_bar.set_tint_progress(Color(0,0,1))
-	$energy_bar.set_tint_progress(Color(0,1,0))
+	$hp_bar.set_tint_progress(Color(172.0/255,57.0/255,57.0/255))
+	$shield_bar.set_tint_progress(Color(54.0/255,187.0/255,245.0/255))
+	$energy_bar.set_tint_progress(Color(113.0/255,201.0/255,55.0/255))
 	$hp_bar.max_value = max_hp
 	$hp_bar.value = hp
 	$shield_bar.max_value = max_shield

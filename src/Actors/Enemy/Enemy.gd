@@ -22,7 +22,7 @@ func _ready() -> void:
 	$Timer.start()
 
 func set_bars() -> void:
-	$hp_bar.set_tint_progress(Color(1,0,0))
+	$hp_bar.set_tint_progress(Color(172.0/255,57.0/255,57.0/255))
 	$hp_bar.max_value = max_hp
 	$hp_bar.value = hp
 

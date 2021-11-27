@@ -274,7 +274,7 @@ var data = {
 		"bullet_number": 1,
 		"angle": 15,
 		"bullet": preload("res://src/Actors/Gun/Bullet_Enemy.tscn"),
-		"sound": "res://assets/Audio/guns/258257__wadaltmon__m3-grease-gun-firing.wav",
+		"sound": "res://assets/Audio/guns/258198__wadaltmon__thompson-smg-shot.wav",
 	},
 	"Enemy Turret Gun": {
 		"lore": "A cheap gun often used by private security forces",

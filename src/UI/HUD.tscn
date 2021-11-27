@@ -96,17 +96,12 @@ margin_right = 208.0
 margin_bottom = 20.0
 rect_min_size = Vector2( 128, 0 )
 
-[node name="Money" type="NinePatchRect" parent="Sections/Top"]
+[node name="Money" type="Panel" parent="Sections/Top"]
 margin_left = 210.0
 margin_right = 270.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 60, 0 )
 theme = ExtResource( 7 )
-texture = ExtResource( 4 )
-patch_margin_left = 16
-patch_margin_top = 13
-patch_margin_right = 15
-patch_margin_bottom = 13
 
 [node name="Stats" type="VBoxContainer" parent="Sections/Top/Money"]
 margin_right = 40.0

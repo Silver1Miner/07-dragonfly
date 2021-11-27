@@ -2,7 +2,7 @@ extends Area2D
 class_name Explosion
 
 export var damage = 0
-export var size_scale = 2
+export var size_scale = 1
 var lifetime = 0.5
 
 func _ready() -> void:
@@ -21,5 +21,7 @@ func _on_Timer_timeout() -> void:
 	queue_free()
 
 func _on_Explosion_area_entered(area: Area2D) -> void:
-	if area.get_parent().has_method("take_damage"):
+	if area.is_in_group("player"):
+		area.get_parent().take_damage(damage/2)
+	elif area.get_parent().has_method("take_damage"):
 		area.get_parent().take_damage(damage)

@@ -80,14 +80,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="cargo_pickups" type="RichTextLabel" parent="cargo"]
+[node name="cargo_pickups" type="Label" parent="cargo"]
 margin_top = 24.0
 margin_right = 400.0
 margin_bottom = 124.0
 rect_min_size = Vector2( 0, 100 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+align = 1
 
 [node name="Failure" type="VBoxContainer" parent="."]
 anchor_left = 0.5
