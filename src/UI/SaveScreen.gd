@@ -11,7 +11,7 @@ func _ready() -> void:
 func load_slot_names() -> void:
 	slot_list.clear()
 	for i in range(3):
-		slot_list.add_item("Save Slot " + str(i+1))
+		slot_list.add_item("Save Slot " + str(i+1) + ", last saved: " + PlayerData.get_save_date(i))
 	save_button.disabled = true
 	load_button.disabled = true
 
@@ -40,8 +40,10 @@ func _on_ItemList_item_selected(index: int) -> void:
 	current_slot = index
 	print(current_slot)
 	save_button.disabled = false
-	load_button.disabled = false
-
+	if PlayerData.get_save_date(index) != "no save in slot":
+		load_button.disabled = false
+	else:
+		load_button.disabled = true
 
 func _on_ToMain_pressed() -> void:
 	AudioManager.play_sound("res://assets/Audio/ui/back_002.ogg")

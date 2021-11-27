@@ -40,8 +40,13 @@ var current_save = {
 		"Flamer": 0,
 		"Burner": 0,
 		"Bolt": 0,
-		"Spiderweb Silk": 0,
+		"Raw Spiderweb Silk": 0,
 		"Gold Bugs": 0,
+		"Silverfish Coins": 0,
+		"Chitin Shell": 0,
+		"Spiderweb Silk Shirt": 0,
+		"Water": 0,
+		"Watermelon": 0
 	}
 }
 var default_save = {
@@ -63,14 +68,20 @@ var default_save = {
 		"Flamer": 0,
 		"Burner": 0,
 		"Bolt": 0,
-		"Spiderweb Silk": 0,
+		"Raw Spiderweb Silk": 0,
 		"Gold Bugs": 0,
+		"Silverfish Coins": 0,
+		"Chitin Shell": 0,
+		"Spiderweb Silk Shirt": 0,
+		"Water": 0,
+		"Watermelon": 0
 	}
 }
 
 func _ready() -> void:
-	current_save = load_game(current_slot)
-	load_data(current_save)
+	pass
+	#current_save = load_game(current_slot)
+	#load_data(current_save)
 
 func load_data(data: Dictionary) -> void:
 	cash = data["cash"]
@@ -94,6 +105,18 @@ func save_data() -> void:
 	current_save["current_chat_scene"] = current_chat_scene
 	current_save["inventory"] = inventory
 
+func get_save_date(slot) -> String:
+	var F = File.new() #
+	var D = Directory.new() 
+	if D.dir_exists("user://save"):
+		if F.open(str("user://save/",slot,".save"), File.READ_WRITE) == OK:
+			var time = OS.get_datetime_from_unix_time(F.get_modified_time(str("user://save/",slot,".save")))
+			return str(time["year"])+"/"+str(time["month"])+"/"+str(time["day"])+" "+str(time["hour"])+":"+str(time["minute"])+":"+str(time["second"])
+		else:
+			return "no save in slot"
+	else:
+		return "no save in slot"
+
 func load_game(slot) -> Dictionary:
 	print("loaded game ", str(slot))
 	var F = File.new() #
@@ -102,6 +125,7 @@ func load_game(slot) -> Dictionary:
 		if F.open(str("user://save/",slot,".save"), File.READ_WRITE) == OK:
 			var temp_d = F.get_var()
 			print(temp_d)
+			print(F.get_modified_time(str("user://save/",slot,".save")))
 			return temp_d
 		else:
 			print("save file doesn't exist, creating one") 
@@ -120,20 +144,26 @@ func save_game(slot) -> void:
 	var F = File.new()
 	F.open(str("user://save/",slot,".save"), File.WRITE)
 	F.store_var(current_save)
+	print(F.get_modified_time(str("user://save/",slot,".save")))
 	F.close()
 
 var inventory = {
-	"Crate": 10,
+	"Crate": 0,
 	"Bomb": 10,
-	"Chaingun": 1,
-	"Spreadgun": 1,
-	"Shotgun": 1,
-	"Scattergun": 1,
-	"Flamer": 1,
-	"Burner": 1,
-	"Bolt": 1,
-	"Spiderweb Silk": 1,
-	"Gold Bugs": 1,
+	"Chaingun": 0,
+	"Spreadgun": 0,
+	"Shotgun": 0,
+	"Scattergun": 0,
+	"Flamer": 0,
+	"Burner": 0,
+	"Bolt": 0,
+	"Raw Spiderweb Silk": 0,
+	"Gold Bugs": 0,
+	"Silverfish Coins": 0,
+	"Chitin Shell": 0,
+	"Spiderweb Silk Shirt": 0,
+	"Water": 0,
+	"Watermelon": 0
 }
 
 var ship_visuals = [

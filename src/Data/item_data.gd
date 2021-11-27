@@ -60,8 +60,8 @@ I've already taken out hundreds of other little pirates he made into his little 
 var data = {
 	"Repairs": {
 		"lore": """Repair your ship to full hull integrity""",
-		"buy_cost": 1000,
-		"sell_price": 1000,
+		"buy_cost": 100,
+		"sell_price": 100,
 		"icon": "res://assets/items/icon.png",
 	},
 	"Dragonfly": {
@@ -70,17 +70,47 @@ var data = {
 		"lore": """The Scarab Class ornithopter airship, known for its bright metallic color, was originally a popular choice for recycling and sanitation companies."""},
 	"Scorpion": {
 		"lore": """The Scorpion Class ornithopter airship, named for the positioning of its mounted weapons, was originally designed for use in private security but soon abandoned for newer models."""},
-	"Spiderweb Silk": {
+	"Raw Spiderweb Silk": {
 		"lore": """A valuable commodity, light and yet more durable than steel. In addition to industrial applications, it is also woven into textiles, and even used as a medium of exchange in some regions.""",
 		"buy_cost": 5000,
 		"sell_price": 1000,
 		"icon": "res://assets/items/Tent.png",
 	},
+	"Silverfish Coins": {
+		"lore": """A discontinued currency made from silver. It became colloquially known as 'silverfish,' a nocturnal insect pest, due to its continued use by piracy groups.""",
+		"buy_cost": 3000,
+		"sell_price": 1500,
+		"icon": "res://assets/items/coins_silver.png",
+	},
 	"Gold Bugs": {
-		"lore": """A very valuable commodity, though heavy and expensive to transport.""",
+		"lore": """A discontinued currency. It is now legal to melt these down for their gold, and many corporations are doing just that.""",
 		"buy_cost": 6000,
 		"sell_price": 3000,
-		"icon": "res://assets/items/5.png"
+		"icon": "res://assets/items/coins_gold.png"
+	},
+	"Chitin Shell": {
+		"lore": """An experimental new type of exoskeleton armor modeled after the shells of arthropods and insects.""",
+		"buy_cost": 1000,
+		"sell_price": 900,
+		"icon": "res://assets/items/armor_04.png"
+	},
+	"Spiderweb Silk Shirt": {
+		"lore": """A light and comfortable shirt crafted from the finest spider silks, very popular among the wealhty.""",
+		"buy_cost": 2000,
+		"sell_price": 800,
+		"icon": "res://assets/items/shirt_01.png"
+	},
+	"Water": {
+		"lore": """A very valuable commodity on a desert planet.""",
+		"buy_cost": 1000,
+		"sell_price": 400,
+		"icon": "res://assets/items/water.png"
+	},
+	"Watermelon": {
+		"lore": """A popular snack for metal beetles.""",
+		"buy_cost": 1000,
+		"sell_price": 200,
+		"icon": "res://assets/items/watermelon.png"
 	},
 	"Bomb": {
 		"lore": """Bombs pack a lot of punch, but can only be dropped. Gravity has to take care of the rest. Their initial speed depends on your speed, so I hope you paid attention to your physics classes!""",

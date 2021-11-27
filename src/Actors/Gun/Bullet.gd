@@ -30,7 +30,7 @@ func _on_Bullet_area_entered(area: Area2D) -> void:
 			if !piercing:
 				var explosion: Explosion = Explosion.instance()
 				explosion.damage = 0
-				explosion.size_scale = 1
+				explosion.size_scale = 0.5
 				explosion.global_position = global_position
 				ObjectRegistry.register_bullet(explosion)
 				queue_free()

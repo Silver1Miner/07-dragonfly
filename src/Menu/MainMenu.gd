@@ -9,6 +9,7 @@ func _ready() -> void:
 func _on_new_pressed() -> void:
 	AudioManager.play_sound("res://assets/Audio/ui/select_008.ogg")
 	PlayerData.new_game = true
+	PlayerData.load_data(PlayerData.default_save)
 	if get_tree().change_scene_to(PlayerData.text_scroll) != OK:
 		push_error("fail to change scene")
 
