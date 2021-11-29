@@ -33,7 +33,7 @@ theme = ExtResource( 8 )
 custom_constants/line_spacing = 8
 text = "Move: WASD or Arrow Keys
 Fast (Hold): Shift
-Slow (Hold): Ctrl"
+Slow (Hold): Spacebar"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false

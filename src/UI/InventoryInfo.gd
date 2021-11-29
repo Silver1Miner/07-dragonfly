@@ -10,6 +10,8 @@ func _ready() -> void:
 	load_items()
 
 func load_items() -> void:
+	items.clear()
+	itemlist.clear()
 	for item in PlayerData.inventory:
 		if PlayerData.inventory[item] > 0:
 			items.append(item)

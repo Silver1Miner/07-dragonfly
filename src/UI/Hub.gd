@@ -82,6 +82,7 @@ func _on_Primary_item_selected(index: int) -> void:
 	populate_options()
 	update_loadout_display()
 	lore_read.set_text(item_data.get_entry(PlayerData.player_weapon_1, "lore"))
+	$HBoxContainer/Lore/NinePatchRect/InventoryInfo.load_items()
 
 func _on_Secondary_item_selected(index: int) -> void:
 	AudioManager.play_sound("res://assets/Audio/ui/select_005.ogg")
@@ -93,6 +94,7 @@ func _on_Secondary_item_selected(index: int) -> void:
 	populate_options()
 	update_loadout_display()
 	lore_read.set_text(item_data.get_entry(PlayerData.player_weapon_2, "lore"))
+	$HBoxContainer/Lore/NinePatchRect/InventoryInfo.load_items()
 
 func _on_to_mission_pressed() -> void:
 	AudioManager.play_sound("res://assets/Audio/ui/select_008.ogg")

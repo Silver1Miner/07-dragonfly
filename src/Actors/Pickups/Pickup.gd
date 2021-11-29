@@ -33,7 +33,7 @@ func _on_Pickup_area_entered(area: Area2D) -> void:
 				#area.get_parent().add_cargo("crate")
 				area.get_parent().crates_gained += 1
 			"DATA ACQUIRED":
-				if PlayerData.lore_found < 4:
+				if PlayerData.lore_found < 5:
 					PlayerData.lore_found += 1
 		AudioManager.play_sound("res://assets/Audio/powerUp8.ogg")
 		queue_free()

@@ -55,6 +55,11 @@ He's got hundreds of naive fools just like you. The Bug job, the Star Scope job,
 
 I've already taken out hundreds of other little pirates he made into his little puppets. Keep this up, and you'll be the next to...'
 """},
+{"name": "Artificial Intelligence",
+"text": """As Artificial Intelligence (AI) is considered heretical on Hive, ownership of AI equipment is illegal under planetary law.
+
+Anyone discovered to have possession of AI equipment is subject to punishment reaching up to familial extermination.
+"""},
 ]
 
 var data = {
