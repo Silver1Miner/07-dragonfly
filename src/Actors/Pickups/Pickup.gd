@@ -21,9 +21,9 @@ func _on_Pickup_area_entered(area: Area2D) -> void:
 		match effect_name:
 			"+25 HP":
 				area.get_parent()._set_HP(area.get_parent().hp + 25)
-			"+25 SH":
+			"+25 SHIELD":
 				area.get_parent()._set_SH(area.get_parent().shield + 25)
-			"+25 EN":
+			"+25 ENERGY":
 				area.get_parent()._set_EN(area.get_parent().energy + 25)
 			"+25 CASH":
 				area.get_parent()._set_cash(area.get_parent().cash + 25)

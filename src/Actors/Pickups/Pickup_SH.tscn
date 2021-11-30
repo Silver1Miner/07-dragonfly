@@ -4,7 +4,7 @@
 [ext_resource path="res://assets/pickups/powerupBlue_shield.png" type="Texture" id=2]
 
 [node name="Pickup_SH" instance=ExtResource( 1 )]
-effect_name = "+25 SH"
+effect_name = "+25 SHIELD"
 speed = 40
 
 [node name="Sprite" parent="." index="0"]

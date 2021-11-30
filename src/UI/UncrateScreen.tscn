@@ -93,7 +93,7 @@ frame = 7
 margin_top = 161.0
 margin_right = 480.0
 margin_bottom = 178.0
-text = "Cost to Uncrate: 60"
+text = "Cost to Uncrate: 160"
 align = 1
 
 [node name="Accept" type="Button" parent="Display"]
@@ -109,6 +109,7 @@ margin_bottom = 236.0
 text = "Decline"
 
 [node name="Result" type="Panel" parent="."]
+visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5

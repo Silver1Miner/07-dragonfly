@@ -64,6 +64,7 @@ func update_ship_choice() -> void:
 	$HBoxContainer/Lore/Options/Inventory.pressed = false
 	ship_preview.texture = PlayerData.ship_visuals[PlayerData.current_ship]["sprite"]
 	lore_read.text = item_data.get_entry(ship_names[PlayerData.current_ship], "lore")
+	lore_read.scroll_to_line(0)
 
 func _on_Ship_item_selected(index: int) -> void:
 	AudioManager.play_sound("res://assets/Audio/ui/select_005.ogg")
@@ -82,6 +83,7 @@ func _on_Primary_item_selected(index: int) -> void:
 	populate_options()
 	update_loadout_display()
 	lore_read.set_text(item_data.get_entry(PlayerData.player_weapon_1, "lore"))
+	lore_read.scroll_to_line(0)
 	$HBoxContainer/Lore/NinePatchRect/InventoryInfo.load_items()
 
 func _on_Secondary_item_selected(index: int) -> void:
@@ -94,6 +96,7 @@ func _on_Secondary_item_selected(index: int) -> void:
 	populate_options()
 	update_loadout_display()
 	lore_read.set_text(item_data.get_entry(PlayerData.player_weapon_2, "lore"))
+	lore_read.scroll_to_line(0)
 	$HBoxContainer/Lore/NinePatchRect/InventoryInfo.load_items()
 
 func _on_to_mission_pressed() -> void:
@@ -108,7 +111,7 @@ func _on_to_trading_pressed() -> void:
 
 func _on_chat_pressed() -> void:
 	AudioManager.play_sound("res://assets/Audio/ui/select_008.ogg")
-	if PlayerData.current_chat_scene < 5:
+	if PlayerData.current_chat_scene < len(textbox.chat_scenes) - 1:
 		PlayerData.current_chat_scene += 1
 	else:
 		PlayerData.current_chat_scene = 0
@@ -139,6 +142,7 @@ func _on_Data_item_selected(index: int) -> void:
 	$HBoxContainer/Lore/Options/Inventory.pressed = false
 	if index > 0:
 		lore_read.set_text(item_data.get_lore(index-1))
+		lore_read.scroll_to_line(0)
 
 func _on_ToMain_pressed() -> void:
 	AudioManager.play_sound("res://assets/Audio/ui/back_002.ogg")

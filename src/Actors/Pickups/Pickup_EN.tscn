@@ -4,7 +4,7 @@
 [ext_resource path="res://assets/pickups/powerupGreen_bolt.png" type="Texture" id=2]
 
 [node name="Pickup_EN" instance=ExtResource( 1 )]
-effect_name = "+25 EN"
+effect_name = "+25 ENERGY"
 speed = 40
 
 [node name="Sprite" parent="." index="0"]

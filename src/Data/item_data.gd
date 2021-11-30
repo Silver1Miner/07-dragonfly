@@ -19,6 +19,19 @@ func get_lore(index) -> String:
 	return "lore entry not found"
 
 var lore = [
+	{"name": "Hive",
+"text": """Due to its relatively central location among the known planetary systems, Hive is a popular intermediary transportation hub. Of course, as all planetary systems are in constant motion relative to one another, there is no such thing as a constant shipping lane in space. Nevertheless Hive intercepts more calculated transportation routes than any other colonized planet, and so all space shipping corporations have invested heavily in Hive.
+
+However, the primacy of Hive as a transportation hub and transformation into a company planet was not always assured, due to a local quirk: the strong religious feelings of the locals.
+
+In the dominant religious beliefs of Hive, all Artificial Intelligence (AI) is considered heretical, a crime against the sanctity of human consciousness. Consequently, ownership of AI equipment is completely illegal under traditional planetary law. Anyone discovered to have possession of AI equipment is subject to punishment reaching up to familial extermination.
+
+This initially caused some difficulties for the shipping corporations due to their heavy reliance on powerful computers to calculate transportation routes among the constantly moving planetary systems. However, the issue was eventually resolved by the declaration of the principle of distinguishability between 'computation power' and 'intelligence' made in the now famous 'Abacus' argument in the landmark 'Unter Freight vs Hive' case.
+
+The 'Abacus' argument states that as a mechanical abacus made of sliding beads cannot be considered intelligent, any computational equipment that can be demonstrated to be reducable to an abacus cannot be considered 'Intelligent,' no matter how great its computational power.
+
+Despite Unter Freight's victory in the case, the logic of the argument has not been completely accepted by the more devout locals of Hive, and for this reason most computational equipment used by the shipping corporations are kept off the planet's surface, or else under very heavy guard.
+"""},
 	{"name": "Old Man of the Moon",
 "text": """The Old Man below the Moon appears in several ancient legends about love and marriage. He is said to use a red string to tie together future mates. Legends vary as to where he ties the strings, such as the ankle or around a finger.
 
@@ -55,11 +68,6 @@ He's got hundreds of naive fools just like you. The Bug job, the Star Scope job,
 
 I've already taken out hundreds of other little pirates he made into his little puppets. Keep this up, and you'll be the next to...'
 """},
-{"name": "Artificial Intelligence",
-"text": """As Artificial Intelligence (AI) is considered heretical on Hive, ownership of AI equipment is illegal under planetary law.
-
-Anyone discovered to have possession of AI equipment is subject to punishment reaching up to familial extermination.
-"""},
 ]
 
 var data = {
@@ -84,37 +92,37 @@ var data = {
 	"Silverfish Coins": {
 		"lore": """A discontinued currency made from silver. It became colloquially known as 'silverfish,' a nocturnal insect pest, due to its continued use by piracy groups.""",
 		"buy_cost": 3000,
-		"sell_price": 1500,
+		"sell_price": 800,
 		"icon": "res://assets/items/coins_silver.png",
 	},
 	"Gold Bugs": {
 		"lore": """A discontinued currency. It is now legal to melt these down for their gold, and many corporations are doing just that.""",
 		"buy_cost": 6000,
-		"sell_price": 3000,
+		"sell_price": 2000,
 		"icon": "res://assets/items/coins_gold.png"
 	},
 	"Chitin Shell": {
 		"lore": """An experimental new type of exoskeleton armor modeled after the shells of arthropods and insects.""",
 		"buy_cost": 1000,
-		"sell_price": 900,
+		"sell_price": 200,
 		"icon": "res://assets/items/armor_04.png"
 	},
 	"Spiderweb Silk Shirt": {
 		"lore": """A light and comfortable shirt crafted from the finest spider silks, very popular among the wealhty.""",
 		"buy_cost": 2000,
-		"sell_price": 800,
+		"sell_price": 400,
 		"icon": "res://assets/items/shirt_01.png"
 	},
 	"Water": {
 		"lore": """A very valuable commodity on a desert planet.""",
 		"buy_cost": 1000,
-		"sell_price": 400,
+		"sell_price": 100,
 		"icon": "res://assets/items/water.png"
 	},
 	"Watermelon": {
 		"lore": """A popular snack for metal beetles.""",
 		"buy_cost": 1000,
-		"sell_price": 200,
+		"sell_price": 120,
 		"icon": "res://assets/items/watermelon.png"
 	},
 	"Bomb": {
@@ -211,7 +219,7 @@ var data = {
 		"baseprice": 1000,
 		"buy_cost": 1200,
 		"sell_price": 1000,
-		"damage": 2.0,
+		"damage": 2.5,
 		"cooldown": 0.1,
 		"direction": Vector2.RIGHT,
 		"speed": 600,
@@ -230,7 +238,7 @@ var data = {
 		"baseprice": 1000,
 		"buy_cost": 1500,
 		"sell_price": 1200,
-		"damage": 2.5,
+		"damage": 3.0,
 		"cooldown": 0.1,
 		"direction": Vector2.RIGHT,
 		"speed": 800,
@@ -247,9 +255,9 @@ var data = {
 	"Bolt": {
 		"lore": """The Scorpion Stinger Bolt Beam is a scaled-down version of the now infamous Bolt Beam that is a favorite of space pirates. Though smaller in absolute size, it is, pound for pound, even more dangerous in atmospheric air battles than its big brother is in space.""",
 		"baseprice": 1000,
-		"buy_cost": 3000,
+		"buy_cost": 4000,
 		"sell_price": 2000,
-		"damage": 40.0,
+		"damage": 30.0,
 		"cooldown": 1.0,
 		"direction": Vector2.RIGHT,
 		"speed": 0,
