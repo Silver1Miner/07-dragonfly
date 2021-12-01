@@ -1,0 +1,101 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://src/Actors/Enemy/Train.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/Actors/Pickups/Pickup_Crate.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/Actors/Enemy/Turret.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/Actors/Enemy/Enemy_Big.tscn" type="PackedScene" id=4]
+
+[node name="Train4" instance=ExtResource( 1 )]
+
+[node name="Sprite2" parent="." index="5"]
+visible = true
+
+[node name="Pickup" parent="." index="34"]
+position = Vector2( 2399.94, -44.9158 )
+
+[node name="Enemy_Small5" parent="." index="48"]
+position = Vector2( 2190.11, -128.943 )
+
+[node name="Enemy_Small8" parent="." index="51"]
+position = Vector2( 3053.46, -160.037 )
+
+[node name="Enemy_Small9" parent="." index="52"]
+position = Vector2( 2118.29, -126.604 )
+
+[node name="Enemy_Small10" parent="." index="53"]
+position = Vector2( 2038.92, -124.485 )
+
+[node name="Enemy_Small11" parent="." index="54"]
+position = Vector2( 1703.48, -225.226 )
+
+[node name="Enemy_Small12" parent="." index="55"]
+position = Vector2( 1616.86, -229.418 )
+
+[node name="Enemy_Small13" parent="." index="56"]
+position = Vector2( 1972.82, -126.205 )
+
+[node name="Enemy_Small15" parent="." index="58"]
+position = Vector2( 4591.82, -158.085 )
+
+[node name="Enemy_Small16" parent="." index="59"]
+position = Vector2( 4646.18, -212.394 )
+
+[node name="Enemy_Small18" parent="." index="61"]
+position = Vector2( 3864.52, -232.452 )
+
+[node name="Enemy_Small19" parent="." index="62"]
+position = Vector2( 4411.9, -244.408 )
+
+[node name="Enemy_Small23" parent="." index="74"]
+position = Vector2( 2470.83, -277.365 )
+
+[node name="Enemy_Small24" parent="." index="75"]
+position = Vector2( 2384.86, -214.868 )
+
+[node name="Enemy_Small25" parent="." index="76"]
+position = Vector2( 5094.35, -267.71 )
+
+[node name="Enemy_Small26" parent="." index="77"]
+position = Vector2( 3813.64, -187.238 )
+
+[node name="Enemy_Small27" parent="." index="78"]
+position = Vector2( 4462.74, -287.71 )
+
+[node name="Enemy_Small28" parent="." index="79"]
+position = Vector2( 3771.3, -132.322 )
+
+[node name="Enemy_Small29" parent="." index="80"]
+position = Vector2( 2414.48, -253.429 )
+
+[node name="Enemy_Small30" parent="." index="81"]
+position = Vector2( 4073.83, -162.269 )
+
+[node name="Enemy_Small32" parent="." index="83"]
+position = Vector2( 2980.09, -159.845 )
+
+[node name="Turret11" parent="." index="88" instance=ExtResource( 3 )]
+position = Vector2( 228.815, -52.6783 )
+
+[node name="Turret12" parent="." index="89" instance=ExtResource( 3 )]
+position = Vector2( 308.905, -52.6783 )
+
+[node name="Turret13" parent="." index="90" instance=ExtResource( 3 )]
+position = Vector2( 399.674, -52.6783 )
+
+[node name="Pickup_Crate3" parent="." index="91" instance=ExtResource( 2 )]
+position = Vector2( 978.186, -46.0041 )
+
+[node name="Pickup_Crate5" parent="." index="92" instance=ExtResource( 2 )]
+position = Vector2( 2435.21, -48.6738 )
+
+[node name="Enemy_Big3" parent="." index="93" instance=ExtResource( 4 )]
+position = Vector2( 1342.54, -284.212 )
+
+[node name="Turret14" parent="." index="94" instance=ExtResource( 3 )]
+position = Vector2( 2613.9, -52.1893 )
+
+[node name="Enemy_Big4" parent="." index="95" instance=ExtResource( 4 )]
+position = Vector2( 5267.57, -282.093 )
+
+[node name="Enemy_Big5" parent="." index="96" instance=ExtResource( 4 )]
+position = Vector2( 4973.04, -198.395 )

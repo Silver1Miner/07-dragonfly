@@ -5,8 +5,10 @@ onready var ship_preview = $HBoxContainer/Loadout/Preview/ShipPreview
 onready var lore_read = $HBoxContainer/Lore/NinePatchRect/LoreText
 onready var textbox = $HUD/Textbox
 onready var lore_selector = $HBoxContainer/Lore/Options/Data
+onready var end_game = $EndGame
 
 func _ready() -> void:
+	end_game.visible = (PlayerData.current_chat_scene == len(textbox.chat_scenes) - 1) and PlayerData.cash >= 10000
 	if textbox.connect("text_finished", self, "_on_text_finished") != OK:
 		push_error("textbox signal connect fail")
 	update_hud()
@@ -113,8 +115,8 @@ func _on_chat_pressed() -> void:
 	AudioManager.play_sound("res://assets/Audio/ui/select_008.ogg")
 	if PlayerData.current_chat_scene < len(textbox.chat_scenes) - 1:
 		PlayerData.current_chat_scene += 1
-	else:
-		PlayerData.current_chat_scene = 0
+	#else:
+	#	PlayerData.current_chat_scene = 0
 	textbox.play_dialogue(textbox.chat_scenes[PlayerData.current_chat_scene])
 	$Choices.visible = false
 
@@ -147,4 +149,10 @@ func _on_Data_item_selected(index: int) -> void:
 func _on_ToMain_pressed() -> void:
 	AudioManager.play_sound("res://assets/Audio/ui/back_002.ogg")
 	if get_tree().change_scene_to(PlayerData.main_menu) != OK:
+		push_error("fail to change scene")
+
+
+func _on_EndGame_pressed() -> void:
+	PlayerData.end_game = true
+	if get_tree().change_scene_to(PlayerData.text_scroll) != OK:
 		push_error("fail to change scene")

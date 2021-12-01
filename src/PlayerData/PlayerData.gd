@@ -19,6 +19,8 @@ var ships = [1, 1, 1]
 var current_ship = 0
 var current_chat_scene = -1
 var new_game = false
+var end_game = false
+var tutorial = true
 
 var current_slot := 0
 var current_save = {

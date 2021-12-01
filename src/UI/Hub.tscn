@@ -201,6 +201,16 @@ margin_right = 290.0
 margin_bottom = 70.0
 text = "Journal"
 
+[node name="EndGame" type="Button" parent="."]
+margin_left = 470.0
+margin_top = 340.0
+margin_right = 550.0
+margin_bottom = 370.0
+text = "Ending"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="SaveScreen" parent="." instance=ExtResource( 7 )]
 visible = false
 
@@ -213,3 +223,6 @@ visible = false
 [connection signal="pressed" from="Choices/to_trading" to="." method="_on_to_trading_pressed"]
 [connection signal="pressed" from="Choices/chat" to="." method="_on_chat_pressed"]
 [connection signal="pressed" from="Choices/to_saves" to="." method="_on_to_saves_pressed"]
+[connection signal="pressed" from="EndGame" to="." method="_on_EndGame_pressed"]
+
+[editable path="HUD"]

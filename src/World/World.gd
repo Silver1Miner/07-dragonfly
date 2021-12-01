@@ -5,9 +5,35 @@ onready var player = $Player
 var cargo_list = []
 var cargo_list_string = ""
 #var crates_gained = 0
+var train2 = preload("res://src/Actors/Enemy/Train2.tscn")
+var train3 = preload("res://src/Actors/Enemy/Train3.tscn")
+var train4 = preload("res://src/Actors/Enemy/Train4.tscn")
 
 func _ready() -> void:
+	if PlayerData.tutorial:
+		PlayerData.tutorial = false
+	else:
+		choose_train()
 	connect_hud()
+
+func choose_train() -> void:
+	randomize()
+	var r = rand_range(0,3)
+	if r < 1:
+		for n in $Enemy.get_children():
+			$Enemy.remove_child(n)
+			n.queue_free()
+		$Enemy.add_child(train2.instance())
+	elif r >=1 and r < 2:
+		for n in $Enemy.get_children():
+			$Enemy.remove_child(n)
+			n.queue_free()
+		$Enemy.add_child(train3.instance())
+	else:
+		for n in $Enemy.get_children():
+			$Enemy.remove_child(n)
+			n.queue_free()
+		$Enemy.add_child(train4.instance())
 
 func connect_hud() -> void:
 	if $Pause.connect("leave", self, "_on_leave") != OK:

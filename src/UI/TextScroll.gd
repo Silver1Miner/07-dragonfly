@@ -27,6 +27,11 @@ func _ready() -> void:
 		base_speed = 30
 		text = intro_text
 		next_level = PlayerData.hub
+	elif PlayerData.end_game:
+		base_speed = 30
+		text = ending
+		next_level = PlayerData.main_menu
+		PlayerData.end_game = false
 	else:
 		base_speed = 30
 		text = credits
@@ -101,6 +106,26 @@ var intro_text = [
 		"you too have decided to make a go at the train robbing life."
 	]
 ]
+
+var ending = [
+	[
+		"It seems almost unbelievable.",
+		"You have enough saved to get off this planet."
+	],[
+		"",
+		"",
+		"You could buy a nice cheap space ship.",
+		"Fly away and leave Hive behind.",
+		"It's exciting just thinking about it.",
+	],[
+		"",
+		"",
+		"And of course, you could bring Ava along.",
+		"She did say she'd like a space ship body.",
+		"Who knows what sorts of trouble you two could get into in space?",
+	]
+]
+
 
 var credits = [
 	[

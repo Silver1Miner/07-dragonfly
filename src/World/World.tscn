@@ -22,7 +22,9 @@ wait_time = 133
 
 [node name="Exit" parent="." instance=ExtResource( 8 )]
 
-[node name="Train" parent="." instance=ExtResource( 12 )]
+[node name="Enemy" type="Node2D" parent="."]
+
+[node name="Train" parent="Enemy" instance=ExtResource( 12 )]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 collision_layer = 7
